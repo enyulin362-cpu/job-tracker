@@ -12,6 +12,27 @@
   <div class="wrap">
     <h1>Anya 的職缺追蹤</h1>
     <p class="sub" id="updated">載入中…</p>
+    <div id="syncbar" class="syncbar" hidden>
+      <div class="sync-line">
+        <p id="syncStatus" class="sync-status" role="status" aria-live="polite">尚未登入</p>
+        <span id="syncWho" class="sync-who" hidden></span>
+        <button id="syncToggle" class="btn" type="button">登入</button>
+        <button id="syncLogout" class="btn" type="button" hidden>登出</button>
+      </div>
+      <div id="syncPanel" hidden>
+        <p class="hint">登入信的連結請用這台裝置的瀏覽器打開。若連結開在別處，改輸入信裡的驗證碼。網站不會保存密碼。</p>
+        <form id="syncLogin" class="sync-form">
+          <label class="sr" for="syncEmail">電子郵件</label>
+          <input id="syncEmail" type="email" autocomplete="email" inputmode="email" placeholder="電子郵件" aria-label="電子郵件" required>
+          <button id="syncSend" class="btn" type="submit">寄送登入連結</button>
+        </form>
+        <form id="syncCodeForm" class="sync-form">
+          <label class="sr" for="syncCode">驗證碼</label>
+          <input id="syncCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="驗證碼（選填）" aria-label="驗證碼" maxlength="10">
+          <button id="syncVerify" class="btn" type="submit">用驗證碼登入</button>
+        </form>
+      </div>
+    </div>
     <nav class="tabs" role="tablist">
       <button class="tab active" data-tab="jobs" role="tab">職缺</button>
       <button class="tab" data-tab="favs" role="tab">我的收藏 <span id="favCount" class="pill">0</span></button>
@@ -60,7 +81,7 @@
     <div class="toolbar">
       <button id="export" class="btn">匯出收藏與備註（JSON）</button>
       <label class="btn">匯入 JSON<input id="import" type="file" accept="application/json,.json" hidden></label>
-      <span class="hint">收藏、狀態與備註只存在這台裝置的瀏覽器裡；換手機或電腦前請先匯出。</span>
+      <span class="hint" id="storageHint">收藏、狀態與備註只存在這台裝置的瀏覽器裡；換手機或電腦前請先匯出。</span>
     </div>
     <div id="favList" class="cards"></div>
   </section>
@@ -81,6 +102,7 @@
 
 <footer class="wrap foot">資料由爬蟲自動整理，可能有誤或已下架，投遞前請點連結確認原始頁面。</footer>
 <div id="toast" class="toast" hidden></div>
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

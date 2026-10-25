@@ -5,7 +5,7 @@
 - 每天早上 9:00（台北時間）由 GitHub 免費的自動化服務（GitHub Actions）去公開職缺網站抓資料。
 - 依照 `config.yaml` 的規則篩選（地區、排除服務業／業務／資深職等）、去除重複、只保留 45 天內的職缺。
 - 結果存成 `docs/data/jobs.json`，並顯示在一個免費的網站（GitHub Pages）上，可搜尋、篩選、排序。
-- 你可以在網站上 ★ 收藏、寫備註、標記狀態（想投／已投／面試／不考慮），這些資料只存在你自己的瀏覽器裡，可以匯出／匯入 JSON 備份。
+- 你可以在網站上 ★ 收藏、寫備註、標記狀態（想投／已投／面試／不考慮）。這些資料存在你自己的瀏覽器裡，可以匯出／匯入 JSON 備份。若依照下方「跨裝置同步」設定 Supabase，登入後同一份進度也會出現在手機與電腦。
 - 「公司與工作室探索」分頁列出值得留意的公司與工作室（`docs/data/companies.json`）。
 - **（選用）** 如果你有任何 AI 服務的金鑰，可以讓 AI 幫新職缺重新分類、判斷適合度、寫一句話備註。沒有金鑰就自動跳過。
 
@@ -39,10 +39,12 @@ scraper/common.py           ← 共用工具與規則判斷
 scraper/sources/*.py        ← 每個網站一個檔案
 scraper/ai_filter.py        ← （選用）AI 篩選
 docs/index.html, app.js, style.css  ← 網站
+docs/config.js              ← （選用）Supabase 網址與 anon key；留空就只用本機
 docs/data/jobs.json         ← 職缺資料（自動更新）
 docs/data/companies.json    ← 公司與工作室名單（手動維護）
 docs/data/meta.json         ← 最近一次執行紀錄
 .github/workflows/update.yml← 每天自動執行的設定
+supabase/schema.sql         ← （選用）雲端同步的資料表與權限
 tools/seed_from_canvas.js   ← 產生初始資料用的小工具（平常用不到）
 ```
 
@@ -56,7 +58,7 @@ tools/seed_from_canvas.js   ← 產生初始資料用的小工具（平常用不
 ### 2. 建立一個新的 repository（專案）
 1. 登入後，右上角「+」→「New repository」。
 2. Repository name 填 `job-tracker`（或任何英文名字）。
-3. 選 **Public**（免費帳號的 GitHub Pages 需要公開 repo；職缺資料本來就是公開資訊，你的收藏與備註不會上傳）。
+3. 選 **Public**（免費帳號的 GitHub Pages 需要公開 repo；職缺資料本來就是公開資訊。收藏與備註不會進到這個 GitHub 專案；只有另外設定 Supabase 並登入之後，才會存到你自己的 Supabase）。
 4. 按「Create repository」。
 
 ### 3. 上傳檔案
@@ -177,6 +179,34 @@ cd docs && python -m http.server 8000 # 然後打開 http://localhost:8000
 
 ---
 
+## 跨裝置同步（選用，Supabase 免費額度）
+
+沒做這一段也完全沒問題：`docs/config.js` 的兩個值留空時，網站跟以前一樣，收藏、狀態、備註只存在這台裝置的瀏覽器。
+
+做完之後，用同一個電子郵件登入，手機和電腦會看到同一份進度。網站仍是純靜態檔案，不需要建置；登入用電子郵件裡的連結或驗證碼，**網站不會保存密碼**。
+
+1. 到 <https://supabase.com> 註冊，新建一個專案，方案選 **Free**。資料庫密碼自己保管即可，網站用不到。
+2. 等專案建好。左側 **SQL Editor** → **New query**，打開本專案的 `supabase/schema.sql`，整份貼上，按 **Run**。看到成功即可。
+3. 左側 **Authentication** → **URL Configuration**：
+   - **Site URL** 填網站網址，例如 `https://你的專案.vercel.app`（Vercel 的根目錄是 `docs`、沒有建置步驟）。
+   - **Redirect URLs** 加上同一個網址。建議這三個都加：`https://你的專案.vercel.app`、`https://你的專案.vercel.app/`、`https://你的專案.vercel.app/**`。
+   - 若會在自己電腦試：再加 `http://localhost:8000/**`。
+4. 確認 **Authentication** → **Sign In / Providers** → **Email** 是開啟的。不用設定密碼。
+5. 左側 **Project Settings** → **API Keys**（有些畫面叫 **API**）：
+   - 複製 **Project URL**。
+   - 複製 **anon public** key，或新的 **publishable** key（`sb_publishable_` 開頭）。
+   - **不要**複製 `service_role` 或 secret key。那種金鑰可以繞過權限，不能放進網站。
+6. 打開 `docs/config.js`，把網址填進 `url`，金鑰填進 `anonKey`，存檔並部署。兩個都留空就會關閉同步。
+7. 重新整理網站，標題下方會出現「登入」。輸入電子郵件 → **寄送登入連結**。
+   - 請用**這台裝置的瀏覽器**打開信裡的連結。
+   - 若連結開到別的瀏覽器，改把信裡的驗證碼填進網站。預設信件可能只有連結；想同時看到 6 位數驗證碼時，到 **Authentication** → **Emails** → **Templates** → **Magic link**，在內容加上 `{{ .Token }}`。
+8. 第一次登入會把這台裝置已經有的收藏、狀態、備註和雲端合併：只有一邊有的職缺會保留。兩邊都改過同一筆時，以比較新的那次為準；這台裝置上還沒同步過的舊收藏或備註，不會因為雲端那一欄是空的就被清掉。之後的修改會自動存到雲端，也會留在這台瀏覽器，沒有網路時仍可看、可改，恢復連線後會再同步。
+9. 「匯出／匯入 JSON」維持可用。換瀏覽器或清掉網站資料前，仍建議匯出一份備份。
+
+這組 anon / publishable key 會出現在公開網頁上，這是預期的。資料表開了 Row Level Security：沒登入的人讀不到，登入之後也只能讀寫自己的列。免費額度對這種個人小量資料足夠。
+
+---
+
 ## 限制與注意事項
 
 - **GitHub 主機在國外**：Actions 的主機 IP 在美國／歐洲，部分台灣網站可能會限制或擋掉國外 IP。如果某來源在 `meta.json` 一直顯示「失敗」，可以改在自己電腦執行，或在 `config.yaml` 把該來源的 `enabled` 改成 `false`。
@@ -186,5 +216,5 @@ cd docs && python -m http.server 8000 # 然後打開 http://localhost:8000
 - **日期意義不同**：104 的日期是「職缺更新日」，不一定是首次刊登日；Yourator 只有「幾天前活躍」，沒有確切日期（改用首次抓到日計算 45 天）；518 只有月／日，年份由程式推算。
 - **規則篩選不完美**：104、518 結果較廣，難免混入不太相關的職缺；可以調整 `config.yaml`，或開啟 AI 篩選。
 - **PTT、1111 家教網是非正式貼文**，未經查證，應徵前請自行確認對方身分，不要先付任何費用。
-- **你的收藏、狀態、備註只存在目前這台裝置的瀏覽器**。換電腦或清除瀏覽器資料前，請先用網站上的「匯出」備份。
+- **沒有設定 Supabase 時，收藏、狀態、備註只存在目前這台裝置的瀏覽器**。有設定並登入之後，會在你的裝置之間同步，這台裝置仍留一份離線備份。換電腦或清除瀏覽器資料前，請先用網站上的「匯出」備份。
 - 請合理使用：程式每次請求間隔約 1.2 秒、每天只跑一次，請不要大幅提高頻率。

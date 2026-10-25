@@ -1,10 +1,13 @@
-/* Anya 的職缺追蹤 — 純前端，無需建置。收藏／狀態／備註存在 localStorage。 */
+/* Anya 的職缺追蹤 — 純前端，無需建置。
+   收藏／狀態／備註存在 localStorage（jerry-job-tracker-v1）。
+   docs/config.js 的 Supabase 網址與 anon key 都留空時，行為與只用本機儲存相同。 */
 (function () {
   "use strict";
   var STORE_KEY = "jerry-job-tracker-v1";
   var PAGE = 60;
   var STATUSES = ["想投", "已投", "面試", "不考慮"];
   var CAT_ORDER = ["設計與生涯", "藝術與諮詢", "一般工讀", "家教伴讀"];
+  var USER_MAPS = ["fav", "status", "note", "favJobs", "updated"];
 
   // ---------- 純函式（可在 node 測試） ----------
   function norm(s) { return String(s == null ? "" : s).toLowerCase(); }
@@ -58,14 +61,234 @@
     }[key] || function () { return 0; };
     return a.sort(by);
   }
+  function emptyUser() {
+    return { fav: {}, status: {}, note: {}, favJobs: {}, updated: {} };
+  }
+  function assignMap(target, src) {
+    if (!src || typeof src !== "object") return;
+    Object.keys(src).forEach(function (id) {
+      if (!id || id === "__proto__" || id === "constructor" || id === "prototype") return;
+      target[id] = src[id];
+    });
+  }
   function mergeUser(base, inc) {
-    var out = { fav: {}, status: {}, note: {}, favJobs: {} };
-    ["fav", "status", "note", "favJobs"].forEach(function (k) {
-      Object.assign(out[k], (base && base[k]) || {}, (inc && inc[k]) || {});
+    var out = emptyUser();
+    USER_MAPS.forEach(function (k) {
+      assignMap(out[k], base && base[k]);
+      assignMap(out[k], inc && inc[k]);
     });
     return out;
   }
-  var api = { filterJobs: filterJobs, sortJobs: sortJobs, payNumber: payNumber, mergeUser: mergeUser, hasDays: hasDays };
+  function normalizeSupabaseUrl(url) {
+    return String(url || "").trim().replace(/\/+$/, "");
+  }
+  function decodeJwtPayload(key) {
+    var parts = String(key || "").split(".");
+    if (parts.length < 2 || !parts[1]) return null;
+    var b64 = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+    while (b64.length % 4) b64 += "=";
+    try {
+      var raw;
+      if (typeof atob === "function") raw = atob(b64);
+      else if (typeof Buffer !== "undefined") raw = Buffer.from(b64, "base64").toString("utf8");
+      else return null;
+      return JSON.parse(raw);
+    } catch (e) { return null; }
+  }
+  function looksLikeServiceRole(key) {
+    var payload = decodeJwtPayload(key);
+    return !!(payload && payload.role === "service_role");
+  }
+  function supabaseConfigError(cfg) {
+    if (!cfg || typeof cfg !== "object") return "";
+    var url = normalizeSupabaseUrl(cfg.url);
+    var key = String(cfg.anonKey == null ? "" : cfg.anonKey).trim();
+    if (!url && !key) return "";
+    if (!url || !key) return "同步設定不完整，目前只存在這台裝置";
+    if (!/^https:\/\/[^\s/]+$/i.test(url)) return "同步網址需要是 https，目前只存在這台裝置";
+    if (looksLikeServiceRole(key)) return "請改填 anon 或 publishable key，不要填 service_role";
+    return "";
+  }
+  function isSupabaseConfigured(cfg) {
+    return !!(cfg && typeof cfg === "object" && !supabaseConfigError(cfg) &&
+      normalizeSupabaseUrl(cfg.url) && String(cfg.anonKey || "").trim());
+  }
+  function timeMs(iso) {
+    var t = Date.parse(iso || "");
+    return isNaN(t) ? 0 : t;
+  }
+  function cleanStatus(s) {
+    return STATUSES.indexOf(s) >= 0 ? s : "";
+  }
+  function stableJson(v) {
+    if (v == null || typeof v !== "object") return JSON.stringify(v == null ? null : v);
+    if (Array.isArray(v)) return "[" + v.map(stableJson).join(",") + "]";
+    return "{" + Object.keys(v).sort().map(function (k) {
+      return JSON.stringify(k) + ":" + stableJson(v[k]);
+    }).join(",") + "}";
+  }
+  function blank(v) { return v == null || v === "" || v === false; }
+  // 同一個欄位：兩邊都有值時，時間較新的贏（平手用本機）。
+  // 空白只有在「兩邊都有時間、而且空白那一邊比較新」時才算明確清除。
+  // 沒有時間的舊資料不會被另一邊的空白清掉，避免第一次登入弄丟收藏。
+  function pickField(localVal, remoteVal, lt, rt) {
+    var le = blank(localVal), re = blank(remoteVal);
+    if (le && re) return localVal === false || remoteVal === false ? false : "";
+    if (!le && re) return rt > lt && lt > 0 ? remoteVal : localVal;
+    if (le && !re) return lt > rt && rt > 0 ? localVal : remoteVal;
+    return rt > lt ? remoteVal : localVal;
+  }
+  function readJob(user, id) {
+    var fav = !!(user.fav && user.fav[id]);
+    var status = cleanStatus((user.status && user.status[id]) || "");
+    var note = user.note && user.note[id] != null ? String(user.note[id]) : "";
+    if (note.length > 20000) note = note.slice(0, 20000);
+    var updatedAt = user.updated && typeof user.updated[id] === "string" ? user.updated[id] : "";
+    var snap = user.favJobs && user.favJobs[id];
+    var favJob = fav && snap && typeof snap === "object" && !Array.isArray(snap) ? snap : null;
+    if (!fav && !status && !note && !updatedAt) return null;
+    return { fav: fav, status: status, note: note, favJob: favJob, updatedAt: updatedAt };
+  }
+  function jobContent(rec) {
+    return {
+      fav: !!rec.fav,
+      status: rec.status || "",
+      note: rec.note || "",
+      favJob: rec.fav ? (rec.favJob || null) : null
+    };
+  }
+  function sameContent(a, b) {
+    return a.fav === b.fav && a.status === b.status && a.note === b.note && stableJson(a.favJob) === stableJson(b.favJob);
+  }
+  function chooseUpdatedAt(localRec, remoteRec, merged, lt, rt, nowIso) {
+    var mc = jobContent(merged), lc = jobContent(localRec), rc = jobContent(remoteRec);
+    var sameL = sameContent(mc, lc), sameR = sameContent(mc, rc);
+    if (sameL && sameR) {
+      if (rt > lt && remoteRec.updatedAt) return remoteRec.updatedAt;
+      return localRec.updatedAt || remoteRec.updatedAt || nowIso;
+    }
+    if (sameR && rt > 0 && remoteRec.updatedAt) return remoteRec.updatedAt;
+    if (sameL && lt > 0 && localRec.updatedAt) return localRec.updatedAt;
+    return nowIso;
+  }
+  function mergeOne(localRec, remoteRec, nowIso) {
+    if (!localRec && !remoteRec) return null;
+    if (!localRec) return remoteRec.updatedAt ? remoteRec : Object.assign({}, remoteRec, { updatedAt: nowIso });
+    if (!remoteRec) return localRec.updatedAt ? localRec : Object.assign({}, localRec, { updatedAt: nowIso });
+    var lt = timeMs(localRec.updatedAt), rt = timeMs(remoteRec.updatedAt);
+    var fav = !!pickField(!!localRec.fav, !!remoteRec.fav, lt, rt);
+    var status = pickField(localRec.status || "", remoteRec.status || "", lt, rt) || "";
+    var note = pickField(localRec.note || "", remoteRec.note || "", lt, rt) || "";
+    var favJob = null;
+    if (fav) {
+      var ls = localRec.fav ? (localRec.favJob || null) : null;
+      var rs = remoteRec.fav ? (remoteRec.favJob || null) : null;
+      favJob = ls && rs ? (rt > lt ? rs : ls) : (ls || rs);
+    }
+    var merged = { fav: fav, status: status, note: note, favJob: favJob, updatedAt: "" };
+    merged.updatedAt = chooseUpdatedAt(localRec, remoteRec, merged, lt, rt, nowIso);
+    return merged;
+  }
+  function jobIdList(user) {
+    var seen = {};
+    USER_MAPS.forEach(function (k) {
+      var src = user && user[k];
+      if (!src || typeof src !== "object") return;
+      Object.keys(src).forEach(function (id) { if (id) seen[id] = 1; });
+    });
+    return Object.keys(seen);
+  }
+  function writeJob(user, id, rec) {
+    if (!rec) return;
+    if (rec.fav) user.fav[id] = true;
+    if (rec.status) user.status[id] = rec.status;
+    if (rec.note) user.note[id] = rec.note;
+    if (rec.fav && rec.favJob) user.favJobs[id] = rec.favJob;
+    if (rec.updatedAt) user.updated[id] = rec.updatedAt;
+  }
+  function mergeProgress(localRaw, remoteRaw, nowIso) {
+    var local = mergeUser(localRaw, null);
+    var remote = mergeUser(remoteRaw, null);
+    var out = emptyUser();
+    var ids = {};
+    jobIdList(local).concat(jobIdList(remote)).forEach(function (id) { ids[id] = 1; });
+    Object.keys(ids).forEach(function (id) {
+      writeJob(out, id, mergeOne(readJob(local, id), readJob(remote, id), nowIso));
+    });
+    return out;
+  }
+  function rowsFromUser(user) {
+    var src = mergeUser(user, null);
+    var rows = [];
+    jobIdList(src).forEach(function (id) {
+      var rec = readJob(src, id);
+      if (!rec) return;
+      rows.push({
+        job_id: id,
+        favorite: !!rec.fav,
+        status: rec.status || null,
+        note: rec.note || null,
+        fav_snapshot: rec.fav ? (rec.favJob || null) : null,
+        updated_at: rec.updatedAt || new Date(0).toISOString()
+      });
+    });
+    return rows;
+  }
+  function userFromRows(rows) {
+    var user = emptyUser();
+    (rows || []).forEach(function (row) {
+      if (!row || !row.job_id) return;
+      var id = String(row.job_id);
+      if (row.favorite) user.fav[id] = true;
+      var status = cleanStatus(row.status || "");
+      if (status) user.status[id] = status;
+      if (row.note) user.note[id] = String(row.note).slice(0, 20000);
+      if (row.favorite && row.fav_snapshot && typeof row.fav_snapshot === "object" && !Array.isArray(row.fav_snapshot)) {
+        user.favJobs[id] = row.fav_snapshot;
+      }
+      if (row.updated_at) user.updated[id] = row.updated_at;
+    });
+    return user;
+  }
+  function sameRow(row, remote) {
+    if (!row || !remote) return false;
+    var ta = timeMs(row.updated_at), tb = timeMs(remote.updated_at);
+    return !!row.favorite === !!remote.favorite &&
+      (row.status || "") === (remote.status || "") &&
+      (row.note || "") === (remote.note || "") &&
+      ta > 0 && ta === tb &&
+      stableJson(row.fav_snapshot || null) === stableJson(remote.fav_snapshot || null);
+  }
+  function applyImport(localUser, inc, nowIso) {
+    var merged = mergeUser(localUser, inc);
+    ["fav", "status", "note", "favJobs"].forEach(function (k) {
+      Object.keys((inc && inc[k]) || {}).forEach(function (id) {
+        if (id && id !== "__proto__" && id !== "constructor" && id !== "prototype") merged.updated[id] = nowIso;
+      });
+    });
+    return merged;
+  }
+  function planSync(localUser, remoteRows, nowIso) {
+    var remoteUser = userFromRows(remoteRows);
+    var merged = mergeProgress(localUser, remoteUser, nowIso);
+    var remoteById = {};
+    (remoteRows || []).forEach(function (row) { if (row && row.job_id) remoteById[String(row.job_id)] = row; });
+    var upserts = [];
+    var keep = {};
+    rowsFromUser(merged).forEach(function (row) {
+      keep[row.job_id] = 1;
+      if (!sameRow(row, remoteById[row.job_id])) upserts.push(row);
+    });
+    var deletes = Object.keys(remoteById).filter(function (id) { return !keep[id]; });
+    return { merged: merged, upserts: upserts, deletes: deletes };
+  }
+  var api = {
+    filterJobs: filterJobs, sortJobs: sortJobs, payNumber: payNumber, mergeUser: mergeUser, hasDays: hasDays,
+    emptyUser: emptyUser, isSupabaseConfigured: isSupabaseConfigured, supabaseConfigError: supabaseConfigError,
+    looksLikeServiceRole: looksLikeServiceRole, mergeProgress: mergeProgress, planSync: planSync,
+    rowsFromUser: rowsFromUser, userFromRows: userFromRows, normalizeSupabaseUrl: normalizeSupabaseUrl,
+    applyImport: applyImport
+  };
   if (typeof module !== "undefined" && module.exports) { module.exports = api; }
   if (typeof document === "undefined") return;
 
@@ -73,14 +296,35 @@
   var $ = function (id) { return document.getElementById(id); };
   var state = { jobs: [], orgs: [], meta: null, shown: PAGE, user: loadUser() };
   var TODAY = Date.now();
+  var sb = null;
+  var session = null;
+  var syncing = false;
+  var syncAgain = false;
+  var cloudTimer = null;
+  var lastPull = 0;
+  var SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js";
 
   function loadUser() {
     try { return mergeUser(JSON.parse(localStorage.getItem(STORE_KEY) || "{}"), null); }
     catch (e) { return mergeUser(null, null); }
   }
+  function saveLocal() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state.user)); }
+    catch (e) { toast("無法儲存（瀏覽器可能關閉了本機儲存）"); }
+    var favCount = $("favCount");
+    if (favCount) favCount.textContent = Object.keys(state.user.fav).length;
+  }
   function saveUser() {
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(state.user)); } catch (e) { toast("無法儲存（瀏覽器可能關閉了本機儲存）"); }
-    $("favCount").textContent = Object.keys(state.user.fav).length;
+    saveLocal();
+    scheduleCloudSync();
+  }
+  function cloudOn() {
+    return isSupabaseConfigured(window.JOB_TRACKER_SUPABASE);
+  }
+  function notePlaceholder() {
+    if (!cloudOn()) return "我的備註（只存在這台裝置）";
+    if (session) return "我的備註（會同步到已登入的帳號）";
+    return "我的備註（登入後可跨裝置同步）";
   }
   function toast(msg) {
     var t = $("toast"); t.textContent = msg; t.hidden = false;
@@ -127,7 +371,7 @@
       "</dl>" +
       (j.fitNote ? '<div class="fit">' + esc(j.fitNote) + "</div>" : "") +
       '<div class="mine"><select data-act="status" aria-label="狀態">' + opts + "</select>" +
-      '<textarea data-act="note" placeholder="我的備註（只存在這台裝置）" aria-label="我的備註">' + esc(u.note[url] || "") + "</textarea></div>" +
+      '<textarea data-act="note" placeholder="' + esc(notePlaceholder()) + '" aria-label="我的備註">' + esc(u.note[url] || "") + "</textarea></div>" +
       "</article>";
   }
 
@@ -184,7 +428,9 @@
     }
     h += "<h3>說明</h3><ul><li>「非正式・未查證」代表來自 PTT 或家教網的個人貼文，請自行確認對方身分，不要先付費或提供證件。</li>" +
       "<li>104 的日期是職缺「更新日」，不一定是首次刊登日；Yourator 只提供「一週內更新」這類相對時間。</li>" +
-      "<li>收藏、狀態與備註只存在這個瀏覽器；請到「我的收藏」匯出備份。</li></ul>";
+      "<li>" + (cloudOn()
+        ? "登入後，收藏、狀態與備註會在你的裝置之間同步，這台裝置也會留一份離線備份。仍可到「我的收藏」匯出 JSON。"
+        : "收藏、狀態與備註只存在這個瀏覽器；請到「我的收藏」匯出備份。") + "</li></ul>";
     $("about").innerHTML = h;
   }
   function fillSelect(sel, values) {
@@ -196,21 +442,29 @@
     if (!art) return;
     var url = art.getAttribute("data-url"), act = el.getAttribute("data-act"), u = state.user;
     if (act === "fav" && e.type === "click") {
-      if (u.fav[url]) { delete u.fav[url]; delete u.favJobs[url]; toast("已取消收藏"); }
+      var cur = state.user;
+      if (cur.fav[url]) { delete cur.fav[url]; delete cur.favJobs[url]; toast("已取消收藏"); }
       else {
-        u.fav[url] = true;
+        cur.fav[url] = true;
         var j = state.jobs.filter(function (x) { return x.url === url; })[0];
-        if (j) u.favJobs[url] = j; // 存一份快照，職缺過期後仍看得到
+        if (j) cur.favJobs[url] = j; // 存一份快照，職缺過期後仍看得到
         toast("已加入收藏 ★");
       }
-      saveUser(); el.classList.toggle("on", !!u.fav[url]); el.textContent = u.fav[url] ? "★" : "☆";
+      cur.updated[url] = new Date().toISOString();
+      saveUser(); el.classList.toggle("on", !!cur.fav[url]); el.textContent = cur.fav[url] ? "★" : "☆";
       if (!$("tab-favs").hidden) renderFavs();
     } else if (act === "status" && e.type === "change") {
-      if (el.value) u.status[url] = el.value; else delete u.status[url];
+      if (el.value) state.user.status[url] = el.value; else delete state.user.status[url];
+      state.user.updated[url] = new Date().toISOString();
       art.classList.toggle("no", el.value === "不考慮"); saveUser();
     } else if (act === "note" && e.type === "input") {
-      if (el.value.trim()) u.note[url] = el.value; else delete u.note[url];
-      clearTimeout(onCardEvent._t); onCardEvent._t = setTimeout(saveUser, 400);
+      clearTimeout(onCardEvent._t);
+      onCardEvent._t = setTimeout(function () {
+        var note = el.value;
+        if (note.trim()) state.user.note[url] = note.slice(0, 20000); else delete state.user.note[url];
+        state.user.updated[url] = new Date().toISOString();
+        saveUser();
+      }, 400);
     }
   }
 
@@ -230,7 +484,8 @@
       try {
         var inc = JSON.parse(r.result);
         if (!inc || typeof inc !== "object" || !inc.fav) throw new Error("格式不符");
-        state.user = mergeUser(state.user, inc); saveUser(); renderFavs(); renderJobs();
+        state.user = applyImport(state.user, inc, new Date().toISOString());
+        saveUser(); renderFavs(); renderJobs();
         toast("匯入完成：收藏 " + Object.keys(state.user.fav).length + " 筆");
       } catch (e) { toast("匯入失敗：" + e.message); }
     };
@@ -244,6 +499,260 @@
     if (name === "orgs") renderOrgs();
     if (name === "about") renderAbout();
     try { history.replaceState(null, "", "#" + name); } catch (e) {}
+  }
+
+  function setSyncStatus(text, kind) {
+    var el = $("syncStatus");
+    if (!el) return;
+    el.textContent = text;
+    el.className = "sync-status" + (kind ? " " + kind : "");
+  }
+  function showSyncLoggedOut() {
+    session = null;
+    var panel = $("syncPanel");
+    if (panel) panel.hidden = true;
+    var who = $("syncWho");
+    if (who) { who.hidden = true; who.textContent = ""; }
+    if ($("syncLogout")) $("syncLogout").hidden = true;
+    if ($("syncToggle")) $("syncToggle").hidden = false;
+    setSyncStatus("尚未登入・只存在這台裝置", "");
+  }
+  function showSyncLoggedIn(email) {
+    var panel = $("syncPanel");
+    if (panel) panel.hidden = true;
+    if ($("syncToggle")) $("syncToggle").hidden = true;
+    var who = $("syncWho");
+    if (who) { who.hidden = false; who.textContent = email || "已登入"; }
+    if ($("syncLogout")) $("syncLogout").hidden = false;
+  }
+  function zhAuthError(e) {
+    var msg = (e && e.message) || String(e || "未知錯誤");
+    if (/rate limit/i.test(msg)) return "寄信太頻繁，請稍後再試";
+    if (/invalid email|validate email|unable to validate/i.test(msg)) return "電子郵件格式不正確";
+    if (/token|otp|expired|invalid/i.test(msg)) return "驗證碼或連結不正確，或已經過期";
+    return msg;
+  }
+  function authRedirectUrl() {
+    var u = new URL(location.href);
+    u.search = "";
+    u.hash = "";
+    return u.toString();
+  }
+  function readAuthErrorFromUrl() {
+    var hash = new URLSearchParams((location.hash || "").replace(/^#/, ""));
+    var query = new URLSearchParams(location.search || "");
+    return hash.get("error_description") || query.get("error_description") || hash.get("error") || query.get("error") || "";
+  }
+  function clearAuthErrorParams() {
+    var url = new URL(location.href);
+    ["error", "error_description", "error_code"].forEach(function (k) { url.searchParams.delete(k); });
+    var hash = new URLSearchParams(url.hash.replace(/^#/, ""));
+    if (hash.get("error") || hash.get("error_description") || hash.get("error_code")) url.hash = "";
+    try { history.replaceState(null, "", url.pathname + url.search + url.hash); } catch (e) {}
+  }
+  function loadSupabaseJs() {
+    return new Promise(function (resolve, reject) {
+      if (window.supabase && window.supabase.createClient) return resolve();
+      var s = document.createElement("script");
+      s.src = SUPABASE_JS;
+      s.async = true;
+      s.onload = function () { resolve(); };
+      s.onerror = function () { reject(new Error("無法載入同步元件")); };
+      document.head.appendChild(s);
+    });
+  }
+  function cloudReady() { return !!(sb && session && session.user); }
+  function scheduleCloudSync() {
+    if (!cloudReady()) return;
+    clearTimeout(cloudTimer);
+    cloudTimer = setTimeout(function () { syncNow(); }, 1000);
+  }
+  function noteIsFocused() {
+    var el = document.activeElement;
+    return !!(el && el.getAttribute && el.getAttribute("data-act") === "note");
+  }
+  function renderAfterSync() {
+    saveLocal();
+    if (noteIsFocused()) return;
+    renderJobs();
+    if ($("tab-favs") && !$("tab-favs").hidden) renderFavs();
+  }
+  function fetchAllRows() {
+    var page = 1000, from = 0, all = [];
+    function next() {
+      return sb.from("job_progress")
+        .select("job_id,favorite,status,note,fav_snapshot,updated_at")
+        .order("job_id", { ascending: true })
+        .range(from, from + page - 1)
+        .then(function (res) {
+          if (res.error) throw res.error;
+          var rows = res.data || [];
+          all = all.concat(rows);
+          if (rows.length < page) return all;
+          from += page;
+          return next();
+        });
+    }
+    return next();
+  }
+  function withUserId(rows) {
+    var uid = session.user.id;
+    return rows.map(function (row) {
+      return {
+        user_id: uid,
+        job_id: row.job_id,
+        favorite: row.favorite,
+        status: row.status,
+        note: row.note,
+        fav_snapshot: row.fav_snapshot,
+        updated_at: row.updated_at
+      };
+    });
+  }
+  function upsertChunks(rows) {
+    var size = 100, i = 0;
+    function next() {
+      if (i >= rows.length) return Promise.resolve();
+      var chunk = withUserId(rows.slice(i, i + size));
+      i += size;
+      return sb.from("job_progress").upsert(chunk, { onConflict: "user_id,job_id" }).then(function (res) {
+        if (res.error) throw res.error;
+        return next();
+      });
+    }
+    return next();
+  }
+  function deleteChunks(ids) {
+    var size = 100, i = 0;
+    function next() {
+      if (i >= ids.length) return Promise.resolve();
+      var chunk = ids.slice(i, i + size);
+      i += size;
+      return sb.from("job_progress").delete().in("job_id", chunk).then(function (res) {
+        if (res.error) throw res.error;
+        return next();
+      });
+    }
+    return next();
+  }
+  function pullMergePush() {
+    return fetchAllRows().then(function (rows) {
+      var plan = planSync(state.user, rows, new Date().toISOString());
+      state.user = plan.merged;
+      renderAfterSync();
+      return Promise.all([upsertChunks(plan.upserts), deleteChunks(plan.deletes)]);
+    });
+  }
+  function syncNow() {
+    if (!cloudReady()) return Promise.resolve();
+    if (syncing) { syncAgain = true; return Promise.resolve(); }
+    syncing = true;
+    lastPull = Date.now();
+    setSyncStatus("已登入・同步中…", "");
+    return pullMergePush().then(function () {
+      setSyncStatus("已登入・已同步", "ok");
+    }).catch(function () {
+      var offline = typeof navigator !== "undefined" && navigator.onLine === false;
+      setSyncStatus(offline ? "已登入・離線，變更已存在這台裝置" : "已登入・同步失敗，變更已存在這台裝置", "warn");
+    }).then(function () {
+      syncing = false;
+      if (syncAgain) { syncAgain = false; return syncNow(); }
+    });
+  }
+  function handleAuth(event, sess) {
+    if (event === "SIGNED_OUT" || !sess) {
+      showSyncLoggedOut();
+      return;
+    }
+    session = sess;
+    showSyncLoggedIn(sess.user && sess.user.email);
+    if (event === "SIGNED_IN" || event === "INITIAL_SESSION" || event === "USER_UPDATED") syncNow();
+  }
+  function emailValue() {
+    return ($("syncEmail") && $("syncEmail").value || "").trim();
+  }
+  function validEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  function sendMagicLink(ev) {
+    if (ev) ev.preventDefault();
+    if (!sb) { toast("同步還沒準備好，請稍後再試"); return; }
+    var email = emailValue();
+    if (!validEmail(email)) { toast("請輸入有效的電子郵件"); return; }
+    $("syncSend").disabled = true;
+    setSyncStatus("正在寄送登入信…", "");
+    sb.auth.signInWithOtp({
+      email: email,
+      options: { emailRedirectTo: authRedirectUrl(), shouldCreateUser: true }
+    }).then(function (res) {
+      if (res.error) throw res.error;
+      setSyncStatus("已寄出登入信。請用這台裝置打開連結，或輸入驗證碼", "ok");
+      toast("已寄出登入信");
+    }).catch(function (e) {
+      setSyncStatus("寄送失敗", "bad");
+      toast("寄送失敗：" + zhAuthError(e));
+    }).then(function () { $("syncSend").disabled = false; });
+  }
+  function verifyCode(ev) {
+    if (ev) ev.preventDefault();
+    if (!sb) { toast("同步還沒準備好，請稍後再試"); return; }
+    var email = emailValue();
+    var code = ($("syncCode").value || "").trim();
+    if (!validEmail(email)) { toast("請輸入有效的電子郵件"); return; }
+    if (!/^[0-9]{6,10}$/.test(code)) { toast("請輸入信裡的驗證碼"); return; }
+    $("syncVerify").disabled = true;
+    setSyncStatus("正在登入…", "");
+    sb.auth.verifyOtp({ email: email, token: code, type: "email" }).then(function (res) {
+      if (res.error) throw res.error;
+      toast("已登入");
+    }).catch(function (e) {
+      setSyncStatus("登入失敗", "bad");
+      toast("登入失敗：" + zhAuthError(e));
+    }).then(function () { $("syncVerify").disabled = false; });
+  }
+  function logout() {
+    if (!sb) { showSyncLoggedOut(); return; }
+    $("syncLogout").disabled = true;
+    sb.auth.signOut().catch(function () {}).then(function () {
+      $("syncLogout").disabled = false;
+      showSyncLoggedOut();
+      toast("已登出，這台裝置仍留著一份資料");
+    });
+  }
+  function initCloud() {
+    var cfg = window.JOB_TRACKER_SUPABASE || null;
+    var problem = supabaseConfigError(cfg);
+    if (!problem && !isSupabaseConfigured(cfg)) return;
+    var bar = $("syncbar");
+    if (bar) bar.hidden = false;
+    var hint = $("storageHint");
+    if (hint && isSupabaseConfigured(cfg)) {
+      hint.textContent = "登入後會在手機與電腦之間同步，這台裝置也留一份離線備份。仍可匯出 JSON。";
+    }
+    if (problem) {
+      setSyncStatus(problem, "bad");
+      if ($("syncToggle")) $("syncToggle").hidden = true;
+      return;
+    }
+    var authError = readAuthErrorFromUrl();
+    if (authError) {
+      clearAuthErrorParams();
+      toast("登入失敗：" + zhAuthError({ message: authError }));
+    }
+    setSyncStatus("正在準備同步…", "");
+    loadSupabaseJs().then(function () {
+      if (!window.supabase || !window.supabase.createClient) throw new Error("同步元件未就緒");
+      sb = window.supabase.createClient(normalizeSupabaseUrl(cfg.url), String(cfg.anonKey).trim(), {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "pkce" }
+      });
+      sb.auth.onAuthStateChange(function (event, sess) {
+        setTimeout(function () { handleAuth(event, sess); }, 0);
+      });
+    }).catch(function () {
+      showSyncLoggedOut();
+      setSyncStatus("無法載入同步元件・只存在這台裝置", "warn");
+      if ($("syncToggle")) $("syncToggle").hidden = true;
+    });
   }
 
   function init() {
@@ -269,6 +778,21 @@
     $("oq").addEventListener("input", renderOrgs);
     $("oType").addEventListener("change", renderOrgs);
     $("favCount").textContent = Object.keys(state.user.fav).length;
+    if ($("syncToggle")) $("syncToggle").addEventListener("click", function () {
+      var panel = $("syncPanel");
+      if (panel) panel.hidden = !panel.hidden;
+      if (panel && !panel.hidden && $("syncEmail")) $("syncEmail").focus();
+    });
+    if ($("syncLogin")) $("syncLogin").addEventListener("submit", sendMagicLink);
+    if ($("syncCodeForm")) $("syncCodeForm").addEventListener("submit", verifyCode);
+    if ($("syncLogout")) $("syncLogout").addEventListener("click", logout);
+    window.addEventListener("online", function () { if (cloudReady()) syncNow(); });
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState !== "visible" || !cloudReady()) return;
+      if (Date.now() - lastPull < 15000) return;
+      syncNow();
+    });
+    initCloud();
 
     Promise.all([
       fetchJSON("data/jobs.json"),
