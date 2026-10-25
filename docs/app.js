@@ -1,4 +1,4 @@
-/* Jerry 的職缺追蹤 — 純前端，無需建置。收藏／狀態／備註存在 localStorage。 */
+/* Anya 的職缺追蹤 — 純前端，無需建置。收藏／狀態／備註存在 localStorage。 */
 (function () {
   "use strict";
   var STORE_KEY = "jerry-job-tracker-v1";
