@@ -1,0 +1,361 @@
+{
+ "companies": [
+  {
+   "name": "Hahow 好學校（思哈）",
+   "type": "UX／產品團隊",
+   "description": "線上課程平台，內部有設計與產品團隊",
+   "location": "台北市松山區",
+   "url": "https://hahow.in",
+   "jobs": [
+    "https://www.104.com.tw/job/8toaz"
+   ]
+  },
+  {
+   "name": "玩美移動／玩美行動 Perfect Corp",
+   "type": "UX／產品團隊",
+   "description": "AI 美妝與影像 App 公司，常開產品與設計實習",
+   "location": "新北市新店區、台北市內湖區",
+   "url": "https://www.perfectcorp.com",
+   "jobs": [
+    "https://www.104.com.tw/job/7cqgq",
+    "https://www.104.com.tw/job/8r6bk",
+    "https://www.104.com.tw/job/94wkv"
+   ]
+  },
+  {
+   "name": "訊連科技 CyberLink",
+   "type": "UX／產品團隊",
+   "description": "影音軟體公司，有產品行銷設計實習",
+   "location": "新北市新店區",
+   "url": "https://www.cyberlink.com",
+   "jobs": [
+    "https://www.104.com.tw/job/809og"
+   ]
+  },
+  {
+   "name": "蝦皮 Shopee",
+   "type": "UX／產品團隊",
+   "description": "電商平台，有 UI/UX 與產品管理實習",
+   "location": "台北市信義區",
+   "url": "https://careers.shopee.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/95dqd"
+   ]
+  },
+  {
+   "name": "Pinkoi",
+   "type": "UX／產品團隊",
+   "description": "設計商品電商平台，視覺設計職歡迎新鮮人",
+   "location": "臺北市",
+   "url": "https://www.pinkoi.com",
+   "jobs": [
+    "https://www.yourator.co/companies/Pinkoi/jobs/34832"
+   ]
+  },
+  {
+   "name": "華碩 ASUS",
+   "type": "UX／產品團隊",
+   "description": "硬體品牌，校園徵才有 UX 設計職",
+   "location": "台北市北投區",
+   "url": "https://www.asus.com/tw/",
+   "jobs": [
+    "https://www.104.com.tw/job/8y0lt"
+   ]
+  },
+  {
+   "name": "明基 BenQ",
+   "type": "UX／產品團隊",
+   "description": "硬體品牌，數位時尚設計中心有 UX 實習",
+   "location": "台北市內湖區",
+   "url": "https://www.benq.com/zh-tw/index.html",
+   "jobs": [
+    "https://www.104.com.tw/job/8ekv9"
+   ]
+  },
+  {
+   "name": "股感 StockFeel",
+   "type": "UX／產品團隊",
+   "description": "財經內容與產品公司，設計助理可實習或兼職",
+   "location": "台北市松山區",
+   "url": "https://www.stockfeel.com.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/8u1az"
+   ]
+  },
+  {
+   "name": "嘖嘖 zeczec",
+   "type": "UX／產品團隊",
+   "description": "台灣群眾集資平台",
+   "location": "未提供",
+   "url": "https://www.zeczec.com",
+   "jobs": []
+  },
+  {
+   "name": "Ubiquiti",
+   "type": "UX／產品團隊",
+   "description": "網通硬體公司，台北有包裝美術設計助理職",
+   "location": "Taipei",
+   "url": "https://www.ui.com",
+   "jobs": [
+    "https://www.linkedin.com/jobs/view/4475554835"
+   ]
+  },
+  {
+   "name": "悠識數位 UserXper",
+   "type": "UX 顧問公司",
+   "description": "UX 研究與體驗設計顧問公司",
+   "location": "台北市中山區",
+   "url": "https://www.userxper.com",
+   "jobs": []
+  },
+  {
+   "name": "海棠設計 Begonia Design",
+   "type": "UX 顧問公司",
+   "description": "UX/UI 設計顧問團隊，做網站與 App",
+   "location": "台北市中山區",
+   "url": "https://www.begonia-design.com.tw/en/",
+   "jobs": []
+  },
+  {
+   "name": "NEUX 新逸科技",
+   "type": "UX 顧問公司",
+   "description": "體驗設計與數位產品公司",
+   "location": "台北市中山區",
+   "url": "https://www.neux.com.tw",
+   "jobs": []
+  },
+  {
+   "name": "簡訊設計 SimpleInfo（圖文不符）",
+   "type": "設計／插畫／動畫工作室",
+   "description": "資訊設計工作室，也經營志祺七七頻道",
+   "location": "台北市大安區",
+   "url": "https://simpleinfo.cc",
+   "jobs": [
+    "https://www.yourator.co/companies/simpleinfo/jobs/48360"
+   ]
+  },
+  {
+   "name": "合十設計 Namaste Design",
+   "type": "設計／插畫／動畫工作室",
+   "description": "品牌視覺設計工作室",
+   "location": "台北市大同區",
+   "url": "https://www.namaste-design.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/967tg"
+   ]
+  },
+  {
+   "name": "墨石創意",
+   "type": "設計／插畫／動畫工作室",
+   "description": "設計公司，有論件設計實習；官網連不上，連結為 104 職缺頁",
+   "location": "台北市南港區",
+   "url": "https://www.104.com.tw/job/7mcxd",
+   "jobs": [
+    "https://www.104.com.tw/job/7mcxd"
+   ]
+  },
+  {
+   "name": "奧美 Ogilvy Taiwan",
+   "type": "設計／插畫／動畫工作室",
+   "description": "整合行銷傳播集團，有顧客體驗工讀",
+   "location": "臺北市",
+   "url": "https://www.ogilvy.com/tw/",
+   "jobs": [
+    "https://www.yourator.co/companies/ogilvy/jobs/38596"
+   ]
+  },
+  {
+   "name": "美勢科技 Digital Origin",
+   "type": "設計／插畫／動畫工作室",
+   "description": "電商營運與設計公司，有電商美編職",
+   "location": "新北市新店區",
+   "url": "https://www.digitalorigin.tw",
+   "jobs": [
+    "https://www.518.com.tw/job-NJDvBM.html"
+   ]
+  },
+  {
+   "name": "SPARKFUL（原 Fourdesire）",
+   "type": "設計／插畫／動畫工作室",
+   "description": "做習慣養成類 App 的設計團隊",
+   "location": "未提供",
+   "url": "https://www.fourdesire.com",
+   "jobs": []
+  },
+  {
+   "name": "DEVILCASE 迪摩",
+   "type": "設計／插畫／動畫工作室",
+   "description": "手機殼品牌，招全遠端圖案繪師與插畫設計師",
+   "location": "台北市士林區",
+   "url": "https://devilcase.com.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/5lmbz"
+   ]
+  },
+  {
+   "name": "無厘頭動畫 Woolito Studio",
+   "type": "設計／插畫／動畫工作室",
+   "description": "動畫工作室，做腳本、分鏡、角色與動畫",
+   "location": "台北市大安區",
+   "url": "https://www.woolito.com",
+   "jobs": []
+  },
+  {
+   "name": "聖工坊動畫 Sunarts Production",
+   "type": "設計／插畫／動畫工作室",
+   "description": "3D 角色與產品動畫團隊",
+   "location": "台北市松山區",
+   "url": "https://www.sunarts3d.com",
+   "jobs": []
+  },
+  {
+   "name": "張老師基金會",
+   "type": "生涯／諮商",
+   "description": "生涯與心理輔導、諮詢服務機構",
+   "location": "未提供",
+   "url": "https://www.1980.org.tw",
+   "jobs": []
+  },
+  {
+   "name": "旭立文教基金會",
+   "type": "生涯／諮商",
+   "description": "心理諮商與助人工作者培訓",
+   "location": "未提供",
+   "url": "https://www.shiuhli.org.tw",
+   "jobs": []
+  },
+  {
+   "name": "臺北市社區心理衛生中心",
+   "type": "生涯／諮商",
+   "description": "台北市政府社區心理衛生服務",
+   "location": "台北市",
+   "url": "https://mental-health.gov.taipei",
+   "jobs": []
+  },
+  {
+   "name": "大心診所",
+   "type": "生涯／諮商",
+   "description": "身心科與心理諮商診所，也提供線上諮商",
+   "location": "台北市大安區、中正區",
+   "url": "https://www.betterhelpgroup.com",
+   "jobs": [
+    "https://www.104.com.tw/job/8w0hr"
+   ]
+  },
+  {
+   "name": "看見心理諮商所",
+   "type": "生涯／諮商",
+   "description": "心理諮商所",
+   "location": "台北市大安區",
+   "url": "https://www.seeingcounseling.com",
+   "jobs": []
+  },
+  {
+   "name": "特殊情緒心理諮商所",
+   "type": "生涯／諮商",
+   "description": "心理諮商所",
+   "location": "台北市大安區",
+   "url": "https://uepsy.com",
+   "jobs": []
+  },
+  {
+   "name": "千里心理諮商所",
+   "type": "生涯／諮商",
+   "description": "心理諮商所，也寫心理文章",
+   "location": "台北市大安區",
+   "url": "https://tracelead.tw",
+   "jobs": []
+  },
+  {
+   "name": "心寓心理諮商所",
+   "type": "生涯／諮商",
+   "description": "個別、伴侶、家族與多元文化諮商",
+   "location": "台北市大安區",
+   "url": "https://xinyupsy.com.tw",
+   "jobs": []
+  },
+  {
+   "name": "先行智庫",
+   "type": "生涯／諮商",
+   "description": "企業培訓與顧問公司；徵才頁另有助理顧問、助理課程規劃師",
+   "location": "台北市中正區",
+   "url": "https://www.kscthinktank.com.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/906ix"
+   ]
+  },
+  {
+   "name": "均一教育平台",
+   "type": "教育／家教",
+   "description": "免費線上學習平台（非營利）",
+   "location": "未提供",
+   "url": "https://www.junyiacademy.org",
+   "jobs": []
+  },
+  {
+   "name": "親子天下",
+   "type": "教育／家教",
+   "description": "教育與親子媒體出版",
+   "location": "台北市中山區",
+   "url": "https://www.parenting.com.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/96jw8"
+   ]
+  },
+  {
+   "name": "PaGamO",
+   "type": "教育／家教",
+   "description": "遊戲化線上學習平台",
+   "location": "未提供",
+   "url": "https://www.pagamo.org",
+   "jobs": []
+  },
+  {
+   "name": "Engoo 線上英文",
+   "type": "教育／家教",
+   "description": "線上英文課程，有數位視覺設計實習",
+   "location": "台北市大安區",
+   "url": "https://engoo.com.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/7ma4p"
+   ]
+  },
+  {
+   "name": "iABC 國際教育中心",
+   "type": "教育／家教",
+   "description": "英文與數學家教、課輔",
+   "location": "台北市信義區、新北市新店區",
+   "url": "https://www.iabc.com.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/8j2qc",
+    "https://www.104.com.tw/job/7olyf"
+   ]
+  },
+  {
+   "name": "資策會數位教育研究所",
+   "type": "教育／家教",
+   "description": "數位人才培訓，有專案行政工讀",
+   "location": "台北市大安區",
+   "url": "https://www.iiiedu.org.tw",
+   "jobs": [
+    "https://www.104.com.tw/job/95voo"
+   ]
+  },
+  {
+   "name": "純家教 PureTutor",
+   "type": "教育／家教",
+   "description": "免抽成的家教媒合平台，可找線上家教",
+   "location": "全台／線上",
+   "url": "https://pure-tutor.com",
+   "jobs": []
+  },
+  {
+   "name": "TUEZ 家教媒合平台",
+   "type": "教育／家教",
+   "description": "依縣市與科目媒合家教",
+   "location": "全台／線上",
+   "url": "https://tuezapp.com",
+   "jobs": []
+  }
+ ]
+}

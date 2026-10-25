@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%98%85%3C/text%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jerry 的職缺追蹤</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Jerry 的職缺追蹤</h1>
+    <p class="sub" id="updated">載入中…</p>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="jobs" role="tab">職缺</button>
+      <button class="tab" data-tab="favs" role="tab">我的收藏 <span id="favCount" class="pill">0</span></button>
+      <button class="tab" data-tab="orgs" role="tab">公司與工作室探索</button>
+      <button class="tab" data-tab="about" role="tab">資料來源與說明</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="tab-jobs" class="panel">
+    <div class="filters">
+      <input id="q" type="search" placeholder="搜尋職稱、公司、地點、備註…" aria-label="搜尋">
+      <div class="row">
+        <select id="fCat" aria-label="類別"><option value="">全部類別</option></select>
+        <select id="fSrc" aria-label="來源"><option value="">全部來源</option></select>
+        <select id="fStatus" aria-label="狀態">
+          <option value="">全部狀態</option><option value="想投">想投</option><option value="已投">已投</option>
+          <option value="面試">面試</option><option value="不考慮">不考慮</option><option value="__none">未標記</option>
+        </select>
+        <select id="fFit" aria-label="AI 適合度" hidden><option value="">AI 適合度：全部</option><option>高</option><option>中</option><option>低</option></select>
+        <input id="fSal" type="text" placeholder="薪資包含（如：時薪、月薪、面議）" aria-label="薪資文字">
+        <select id="sort" aria-label="排序">
+          <option value="date">排序：日期（新→舊）</option>
+          <option value="first">排序：首次出現（新→舊）</option>
+          <option value="company">排序：公司名稱</option>
+          <option value="title">排序：職稱</option>
+          <option value="pay">排序：時薪／月薪數字（高→低）</option>
+        </select>
+      </div>
+      <div class="row checks">
+        <label><input type="checkbox" id="fRemote"> 遠端</label>
+        <label><input type="checkbox" id="fIntern"> 實習</label>
+        <label><input type="checkbox" id="fDays"> 有寫工作天數</label>
+        <label><input type="checkbox" id="fNew"> 7 天內新出現</label>
+        <label><input type="checkbox" id="fHideNo"> 隱藏「不考慮」</label>
+        <button id="reset" class="link">清除篩選</button>
+      </div>
+    </div>
+    <p class="count" id="count"></p>
+    <div id="list" class="cards"></div>
+    <button id="more" class="btn wide" hidden>載入更多</button>
+  </section>
+
+  <section id="tab-favs" class="panel" hidden>
+    <div class="toolbar">
+      <button id="export" class="btn">匯出收藏與備註（JSON）</button>
+      <label class="btn">匯入 JSON<input id="import" type="file" accept="application/json,.json" hidden></label>
+      <span class="hint">收藏、狀態與備註只存在這台裝置的瀏覽器裡；換手機或電腦前請先匯出。</span>
+    </div>
+    <div id="favList" class="cards"></div>
+  </section>
+
+  <section id="tab-orgs" class="panel" hidden>
+    <div class="filters">
+      <input id="oq" type="search" placeholder="搜尋公司、工作室…" aria-label="搜尋公司">
+      <div class="row"><select id="oType" aria-label="類型"><option value="">全部類型</option></select></div>
+    </div>
+    <p class="count" id="ocount"></p>
+    <div id="orgList" class="cards"></div>
+  </section>
+
+  <section id="tab-about" class="panel" hidden>
+    <div id="about" class="about"></div>
+  </section>
+</main>
+
+<footer class="wrap foot">資料由爬蟲自動整理，可能有誤或已下架，投遞前請點連結確認原始頁面。</footer>
+<div id="toast" class="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
