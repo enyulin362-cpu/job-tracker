@@ -96,7 +96,10 @@
     } catch (e) { return null; }
   }
   function looksLikeServiceRole(key) {
-    var payload = decodeJwtPayload(key);
+    var k = String(key || "").trim();
+    // 新的 secret key 不是 JWT，但權限等同 service_role，不能放進公開網站。
+    if (/^sb_secret_/i.test(k)) return true;
+    var payload = decodeJwtPayload(k);
     return !!(payload && payload.role === "service_role");
   }
   function supabaseConfigError(cfg) {
@@ -106,7 +109,7 @@
     if (!url && !key) return "";
     if (!url || !key) return "同步設定不完整，目前只存在這台裝置";
     if (!/^https:\/\/[^\s/]+$/i.test(url)) return "同步網址需要是 https，目前只存在這台裝置";
-    if (looksLikeServiceRole(key)) return "請改填 anon 或 publishable key，不要填 service_role";
+    if (looksLikeServiceRole(key)) return "請改填 anon 或 publishable key，不要填 service_role 或 secret key";
     return "";
   }
   function isSupabaseConfigured(cfg) {

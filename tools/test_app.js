@@ -33,11 +33,17 @@ check("empty config stays local-only", function () {
   assert.strictEqual(api.isSupabaseConfigured({ url: "", anonKey: "" }), false);
   assert.strictEqual(api.isSupabaseConfigured({ url: "  ", anonKey: "  " }), false);
   assert.strictEqual(api.supabaseConfigError({ url: "", anonKey: "" }), "");
+});
+
+check("committed config uses the publishable key", function () {
   var ctx = { window: {} };
   vm.runInNewContext(read("docs/config.js"), ctx);
-  assert.strictEqual(ctx.window.JOB_TRACKER_SUPABASE.url, "");
-  assert.strictEqual(ctx.window.JOB_TRACKER_SUPABASE.anonKey, "");
-  assert.strictEqual(api.isSupabaseConfigured(ctx.window.JOB_TRACKER_SUPABASE), false);
+  var cfg = ctx.window.JOB_TRACKER_SUPABASE;
+  assert.strictEqual(cfg.url, "https://vmyitibdkkguzgqwsrbc.supabase.co");
+  assert.ok(/^sb_publishable_/.test(cfg.anonKey));
+  assert.strictEqual(api.looksLikeServiceRole(cfg.anonKey), false);
+  assert.strictEqual(api.isSupabaseConfigured(cfg), true);
+  assert.strictEqual(api.supabaseConfigError(cfg), "");
 });
 
 check("rejects partial, insecure, and service-role config", function () {
@@ -47,9 +53,16 @@ check("rejects partial, insecure, and service-role config", function () {
   assert.strictEqual(api.looksLikeServiceRole(secret), true);
   assert.strictEqual(api.isSupabaseConfigured({ url: "https://abc.supabase.co", anonKey: secret }), false);
   assert.ok(/service_role/.test(api.supabaseConfigError({ url: "https://abc.supabase.co", anonKey: secret })));
+  assert.strictEqual(api.looksLikeServiceRole("sb_secret_example"), true);
+  assert.strictEqual(api.isSupabaseConfigured({ url: "https://abc.supabase.co", anonKey: "sb_secret_example" }), false);
+  assert.ok(/secret/.test(api.supabaseConfigError({ url: "https://abc.supabase.co", anonKey: "sb_secret_example" })));
   assert.strictEqual(api.looksLikeServiceRole(jwt({ role: "anon" })), false);
   assert.strictEqual(api.isSupabaseConfigured({ url: "https://abc.supabase.co/", anonKey: jwt({ role: "anon" }) }), true);
   assert.strictEqual(api.isSupabaseConfigured({ url: "https://abc.supabase.co", anonKey: "sb_publishable_test" }), true);
+  assert.strictEqual(api.isSupabaseConfigured({
+    url: "https://abc.supabase.co",
+    anonKey: "sb_publishable_5bRHv6VKJ04aJ_3fLTatgw_0fJxoRUZ"
+  }), true);
   assert.strictEqual(api.normalizeSupabaseUrl("https://abc.supabase.co/"), "https://abc.supabase.co");
 });
 
