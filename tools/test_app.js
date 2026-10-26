@@ -231,7 +231,45 @@ check("page wires config, keeps sync hidden, and schema locks rows to the user",
   assert.strictEqual(js.indexOf("service_role_key"), -1);
   assert.ok(js.indexOf("signInWithOtp") > 0);
   assert.ok(js.indexOf("verifyOtp") > 0);
+  assert.ok(js.indexOf('flowType: "implicit"') > 0);
+  assert.strictEqual(js.indexOf('flowType: "pkce"'), -1);
+  assert.ok(js.indexOf("token_hash") > 0);
   assert.ok(js.indexOf("jerry-job-tracker-v1") > 0);
+  assert.ok(html.indexOf("6 位數驗證碼") > 0);
+  assert.ok(html.indexOf('id="syncCode"') > 0);
+  var readme = read("README.md");
+  assert.ok(readme.indexOf("{{ .Token }}") > 0);
+  assert.ok(readme.indexOf("type=signup") > 0);
+  assert.ok(readme.indexOf("type=magiclink") > 0);
+  assert.ok(readme.indexOf("{{ .ConfirmationURL }}") > 0);
+  assert.ok(readme.indexOf("Confirm signup") > 0);
+});
+
+check("login link can be opened on a different device", function () {
+  assert.deepStrictEqual(api.otpTypesToTry(""), ["email", "signup", "magiclink"]);
+  assert.deepStrictEqual(api.otpTypesToTry("signup"), ["signup", "email", "magiclink"]);
+  assert.deepStrictEqual(api.otpTypesToTry("magiclink"), ["magiclink", "email", "signup"]);
+  assert.deepStrictEqual(api.otpTypesToTry("email"), ["email", "signup", "magiclink"]);
+  var href = "https://job-tracker-docs.vercel.app/?token_hash=abc%2Bdef&type=signup#favs";
+  var parsed = api.parseAuthCallback(href);
+  assert.strictEqual(parsed.tokenHash, "abc+def");
+  assert.strictEqual(parsed.type, "signup");
+  assert.strictEqual(parsed.code, "");
+  assert.strictEqual(api.stripAuthParams(href), "/#favs");
+  var pkce = api.parseAuthCallback("https://job-tracker-docs.vercel.app/?code=from-other-browser#favs");
+  assert.strictEqual(pkce.code, "from-other-browser");
+  assert.strictEqual(pkce.tokenHash, "");
+  assert.strictEqual(api.stripAuthParams("https://job-tracker-docs.vercel.app/?code=from-other-browser#favs"), "/#favs");
+  var implicit = api.parseAuthCallback("https://job-tracker-docs.vercel.app/#access_token=tok&refresh_token=r&type=signup");
+  assert.strictEqual(implicit.accessToken, "tok");
+  assert.strictEqual(api.stripAuthParams("https://job-tracker-docs.vercel.app/#access_token=tok&refresh_token=r"), "/");
+  var failed = api.parseAuthCallback("https://job-tracker-docs.vercel.app/?error_description=Email+link+is+invalid+or+has+expired");
+  assert.ok(/expired/i.test(failed.error));
+  assert.ok(/6 位數驗證碼/.test(api.authFailureMessage({ message: failed.error })));
+  assert.ok(/這台裝置/.test(api.authFailureMessage({ message: "Not a valid implicit grant flow url." })));
+  assert.strictEqual(api.shouldRetryOtp({ message: "Token has expired or is invalid" }), true);
+  assert.strictEqual(api.shouldRetryOtp({ message: "Request rate limit reached" }), false);
+  assert.strictEqual(api.shouldRetryOtp({ message: "Failed to fetch" }), false);
 });
 
 if (failures) {

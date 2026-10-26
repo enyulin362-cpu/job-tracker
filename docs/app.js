@@ -271,6 +271,63 @@
     });
     return merged;
   }
+  var OTP_TYPES = ["email", "signup", "magiclink"];
+  function otpTypesToTry(explicitType) {
+    var type = String(explicitType || "").trim().toLowerCase();
+    var order = OTP_TYPES.slice();
+    if (type && order.indexOf(type) < 0 && /^[a-z0-9_]+$/.test(type)) order.unshift(type);
+    else if (order.indexOf(type) > 0) order = [type].concat(order.filter(function (t) { return t !== type; }));
+    return order;
+  }
+  function parseAuthCallback(href) {
+    var empty = { tokenHash: "", type: "", code: "", error: "", accessToken: "" };
+    var url;
+    try { url = new URL(String(href || ""), "https://job-tracker-docs.vercel.app"); }
+    catch (e) { return empty; }
+    var query = url.searchParams;
+    var hash = new URLSearchParams((url.hash || "").replace(/^#/, ""));
+    function pick(name) { return query.get(name) || hash.get(name) || ""; }
+    return {
+      tokenHash: pick("token_hash"),
+      type: pick("type"),
+      code: pick("code"),
+      error: pick("error_description") || pick("error") || "",
+      accessToken: pick("access_token")
+    };
+  }
+  function stripAuthParams(href) {
+    var url = new URL(String(href || ""), "https://job-tracker-docs.vercel.app");
+    var keys = ["token_hash", "type", "code", "error", "error_description", "error_code", "access_token", "refresh_token", "expires_in", "expires_at", "token_type", "provider_token", "sb"];
+    keys.forEach(function (k) { url.searchParams.delete(k); });
+    var hash = new URLSearchParams((url.hash || "").replace(/^#/, ""));
+    var had = false;
+    keys.forEach(function (k) {
+      if (hash.has(k)) { hash.delete(k); had = true; }
+    });
+    if (had) {
+      var rest = hash.toString();
+      url.hash = rest ? "#" + rest : "";
+    }
+    return url.pathname + url.search + url.hash;
+  }
+  function shouldRetryOtp(err) {
+    var msg = (err && err.message) || "";
+    if (!msg) return false;
+    if (/rate limit|network|fetch/i.test(msg)) return false;
+    return /token|otp|expired|invalid|not found/i.test(msg);
+  }
+  function authFailureMessage(err) {
+    var msg = (err && err.message) || String(err || "");
+    if (/rate limit/i.test(msg)) return "寄信太頻繁，請稍後再試";
+    if (/verifier|code challenge|both auth code|not a valid implicit|not a valid pkce/i.test(msg)) {
+      return "這個連結無法在這台裝置完成登入。請改輸入信裡的 6 位數驗證碼，或再寄一次登入信。";
+    }
+    if (/token|otp|expired|invalid|not found/i.test(msg)) {
+      return "登入連結已經用過或失效。請再寄一次登入信，或輸入信裡的 6 位數驗證碼。";
+    }
+    if (/invalid email|validate email|unable to validate/i.test(msg)) return "電子郵件格式不正確";
+    return msg ? ("登入失敗：" + msg) : "登入失敗。請再寄一次登入信，或輸入 6 位數驗證碼。";
+  }
   function planSync(localUser, remoteRows, nowIso) {
     var remoteUser = userFromRows(remoteRows);
     var merged = mergeProgress(localUser, remoteUser, nowIso);
@@ -290,7 +347,8 @@
     emptyUser: emptyUser, isSupabaseConfigured: isSupabaseConfigured, supabaseConfigError: supabaseConfigError,
     looksLikeServiceRole: looksLikeServiceRole, mergeProgress: mergeProgress, planSync: planSync,
     rowsFromUser: rowsFromUser, userFromRows: userFromRows, normalizeSupabaseUrl: normalizeSupabaseUrl,
-    applyImport: applyImport
+    applyImport: applyImport, otpTypesToTry: otpTypesToTry, parseAuthCallback: parseAuthCallback,
+    stripAuthParams: stripAuthParams, shouldRetryOtp: shouldRetryOtp, authFailureMessage: authFailureMessage
   };
   if (typeof module !== "undefined" && module.exports) { module.exports = api; }
   if (typeof document === "undefined") return;
@@ -305,6 +363,8 @@
   var syncAgain = false;
   var cloudTimer = null;
   var lastPull = 0;
+  var authPending = false;
+  var loginErrorShown = false;
   var SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js";
 
   function loadUser() {
@@ -528,12 +588,44 @@
     if (who) { who.hidden = false; who.textContent = email || "已登入"; }
     if ($("syncLogout")) $("syncLogout").hidden = false;
   }
-  function zhAuthError(e) {
-    var msg = (e && e.message) || String(e || "未知錯誤");
-    if (/rate limit/i.test(msg)) return "寄信太頻繁，請稍後再試";
-    if (/invalid email|validate email|unable to validate/i.test(msg)) return "電子郵件格式不正確";
-    if (/token|otp|expired|invalid/i.test(msg)) return "驗證碼或連結不正確，或已經過期";
-    return msg;
+  function zhAuthError(e) { return authFailureMessage(e); }
+  function revealCodeEntry() {
+    var panel = $("syncPanel");
+    if (panel) panel.hidden = false;
+    if ($("syncToggle")) $("syncToggle").hidden = false;
+    var hint = $("syncCodeHint");
+    if (hint) hint.hidden = false;
+    var form = $("syncCodeForm");
+    if (form) form.classList.add("is-ready");
+    if ($("syncCode")) {
+      try { $("syncCode").scrollIntoView({ block: "nearest" }); } catch (e) {}
+      $("syncCode").focus();
+    }
+  }
+  function showLoginError(message) {
+    loginErrorShown = true;
+    authPending = false;
+    revealCodeEntry();
+    setSyncStatus(message, "bad");
+    toast(message);
+  }
+  function clearAuthCallback() {
+    try { history.replaceState(null, "", stripAuthParams(location.href)); } catch (e) {}
+  }
+  function verifyWithTypes(makeParams, types) {
+    var i = 0;
+    function next() {
+      if (i >= types.length) return Promise.reject(new Error("登入連結已經用過或失效"));
+      var type = types[i];
+      i += 1;
+      return sb.auth.verifyOtp(makeParams(type)).then(function (res) {
+        if (res && !res.error) return res;
+        var err = (res && res.error) || new Error("登入失敗");
+        if (shouldRetryOtp(err) && i < types.length) return next();
+        throw err;
+      });
+    }
+    return next();
   }
   function authRedirectUrl() {
     var u = new URL(location.href);
@@ -541,17 +633,50 @@
     u.hash = "";
     return u.toString();
   }
-  function readAuthErrorFromUrl() {
-    var hash = new URLSearchParams((location.hash || "").replace(/^#/, ""));
-    var query = new URLSearchParams(location.search || "");
-    return hash.get("error_description") || query.get("error_description") || hash.get("error") || query.get("error") || "";
-  }
-  function clearAuthErrorParams() {
-    var url = new URL(location.href);
-    ["error", "error_description", "error_code"].forEach(function (k) { url.searchParams.delete(k); });
-    var hash = new URLSearchParams(url.hash.replace(/^#/, ""));
-    if (hash.get("error") || hash.get("error_description") || hash.get("error_code")) url.hash = "";
-    try { history.replaceState(null, "", url.pathname + url.search + url.hash); } catch (e) {}
+  function settleAuthCallback(callback) {
+    callback = callback || {};
+    if (callback.tokenHash) {
+      authPending = true;
+      loginErrorShown = false;
+      setSyncStatus("正在用登入連結登入…", "");
+      clearAuthCallback();
+      return verifyWithTypes(function (type) {
+        return { token_hash: callback.tokenHash, type: type };
+      }, otpTypesToTry(callback.type)).then(function () {
+        authPending = false;
+        toast("已登入");
+      }).catch(function (e) {
+        showLoginError(authFailureMessage(e));
+      });
+    }
+    if (callback.accessToken) {
+      authPending = true;
+      loginErrorShown = false;
+      setSyncStatus("正在登入…", "");
+      return sb.auth.getSession().then(function (res) {
+        var sess = res && res.data && res.data.session;
+        clearAuthCallback();
+        if (sess && sess.user) {
+          authPending = false;
+          return;
+        }
+        showLoginError("登入連結沒有完成。請再寄一次，或輸入信裡的 6 位數驗證碼。");
+      }).catch(function () {
+        clearAuthCallback();
+        showLoginError("登入連結沒有完成。請再寄一次，或輸入信裡的 6 位數驗證碼。");
+      });
+    }
+    if (callback.code) {
+      clearAuthCallback();
+      showLoginError("這個連結無法在這台裝置完成登入。請改輸入信裡的 6 位數驗證碼，或再寄一次登入信。");
+      return Promise.resolve();
+    }
+    if (callback.error) {
+      clearAuthCallback();
+      showLoginError(authFailureMessage({ message: callback.error }));
+      return Promise.resolve();
+    }
+    return Promise.resolve();
   }
   function loadSupabaseJs() {
     return new Promise(function (resolve, reject) {
@@ -663,10 +788,12 @@
     });
   }
   function handleAuth(event, sess) {
-    if (event === "SIGNED_OUT" || !sess) {
+    if (!sess) {
+      if (authPending || loginErrorShown) return;
       showSyncLoggedOut();
       return;
     }
+    loginErrorShown = false;
     session = sess;
     showSyncLoggedIn(sess.user && sess.user.email);
     if (event === "SIGNED_IN" || event === "INITIAL_SESSION" || event === "USER_UPDATED") syncNow();
@@ -689,8 +816,9 @@
       options: { emailRedirectTo: authRedirectUrl(), shouldCreateUser: true }
     }).then(function (res) {
       if (res.error) throw res.error;
-      setSyncStatus("已寄出登入信。請用這台裝置打開連結，或輸入驗證碼", "ok");
-      toast("已寄出登入信");
+      loginErrorShown = false;
+      setSyncStatus("登入信已寄出。任何裝置點連結會登入那一台；這台請輸入 6 位數驗證碼", "ok");
+      revealCodeEntry();
     }).catch(function (e) {
       setSyncStatus("寄送失敗", "bad");
       toast("寄送失敗：" + zhAuthError(e));
@@ -704,13 +832,16 @@
     if (!validEmail(email)) { toast("請輸入有效的電子郵件"); return; }
     if (!/^[0-9]{6,10}$/.test(code)) { toast("請輸入信裡的驗證碼"); return; }
     $("syncVerify").disabled = true;
+    loginErrorShown = false;
+    authPending = true;
     setSyncStatus("正在登入…", "");
-    sb.auth.verifyOtp({ email: email, token: code, type: "email" }).then(function (res) {
-      if (res.error) throw res.error;
+    verifyWithTypes(function (type) {
+      return { email: email, token: code, type: type };
+    }, otpTypesToTry("email")).then(function () {
+      authPending = false;
       toast("已登入");
     }).catch(function (e) {
-      setSyncStatus("登入失敗", "bad");
-      toast("登入失敗：" + zhAuthError(e));
+      showLoginError(authFailureMessage(e));
     }).then(function () { $("syncVerify").disabled = false; });
   }
   function logout() {
@@ -737,20 +868,18 @@
       if ($("syncToggle")) $("syncToggle").hidden = true;
       return;
     }
-    var authError = readAuthErrorFromUrl();
-    if (authError) {
-      clearAuthErrorParams();
-      toast("登入失敗：" + zhAuthError({ message: authError }));
-    }
     setSyncStatus("正在準備同步…", "");
+    var callback = parseAuthCallback(location.href);
     loadSupabaseJs().then(function () {
       if (!window.supabase || !window.supabase.createClient) throw new Error("同步元件未就緒");
+      // implicit：登入連結把工作階段放在網址裡，任何裝置都能登入，不靠原本那台瀏覽器的 PKCE verifier。
       sb = window.supabase.createClient(normalizeSupabaseUrl(cfg.url), String(cfg.anonKey).trim(), {
-        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "pkce" }
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "implicit" }
       });
       sb.auth.onAuthStateChange(function (event, sess) {
         setTimeout(function () { handleAuth(event, sess); }, 0);
       });
+      return settleAuthCallback(callback);
     }).catch(function () {
       showSyncLoggedOut();
       setSyncStatus("無法載入同步元件・只存在這台裝置", "warn");

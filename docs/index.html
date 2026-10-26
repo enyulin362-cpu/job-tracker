@@ -20,15 +20,16 @@
         <button id="syncLogout" class="btn" type="button" hidden>登出</button>
       </div>
       <div id="syncPanel" hidden>
-        <p class="hint">登入信的連結請用這台裝置的瀏覽器打開。若連結開在別處，改輸入信裡的驗證碼。網站不會保存密碼。</p>
+        <p id="syncHelp" class="hint">在任何手機或電腦打開信裡的連結，就會登入那一台。這台裝置也可以輸入同一封信裡的 6 位數驗證碼。網站不會保存密碼。</p>
         <form id="syncLogin" class="sync-form">
           <label class="sr" for="syncEmail">電子郵件</label>
           <input id="syncEmail" type="email" autocomplete="email" inputmode="email" placeholder="電子郵件" aria-label="電子郵件" required>
           <button id="syncSend" class="btn" type="submit">寄送登入連結</button>
         </form>
+        <p id="syncCodeHint" class="hint sync-code-hint" hidden>請輸入信裡的 6 位數驗證碼。連結和驗證碼只能用一次。</p>
         <form id="syncCodeForm" class="sync-form">
-          <label class="sr" for="syncCode">驗證碼</label>
-          <input id="syncCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="驗證碼（選填）" aria-label="驗證碼" maxlength="10">
+          <label class="sr" for="syncCode">6 位數驗證碼</label>
+          <input id="syncCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="6 位數驗證碼" aria-label="6 位數驗證碼" maxlength="10">
           <button id="syncVerify" class="btn" type="submit">用驗證碼登入</button>
         </form>
       </div>
