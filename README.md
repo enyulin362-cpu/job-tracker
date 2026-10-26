@@ -188,7 +188,7 @@ cd docs && python -m http.server 8000 # 然後打開 http://localhost:8000
 1. 到 <https://supabase.com> 註冊，新建一個專案，方案選 **Free**。資料庫密碼自己保管即可，網站用不到。
 2. 等專案建好。左側 **SQL Editor** → **New query**，打開本專案的 `supabase/schema.sql`，整份貼上，按 **Run**。看到成功即可。
 3. 左側 **Authentication** → **URL Configuration**：
-   - **Site URL** 填網站網址，例如 `https://你的專案.vercel.app`（Vercel 的根目錄是 `docs`、沒有建置步驟）。
+   - **Site URL** 填網站網址，而且**一定要包含 `https://`**，例如 `https://你的專案.vercel.app`（Vercel 的根目錄是 `docs`、沒有建置步驟）。不要只填網域。少了 `https://` 時，點登入信會被帶到 Supabase 的網址，而不是這個網站。
    - **Redirect URLs** 加上同一個網址。建議這三個都加：`https://你的專案.vercel.app`、`https://你的專案.vercel.app/`、`https://你的專案.vercel.app/**`。
    - 若會在自己電腦試：再加 `http://localhost:8000/**`。
 4. 確認 **Authentication** → **Sign In / Providers** → **Email** 是開啟的。不用設定密碼。
