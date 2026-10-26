@@ -231,18 +231,22 @@ check("page wires config, keeps sync hidden, and schema locks rows to the user",
   assert.strictEqual(js.indexOf("service_role_key"), -1);
   assert.ok(js.indexOf("signInWithOtp") > 0);
   assert.ok(js.indexOf("verifyOtp") > 0);
+  assert.ok(js.indexOf("signInWithPassword") > 0);
+  assert.ok(js.indexOf("updateUser") > 0);
   assert.ok(js.indexOf('flowType: "implicit"') > 0);
+  assert.ok(js.indexOf('scope: "local"') > 0);
   assert.strictEqual(js.indexOf('flowType: "pkce"'), -1);
-  assert.ok(js.indexOf("token_hash") > 0);
+  assert.strictEqual(js.indexOf("localStorage.setItem(\"password\""), -1);
   assert.ok(js.indexOf("jerry-job-tracker-v1") > 0);
   assert.ok(html.indexOf("6 位數驗證碼") > 0);
   assert.ok(html.indexOf('id="syncCode"') > 0);
+  assert.ok(html.indexOf("用密碼登入") > 0);
+  assert.ok(html.indexOf("設定密碼") > 0);
+  assert.ok(html.indexOf('id="syncSetPassword"') > 0);
   var readme = read("README.md");
-  assert.ok(readme.indexOf("{{ .Token }}") > 0);
-  assert.ok(readme.indexOf("type=signup") > 0);
-  assert.ok(readme.indexOf("type=magiclink") > 0);
-  assert.ok(readme.indexOf("{{ .ConfirmationURL }}") > 0);
-  assert.ok(readme.indexOf("Confirm signup") > 0);
+  assert.ok(readme.indexOf("不用改 Supabase 的信件範本") > 0);
+  assert.ok(readme.indexOf("設定密碼") > 0);
+  assert.strictEqual(readme.indexOf("信件範本一定要改"), -1);
 });
 
 check("login link can be opened on a different device", function () {
@@ -260,13 +264,16 @@ check("login link can be opened on a different device", function () {
   assert.strictEqual(pkce.code, "from-other-browser");
   assert.strictEqual(pkce.tokenHash, "");
   assert.strictEqual(api.stripAuthParams("https://job-tracker-docs.vercel.app/?code=from-other-browser#favs"), "/#favs");
-  var implicit = api.parseAuthCallback("https://job-tracker-docs.vercel.app/#access_token=tok&refresh_token=r&type=signup");
+  var implicit = api.parseAuthCallback("https://job-tracker-docs.vercel.app/#access_token=tok&refresh_token=r&expires_in=3600&token_type=bearer&type=signup");
   assert.strictEqual(implicit.accessToken, "tok");
+  assert.strictEqual(implicit.refreshToken, "r");
   assert.strictEqual(api.stripAuthParams("https://job-tracker-docs.vercel.app/#access_token=tok&refresh_token=r"), "/");
   var failed = api.parseAuthCallback("https://job-tracker-docs.vercel.app/?error_description=Email+link+is+invalid+or+has+expired");
   assert.ok(/expired/i.test(failed.error));
-  assert.ok(/6 位數驗證碼/.test(api.authFailureMessage({ message: failed.error })));
+  assert.ok(/密碼登入/.test(api.authFailureMessage({ message: failed.error })));
   assert.ok(/這台裝置/.test(api.authFailureMessage({ message: "Not a valid implicit grant flow url." })));
+  assert.ok(/設定密碼/.test(api.authFailureMessage({ message: "Invalid login credentials" })));
+  assert.strictEqual(api.authFailureMessage({ message: "Password should be at least 6 characters" }), "密碼至少要 6 個字");
   assert.strictEqual(api.shouldRetryOtp({ message: "Token has expired or is invalid" }), true);
   assert.strictEqual(api.shouldRetryOtp({ message: "Request rate limit reached" }), false);
   assert.strictEqual(api.shouldRetryOtp({ message: "Failed to fetch" }), false);
