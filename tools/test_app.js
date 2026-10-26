@@ -245,6 +245,12 @@ check("page wires config, keeps sync hidden, and schema locks rows to the user",
   assert.ok(html.indexOf('id="syncSetPassword"') > 0);
   var readme = read("README.md");
   assert.ok(readme.indexOf("不用改 Supabase 的信件範本") > 0);
+  assert.ok(readme.indexOf("一定要包含 `https://`") > 0);
+  assert.strictEqual(api.authRedirectUrl("https://job-tracker-docs.vercel.app/index.html?x=1#favs"), "https://job-tracker-docs.vercel.app");
+  assert.strictEqual(api.authRedirectUrl("http://localhost:8000/docs/"), "http://localhost:8000");
+  assert.strictEqual(api.authRedirectUrl("http://127.0.0.1:8000/"), "http://127.0.0.1:8000");
+  assert.strictEqual(api.authRedirectUrl("http://job-tracker-docs.vercel.app/"), "");
+  assert.strictEqual(api.authRedirectUrl("job-tracker-docs.vercel.app"), "");
   assert.ok(readme.indexOf("設定密碼") > 0);
   assert.strictEqual(readme.indexOf("信件範本一定要改"), -1);
 });

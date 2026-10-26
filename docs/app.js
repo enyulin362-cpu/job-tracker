@@ -351,13 +351,22 @@
     var deletes = Object.keys(remoteById).filter(function (id) { return !keep[id]; });
     return { merged: merged, upserts: upserts, deletes: deletes };
   }
+  function authRedirectUrl(href) {
+    var origin = "";
+    try { origin = new URL(String(href || "")).origin; }
+    catch (e) { return ""; }
+    if (/^https:\/\//i.test(origin)) return origin;
+    if (/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin)) return origin;
+    return "";
+  }
   var api = {
     filterJobs: filterJobs, sortJobs: sortJobs, payNumber: payNumber, mergeUser: mergeUser, hasDays: hasDays,
     emptyUser: emptyUser, isSupabaseConfigured: isSupabaseConfigured, supabaseConfigError: supabaseConfigError,
     looksLikeServiceRole: looksLikeServiceRole, mergeProgress: mergeProgress, planSync: planSync,
     rowsFromUser: rowsFromUser, userFromRows: userFromRows, normalizeSupabaseUrl: normalizeSupabaseUrl,
     applyImport: applyImport, otpTypesToTry: otpTypesToTry, parseAuthCallback: parseAuthCallback,
-    stripAuthParams: stripAuthParams, shouldRetryOtp: shouldRetryOtp, authFailureMessage: authFailureMessage
+    stripAuthParams: stripAuthParams, shouldRetryOtp: shouldRetryOtp, authFailureMessage: authFailureMessage,
+    authRedirectUrl: authRedirectUrl
   };
   if (typeof module !== "undefined" && module.exports) { module.exports = api; }
   if (typeof document === "undefined") return;
@@ -631,12 +640,6 @@
     }
     return next();
   }
-  function authRedirectUrl() {
-    var u = new URL(location.href);
-    u.search = "";
-    u.hash = "";
-    return u.toString();
-  }
   function settleAuthCallback(callback) {
     callback = callback || {};
     if (callback.tokenHash) {
@@ -831,7 +834,7 @@
     setSyncStatus("正在寄送登入信…", "");
     sb.auth.signInWithOtp({
       email: email,
-      options: { emailRedirectTo: authRedirectUrl(), shouldCreateUser: true }
+      options: { emailRedirectTo: authRedirectUrl(location.href) || undefined, shouldCreateUser: true }
     }).then(function (res) {
       if (res.error) throw res.error;
       loginErrorShown = false;
