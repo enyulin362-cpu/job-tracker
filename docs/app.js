@@ -280,7 +280,7 @@
     return order;
   }
   function parseAuthCallback(href) {
-    var empty = { tokenHash: "", type: "", code: "", error: "", accessToken: "" };
+    var empty = { tokenHash: "", type: "", code: "", error: "", accessToken: "", refreshToken: "" };
     var url;
     try { url = new URL(String(href || ""), "https://job-tracker-docs.vercel.app"); }
     catch (e) { return empty; }
@@ -292,7 +292,8 @@
       type: pick("type"),
       code: pick("code"),
       error: pick("error_description") || pick("error") || "",
-      accessToken: pick("access_token")
+      accessToken: pick("access_token"),
+      refreshToken: pick("refresh_token")
     };
   }
   function stripAuthParams(href) {
@@ -319,14 +320,22 @@
   function authFailureMessage(err) {
     var msg = (err && err.message) || String(err || "");
     if (/rate limit/i.test(msg)) return "寄信太頻繁，請稍後再試";
+    if (/invalid login credentials/i.test(msg)) return "電子郵件或密碼不正確。若還沒設定密碼，請先打開信裡的連結登入，再按「設定密碼」。";
+    if (/email not confirmed/i.test(msg)) return "請先打開信裡的連結完成登入，再設定密碼。";
+    var least = msg.match(/at least (\d+) character/i);
+    if (least) return "密碼至少要 " + least[1] + " 個字";
+    if (/password should be at least/i.test(msg)) return "密碼太短";
+    if (/same password|should be different from the old/i.test(msg)) return "新密碼不能和目前的一樣";
+    if (/weak password|pwned|leaked|easy to guess/i.test(msg)) return "這組密碼太容易猜，請換一組";
+    if (/auth session missing|session missing/i.test(msg)) return "請重新登入後再設定密碼";
     if (/verifier|code challenge|both auth code|not a valid implicit|not a valid pkce/i.test(msg)) {
-      return "這個連結無法在這台裝置完成登入。請改輸入信裡的 6 位數驗證碼，或再寄一次登入信。";
+      return "這個連結無法在這台裝置完成登入。請再寄一次登入信；若已設定密碼，請改用密碼登入。";
     }
     if (/token|otp|expired|invalid|not found/i.test(msg)) {
-      return "登入連結已經用過或失效。請再寄一次登入信，或輸入信裡的 6 位數驗證碼。";
+      return "登入連結已經用過或失效。請再寄一次登入信。若已設定密碼，請改用密碼登入。";
     }
     if (/invalid email|validate email|unable to validate/i.test(msg)) return "電子郵件格式不正確";
-    return msg ? ("登入失敗：" + msg) : "登入失敗。請再寄一次登入信，或輸入 6 位數驗證碼。";
+    return msg ? ("登入失敗：" + msg) : "登入失敗。請再寄一次登入信，或改用密碼登入。";
   }
   function planSync(localUser, remoteRows, nowIso) {
     var remoteUser = userFromRows(remoteRows);
@@ -578,6 +587,8 @@
     if (who) { who.hidden = true; who.textContent = ""; }
     if ($("syncLogout")) $("syncLogout").hidden = true;
     if ($("syncToggle")) $("syncToggle").hidden = false;
+    if ($("syncPasswordOpen")) $("syncPasswordOpen").hidden = true;
+    if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
     setSyncStatus("尚未登入・只存在這台裝置", "");
   }
   function showSyncLoggedIn(email) {
@@ -587,25 +598,18 @@
     var who = $("syncWho");
     if (who) { who.hidden = false; who.textContent = email || "已登入"; }
     if ($("syncLogout")) $("syncLogout").hidden = false;
+    if ($("syncPasswordOpen")) $("syncPasswordOpen").hidden = false;
   }
   function zhAuthError(e) { return authFailureMessage(e); }
-  function revealCodeEntry() {
+  function openLoginPanel() {
     var panel = $("syncPanel");
     if (panel) panel.hidden = false;
     if ($("syncToggle")) $("syncToggle").hidden = false;
-    var hint = $("syncCodeHint");
-    if (hint) hint.hidden = false;
-    var form = $("syncCodeForm");
-    if (form) form.classList.add("is-ready");
-    if ($("syncCode")) {
-      try { $("syncCode").scrollIntoView({ block: "nearest" }); } catch (e) {}
-      $("syncCode").focus();
-    }
   }
   function showLoginError(message) {
     loginErrorShown = true;
     authPending = false;
-    revealCodeEntry();
+    openLoginPanel();
     setSyncStatus(message, "bad");
     toast(message);
   }
@@ -655,20 +659,34 @@
       setSyncStatus("正在登入…", "");
       return sb.auth.getSession().then(function (res) {
         var sess = res && res.data && res.data.session;
-        clearAuthCallback();
         if (sess && sess.user) {
+          clearAuthCallback();
           authPending = false;
+          toast("已登入");
           return;
         }
-        showLoginError("登入連結沒有完成。請再寄一次，或輸入信裡的 6 位數驗證碼。");
-      }).catch(function () {
+        if (!callback.refreshToken || !sb.auth.setSession) {
+          clearAuthCallback();
+          showLoginError("登入連結沒有完成。請再寄一次登入信。若已設定密碼，請改用密碼登入。");
+          return;
+        }
+        return sb.auth.setSession({ access_token: callback.accessToken, refresh_token: callback.refreshToken }).then(function (setRes) {
+          clearAuthCallback();
+          if (setRes && setRes.data && setRes.data.session) {
+            authPending = false;
+            toast("已登入");
+            return;
+          }
+          showLoginError(authFailureMessage((setRes && setRes.error) || { message: "登入連結沒有完成" }));
+        });
+      }).catch(function (e) {
         clearAuthCallback();
-        showLoginError("登入連結沒有完成。請再寄一次，或輸入信裡的 6 位數驗證碼。");
+        showLoginError(authFailureMessage(e));
       });
     }
     if (callback.code) {
       clearAuthCallback();
-      showLoginError("這個連結無法在這台裝置完成登入。請改輸入信裡的 6 位數驗證碼，或再寄一次登入信。");
+      showLoginError("這個連結無法在這台裝置完成登入。請再寄一次登入信；若已設定密碼，請改用密碼登入。");
       return Promise.resolve();
     }
     if (callback.error) {
@@ -817,8 +835,7 @@
     }).then(function (res) {
       if (res.error) throw res.error;
       loginErrorShown = false;
-      setSyncStatus("登入信已寄出。任何裝置點連結會登入那一台；這台請輸入 6 位數驗證碼", "ok");
-      revealCodeEntry();
+      setSyncStatus("登入信已寄出。請在要登入的那台手機或電腦打開連結。登入後按「設定密碼」，其他裝置就能用密碼登入。", "ok");
     }).catch(function (e) {
       setSyncStatus("寄送失敗", "bad");
       toast("寄送失敗：" + zhAuthError(e));
@@ -844,10 +861,47 @@
       showLoginError(authFailureMessage(e));
     }).then(function () { $("syncVerify").disabled = false; });
   }
+  function signInWithPassword() {
+    if (!sb) { toast("同步還沒準備好，請稍後再試"); return; }
+    var email = emailValue();
+    var password = ($("syncPassword") && $("syncPassword").value) || "";
+    if (!validEmail(email)) { toast("請輸入有效的電子郵件"); return; }
+    if (!password) { toast("請輸入密碼"); return; }
+    $("syncPasswordBtn").disabled = true;
+    loginErrorShown = false;
+    authPending = true;
+    setSyncStatus("正在登入…", "");
+    sb.auth.signInWithPassword({ email: email, password: password }).then(function (res) {
+      if (res.error) throw res.error;
+      if ($("syncPassword")) $("syncPassword").value = "";
+      authPending = false;
+      toast("已登入");
+    }).catch(function (e) {
+      showLoginError(authFailureMessage(e));
+    }).then(function () { $("syncPasswordBtn").disabled = false; });
+  }
+  function setPassword(ev) {
+    if (ev) ev.preventDefault();
+    if (!sb || !session) { toast("請先登入"); return; }
+    var first = ($("syncNewPassword") && $("syncNewPassword").value) || "";
+    var second = ($("syncNewPassword2") && $("syncNewPassword2").value) || "";
+    if (first.length < 6) { toast("密碼至少要 6 個字"); return; }
+    if (first !== second) { toast("兩次密碼不一致"); return; }
+    $("syncSavePassword").disabled = true;
+    sb.auth.updateUser({ password: first }).then(function (res) {
+      if (res.error) throw res.error;
+      if ($("syncNewPassword")) $("syncNewPassword").value = "";
+      if ($("syncNewPassword2")) $("syncNewPassword2").value = "";
+      if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
+      toast("密碼已設定。其他裝置可以用這個電子郵件和密碼登入。");
+    }).catch(function (e) {
+      toast(authFailureMessage(e));
+    }).then(function () { $("syncSavePassword").disabled = false; });
+  }
   function logout() {
     if (!sb) { showSyncLoggedOut(); return; }
     $("syncLogout").disabled = true;
-    sb.auth.signOut().catch(function () {}).then(function () {
+    sb.auth.signOut({ scope: "local" }).catch(function () {}).then(function () {
       $("syncLogout").disabled = false;
       showSyncLoggedOut();
       toast("已登出，這台裝置仍留著一份資料");
@@ -861,7 +915,7 @@
     if (bar) bar.hidden = false;
     var hint = $("storageHint");
     if (hint && isSupabaseConfigured(cfg)) {
-      hint.textContent = "登入後會在手機與電腦之間同步，這台裝置也留一份離線備份。仍可匯出 JSON。";
+      hint.textContent = "登入後會在手機與電腦之間同步。可以設定密碼，其他裝置就不用再收信。這台裝置也留一份離線備份。仍可匯出 JSON。";
     }
     if (problem) {
       setSyncStatus(problem, "bad");
@@ -915,8 +969,23 @@
       if (panel) panel.hidden = !panel.hidden;
       if (panel && !panel.hidden && $("syncEmail")) $("syncEmail").focus();
     });
-    if ($("syncLogin")) $("syncLogin").addEventListener("submit", sendMagicLink);
+    if ($("syncPasswordBtn")) $("syncPasswordBtn").addEventListener("click", function (ev) {
+      if (ev) ev.preventDefault();
+      signInWithPassword();
+    });
+    if ($("syncLogin")) $("syncLogin").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (document.activeElement && document.activeElement.id === "syncPassword") signInWithPassword();
+      else sendMagicLink();
+    });
     if ($("syncCodeForm")) $("syncCodeForm").addEventListener("submit", verifyCode);
+    if ($("syncPasswordOpen")) $("syncPasswordOpen").addEventListener("click", function () {
+      var form = $("syncSetPassword");
+      if (!form) return;
+      form.hidden = !form.hidden;
+      if (!form.hidden && $("syncNewPassword")) $("syncNewPassword").focus();
+    });
+    if ($("syncSetPassword")) $("syncSetPassword").addEventListener("submit", setPassword);
     if ($("syncLogout")) $("syncLogout").addEventListener("click", logout);
     window.addEventListener("online", function () { if (cloudReady()) syncNow(); });
     document.addEventListener("visibilitychange", function () {

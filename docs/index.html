@@ -17,22 +17,35 @@
         <p id="syncStatus" class="sync-status" role="status" aria-live="polite">尚未登入</p>
         <span id="syncWho" class="sync-who" hidden></span>
         <button id="syncToggle" class="btn" type="button">登入</button>
+        <button id="syncPasswordOpen" class="btn" type="button" hidden>設定密碼</button>
         <button id="syncLogout" class="btn" type="button" hidden>登出</button>
       </div>
       <div id="syncPanel" hidden>
-        <p id="syncHelp" class="hint">在任何手機或電腦打開信裡的連結，就會登入那一台。這台裝置也可以輸入同一封信裡的 6 位數驗證碼。網站不會保存密碼。</p>
+        <p id="syncHelp" class="hint">在任何手機或電腦打開信裡的連結，就會登入那一台。登入後按「設定密碼」，其他裝置用電子郵件和密碼登入即可。網站不會保存密碼。</p>
         <form id="syncLogin" class="sync-form">
           <label class="sr" for="syncEmail">電子郵件</label>
-          <input id="syncEmail" type="email" autocomplete="email" inputmode="email" placeholder="電子郵件" aria-label="電子郵件" required>
+          <input id="syncEmail" type="email" autocomplete="username" inputmode="email" placeholder="電子郵件" aria-label="電子郵件" required>
           <button id="syncSend" class="btn" type="submit">寄送登入連結</button>
+          <p class="hint">若已經設定過密碼，在這台裝置直接登入：</p>
+          <label class="sr" for="syncPassword">密碼</label>
+          <input id="syncPassword" type="password" autocomplete="current-password" placeholder="密碼" aria-label="密碼" maxlength="128">
+          <button id="syncPasswordBtn" class="btn" type="button">用密碼登入</button>
         </form>
-        <p id="syncCodeHint" class="hint sync-code-hint" hidden>請輸入信裡的 6 位數驗證碼。連結和驗證碼只能用一次。</p>
+        <p id="syncCodeHint" class="hint sync-code-hint">預設的信只有連結。如果信裡另外有 6 位數驗證碼，也可以輸入。</p>
         <form id="syncCodeForm" class="sync-form">
           <label class="sr" for="syncCode">6 位數驗證碼</label>
           <input id="syncCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="6 位數驗證碼" aria-label="6 位數驗證碼" maxlength="10">
           <button id="syncVerify" class="btn" type="submit">用驗證碼登入</button>
         </form>
       </div>
+      <form id="syncSetPassword" class="sync-form" hidden>
+        <p class="hint">設定之後，其他手機或電腦可以用同一個電子郵件和這組密碼登入，不用再收信。密碼只傳給登入服務，網站不會保存。</p>
+        <label class="sr" for="syncNewPassword">新密碼</label>
+        <input id="syncNewPassword" type="password" autocomplete="new-password" placeholder="新密碼（至少 6 個字）" aria-label="新密碼" maxlength="128">
+        <label class="sr" for="syncNewPassword2">再輸入一次密碼</label>
+        <input id="syncNewPassword2" type="password" autocomplete="new-password" placeholder="再輸入一次密碼" aria-label="再輸入一次密碼" maxlength="128">
+        <button id="syncSavePassword" class="btn" type="submit">儲存密碼</button>
+      </form>
     </div>
     <nav class="tabs" role="tablist">
       <button class="tab active" data-tab="jobs" role="tab">職缺</button>
