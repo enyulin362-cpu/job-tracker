@@ -18,14 +18,17 @@
         <p id="syncStatus" class="sync-status" role="status" aria-live="polite">尚未登入</p>
         <span id="syncWho" class="sync-who" hidden></span>
         <div class="sync-actions">
-          <button id="syncToggle" class="btn" type="button">登入</button>
-          <button id="syncPasswordOpen" class="btn" type="button" hidden>設定密碼</button>
-          <button id="syncLogout" class="btn" type="button" hidden>登出</button>
+          <button id="syncToggle" class="btn btn-entry" type="button" aria-expanded="false" aria-controls="syncPanel">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 19.2c.8-3.2 3.2-4.8 6.5-4.8s5.7 1.6 6.5 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span>登入／同步到其他裝置</span>
+          </button>
+          <button id="syncPasswordOpen" class="btn btn-quiet" type="button" hidden>設定密碼</button>
+          <button id="syncLogout" class="btn btn-quiet" type="button" hidden>登出</button>
         </div>
       </div>
       <div id="syncPanel" hidden>
         <div class="sheet-bar">
-          <p class="sheet-title" id="syncSheetTitle">登入</p>
+          <p class="sheet-title" id="syncSheetTitle">登入／同步到其他裝置</p>
           <button id="syncClose" class="btn sheet-close" type="button">關閉</button>
         </div>
         <p id="syncSheetStatus" class="sync-status" aria-hidden="true"></p>
@@ -33,17 +36,17 @@
         <form id="syncLogin" class="sync-form">
           <label class="sr" for="syncEmail">電子郵件</label>
           <input id="syncEmail" type="email" autocomplete="username" inputmode="email" placeholder="電子郵件" aria-label="電子郵件" required>
-          <button id="syncSend" class="btn" type="submit">寄送登入連結</button>
+          <button id="syncSend" class="btn primary" type="submit">寄送登入連結</button>
           <p class="hint">若已經設定過密碼，在這台裝置直接登入：</p>
           <label class="sr" for="syncPassword">密碼</label>
           <input id="syncPassword" type="password" autocomplete="current-password" placeholder="密碼" aria-label="密碼" maxlength="128">
-          <button id="syncPasswordBtn" class="btn" type="button">用密碼登入</button>
+          <button id="syncPasswordBtn" class="btn primary" type="button">用密碼登入</button>
         </form>
         <p id="syncCodeHint" class="hint sync-code-hint">預設的信只有連結。如果信裡另外有 6 位數驗證碼，也可以輸入。</p>
         <form id="syncCodeForm" class="sync-form">
           <label class="sr" for="syncCode">6 位數驗證碼</label>
           <input id="syncCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="6 位數驗證碼" aria-label="6 位數驗證碼" maxlength="10">
-          <button id="syncVerify" class="btn" type="submit">用驗證碼登入</button>
+          <button id="syncVerify" class="btn primary" type="submit">用驗證碼登入</button>
         </form>
       </div>
       <form id="syncSetPassword" class="sync-form" hidden>
@@ -56,7 +59,7 @@
         <input id="syncNewPassword" type="password" autocomplete="new-password" placeholder="新密碼（至少 6 個字）" aria-label="新密碼" maxlength="128">
         <label class="sr" for="syncNewPassword2">再輸入一次密碼</label>
         <input id="syncNewPassword2" type="password" autocomplete="new-password" placeholder="再輸入一次密碼" aria-label="再輸入一次密碼" maxlength="128">
-        <button id="syncSavePassword" class="btn" type="submit">儲存密碼</button>
+        <button id="syncSavePassword" class="btn primary" type="submit">儲存密碼</button>
       </form>
     </div>
     <nav class="tabs" role="tablist">

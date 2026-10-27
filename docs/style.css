@@ -51,6 +51,12 @@ dl.f dt{color:var(--mut)}dl.f dd{margin:0;word-break:break-word}
 .mine select{font-size:14px;padding:6px}
 .btn{display:inline-block;border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:8px;cursor:pointer;font:inherit;font-size:.9rem;color:var(--ink)}
 .btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.btn.primary:hover{background:#2c4ac0;border-color:#2c4ac0;color:#fff}
+.btn.btn-entry{display:inline-flex;align-items:center;gap:6px;width:auto;max-width:100%;background:transparent;border:1px solid var(--acc);color:var(--acc);border-radius:999px;padding:6px 14px 6px 10px;min-height:40px;font-weight:600;line-height:1.25;text-align:left}
+.btn.btn-entry:hover,.btn.btn-entry[aria-expanded="true"]{background:var(--acc2);border-color:var(--acc);color:var(--acc)}
+.btn.btn-quiet{background:transparent}
+.ico{width:18px;height:18px;flex:0 0 auto;display:block}
 .btn.wide{display:block;margin:16px auto;min-width:200px}
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
 .hint{color:var(--mut);font-size:.85rem}
@@ -100,14 +106,15 @@ dl.f dt{color:var(--mut)}dl.f dd{margin:0;word-break:break-word}
   .toolbar .btn{width:100%;min-height:44px;text-align:center}
   .sync-form,.sync-line{flex-direction:column;align-items:stretch}
   .sync-status,.sync-who{flex:none}
-  .sync-actions{width:100%}
-  .sync-actions .btn{flex:1 1 0;width:auto;min-height:44px}
+  .sync-actions{width:auto;align-self:flex-start}
+  .sync-actions .btn{flex:0 0 auto;width:auto;min-height:44px}
+  .btn.btn-entry{min-height:44px}
   .sync-form input,.sync-form .btn,.sync-form .hint,.sync-code-hint{flex:none;width:100%}
   .sync-form input,.sync-form .btn{min-height:44px}
   body.sync-open{overflow:hidden}
   #syncPanel:not([hidden]) #syncSheetStatus{display:block;margin:0 0 8px}
   .sheet-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 8px;position:sticky;top:0;background:#fff;z-index:1}
-  .sheet-title{margin:0;font-size:1.05rem;font-weight:650}
+  .sheet-title{margin:0;flex:1;min-width:0;font-size:1rem;font-weight:650;line-height:1.35}
   .sheet-close,.sync-form .sheet-close{width:auto;min-height:40px;flex:0 0 auto}
   #syncPanel:not([hidden]),#syncSetPassword:not([hidden]){
     position:fixed;z-index:50;

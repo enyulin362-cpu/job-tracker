@@ -654,6 +654,8 @@
         pw.removeAttribute("aria-labelledby");
       }
     }
+    var toggle = $("syncToggle");
+    if (toggle) toggle.setAttribute("aria-expanded", panel && !panel.hidden ? "true" : "false");
   }
   function closeSyncSheets() {
     if ($("syncPanel")) $("syncPanel").hidden = true;
