@@ -3,11 +3,12 @@
 <head>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%98%85%3C/text%3E%3C/svg%3E">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Anya 的職缺追蹤</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="syncBackdrop" class="sync-backdrop" hidden></div>
 <header class="top">
   <div class="wrap">
     <h1>Anya 的職缺追蹤</h1>
@@ -16,35 +17,49 @@
       <div class="sync-line">
         <p id="syncStatus" class="sync-status" role="status" aria-live="polite">尚未登入</p>
         <span id="syncWho" class="sync-who" hidden></span>
-        <button id="syncToggle" class="btn" type="button">登入</button>
-        <button id="syncPasswordOpen" class="btn" type="button" hidden>設定密碼</button>
-        <button id="syncLogout" class="btn" type="button" hidden>登出</button>
+        <div class="sync-actions">
+          <button id="syncToggle" class="btn btn-entry" type="button" aria-expanded="false" aria-controls="syncPanel">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 19.2c.8-3.2 3.2-4.8 6.5-4.8s5.7 1.6 6.5 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span>登入／同步到其他裝置</span>
+          </button>
+          <button id="syncPasswordOpen" class="btn btn-quiet" type="button" hidden>設定密碼</button>
+          <button id="syncLogout" class="btn btn-quiet" type="button" hidden>登出</button>
+        </div>
       </div>
       <div id="syncPanel" hidden>
+        <div class="sheet-bar">
+          <p class="sheet-title" id="syncSheetTitle">登入／同步到其他裝置</p>
+          <button id="syncClose" class="btn sheet-close" type="button">關閉</button>
+        </div>
+        <p id="syncSheetStatus" class="sync-status" aria-hidden="true"></p>
         <p id="syncHelp" class="hint">在任何手機或電腦打開信裡的連結，就會登入那一台。登入後按「設定密碼」，其他裝置用電子郵件和密碼登入即可。網站不會保存密碼。</p>
         <form id="syncLogin" class="sync-form">
           <label class="sr" for="syncEmail">電子郵件</label>
           <input id="syncEmail" type="email" autocomplete="username" inputmode="email" placeholder="電子郵件" aria-label="電子郵件" required>
-          <button id="syncSend" class="btn" type="submit">寄送登入連結</button>
+          <button id="syncSend" class="btn primary" type="submit">寄送登入連結</button>
           <p class="hint">若已經設定過密碼，在這台裝置直接登入：</p>
           <label class="sr" for="syncPassword">密碼</label>
           <input id="syncPassword" type="password" autocomplete="current-password" placeholder="密碼" aria-label="密碼" maxlength="128">
-          <button id="syncPasswordBtn" class="btn" type="button">用密碼登入</button>
+          <button id="syncPasswordBtn" class="btn primary" type="button">用密碼登入</button>
         </form>
         <p id="syncCodeHint" class="hint sync-code-hint">預設的信只有連結。如果信裡另外有 6 位數驗證碼，也可以輸入。</p>
         <form id="syncCodeForm" class="sync-form">
           <label class="sr" for="syncCode">6 位數驗證碼</label>
           <input id="syncCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="6 位數驗證碼" aria-label="6 位數驗證碼" maxlength="10">
-          <button id="syncVerify" class="btn" type="submit">用驗證碼登入</button>
+          <button id="syncVerify" class="btn primary" type="submit">用驗證碼登入</button>
         </form>
       </div>
       <form id="syncSetPassword" class="sync-form" hidden>
+        <div class="sheet-bar">
+          <p class="sheet-title" id="syncPasswordTitle">設定密碼</p>
+          <button id="syncPasswordClose" class="btn sheet-close" type="button">關閉</button>
+        </div>
         <p class="hint">設定之後，其他手機或電腦可以用同一個電子郵件和這組密碼登入，不用再收信。密碼只傳給登入服務，網站不會保存。</p>
         <label class="sr" for="syncNewPassword">新密碼</label>
         <input id="syncNewPassword" type="password" autocomplete="new-password" placeholder="新密碼（至少 6 個字）" aria-label="新密碼" maxlength="128">
         <label class="sr" for="syncNewPassword2">再輸入一次密碼</label>
         <input id="syncNewPassword2" type="password" autocomplete="new-password" placeholder="再輸入一次密碼" aria-label="再輸入一次密碼" maxlength="128">
-        <button id="syncSavePassword" class="btn" type="submit">儲存密碼</button>
+        <button id="syncSavePassword" class="btn primary" type="submit">儲存密碼</button>
       </form>
     </div>
     <nav class="tabs" role="tablist">
@@ -58,8 +73,12 @@
 
 <main class="wrap">
   <section id="tab-jobs" class="panel">
-    <div class="filters">
-      <input id="q" type="search" placeholder="搜尋職稱、公司、地點、備註…" aria-label="搜尋">
+    <div class="filters" id="jobFilters">
+      <div class="filter-bar">
+        <input id="q" type="search" placeholder="搜尋職稱、公司、地點、備註…" aria-label="搜尋">
+        <button type="button" id="filterToggle" class="btn filter-toggle" aria-expanded="false" aria-controls="filterMore">篩選</button>
+      </div>
+      <div id="filterMore" class="filter-more">
       <div class="row">
         <select id="fCat" aria-label="類別"><option value="">全部類別</option></select>
         <select id="fSrc" aria-label="來源"><option value="">全部來源</option></select>
@@ -84,6 +103,7 @@
         <label><input type="checkbox" id="fNew"> 7 天內新出現</label>
         <label><input type="checkbox" id="fHideNo"> 隱藏「不考慮」</label>
         <button id="reset" class="link">清除篩選</button>
+      </div>
       </div>
     </div>
     <p class="count" id="count"></p>
