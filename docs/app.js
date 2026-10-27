@@ -463,11 +463,36 @@
       isNew: $("fNew").checked, hideNo: $("fHideNo").checked
     };
   }
+  function activeFilterCount() {
+    var n = 0;
+    if ($("fCat").value) n++;
+    if ($("fSrc").value) n++;
+    if ($("fStatus").value) n++;
+    if ($("fFit") && !$("fFit").hidden && $("fFit").value) n++;
+    if ($("fSal").value.trim()) n++;
+    if ($("sort").value && $("sort").value !== "date") n++;
+    if ($("fRemote").checked) n++;
+    if ($("fIntern").checked) n++;
+    if ($("fDays").checked) n++;
+    if ($("fNew").checked) n++;
+    if ($("fHideNo").checked) n++;
+    return n;
+  }
+  function updateFilterToggle() {
+    var btn = $("filterToggle");
+    var box = $("jobFilters");
+    if (!btn || !box) return;
+    var open = box.classList.contains("is-open");
+    var n = activeFilterCount();
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "收合篩選" : (n ? "篩選（" + n + "）" : "篩選");
+  }
   function renderJobs() {
     var list = sortJobs(filterJobs(state.jobs, currentFilters(), state.user, TODAY), $("sort").value);
     $("count").textContent = "符合 " + list.length + " 筆（共 " + state.jobs.length + " 筆）";
     $("list").innerHTML = list.length ? list.slice(0, state.shown).map(card).join("") : '<p class="empty">沒有符合條件的職缺，試著放寬篩選。</p>';
     $("more").hidden = list.length <= state.shown;
+    updateFilterToggle();
   }
   function renderFavs() {
     var u = state.user, byUrl = {};
@@ -501,8 +526,12 @@
       h += "<table><tr><th>來源</th><th>狀態</th><th>抓到</th><th>符合條件</th><th>新增</th><th>錯誤</th></tr>";
       Object.keys(m.sources || {}).forEach(function (k) {
         var s = m.sources[k], cls = s.status === "成功" ? "ok" : s.status === "失敗" ? "bad" : "part";
-        h += "<tr><td>" + esc(k) + '</td><td class="' + cls + '">' + esc(s.status) + "</td><td>" + (s.fetched == null ? "—" : s.fetched) +
-          "</td><td>" + (s.kept == null ? "—" : s.kept) + "</td><td>" + (s.new == null ? "—" : s.new) + "</td><td>" + esc((s.errors || []).slice(0, 2).join("；")) + "</td></tr>";
+        var err = esc((s.errors || []).slice(0, 2).join("；")) || "—";
+        h += "<tr><td data-label=\"來源\">" + esc(k) + '</td><td data-label="狀態" class="' + cls + '">' + esc(s.status) +
+          "</td><td data-label=\"抓到\">" + (s.fetched == null ? "—" : s.fetched) +
+          "</td><td data-label=\"符合條件\">" + (s.kept == null ? "—" : s.kept) +
+          "</td><td data-label=\"新增\">" + (s.new == null ? "—" : s.new) +
+          "</td><td data-label=\"錯誤\">" + err + "</td></tr>";
       });
       h += "</table>";
       if (m.ai) h += "<p>AI 篩選：模型 " + esc(m.ai.model) + "，處理 " + m.ai.processed + " 筆（輸入 " + m.ai.prompt_tokens + "、輸出 " + m.ai.completion_tokens + " tokens）。</p>";
@@ -583,10 +612,53 @@
   }
 
   function setSyncStatus(text, kind) {
-    var el = $("syncStatus");
-    if (!el) return;
-    el.textContent = text;
-    el.className = "sync-status" + (kind ? " " + kind : "");
+    ["syncStatus", "syncSheetStatus"].forEach(function (id) {
+      var el = $(id);
+      if (!el) return;
+      el.textContent = text;
+      el.className = "sync-status" + (kind ? " " + kind : "");
+    });
+  }
+  function syncSheetOpen() {
+    var panel = $("syncPanel");
+    var pw = $("syncSetPassword");
+    return !!((panel && !panel.hidden) || (pw && !pw.hidden));
+  }
+  function refreshSyncSheet() {
+    var open = syncSheetOpen();
+    var narrow = window.matchMedia("(max-width: 640px)").matches;
+    var bd = $("syncBackdrop");
+    if (bd) bd.hidden = !open || !narrow;
+    document.body.classList.toggle("sync-open", !!(open && narrow));
+    var panel = $("syncPanel");
+    if (panel) {
+      if (open && narrow && !panel.hidden) {
+        panel.setAttribute("role", "dialog");
+        panel.setAttribute("aria-modal", "true");
+        panel.setAttribute("aria-labelledby", "syncSheetTitle");
+      } else {
+        panel.removeAttribute("role");
+        panel.removeAttribute("aria-modal");
+        panel.removeAttribute("aria-labelledby");
+      }
+    }
+    var pw = $("syncSetPassword");
+    if (pw) {
+      if (open && narrow && !pw.hidden) {
+        pw.setAttribute("role", "dialog");
+        pw.setAttribute("aria-modal", "true");
+        pw.setAttribute("aria-labelledby", "syncPasswordTitle");
+      } else {
+        pw.removeAttribute("role");
+        pw.removeAttribute("aria-modal");
+        pw.removeAttribute("aria-labelledby");
+      }
+    }
+  }
+  function closeSyncSheets() {
+    if ($("syncPanel")) $("syncPanel").hidden = true;
+    if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
+    refreshSyncSheet();
   }
   function showSyncLoggedOut() {
     session = null;
@@ -599,6 +671,7 @@
     if ($("syncPasswordOpen")) $("syncPasswordOpen").hidden = true;
     if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
     setSyncStatus("尚未登入・只存在這台裝置", "");
+    refreshSyncSheet();
   }
   function showSyncLoggedIn(email) {
     var panel = $("syncPanel");
@@ -608,12 +681,15 @@
     if (who) { who.hidden = false; who.textContent = email || "已登入"; }
     if ($("syncLogout")) $("syncLogout").hidden = false;
     if ($("syncPasswordOpen")) $("syncPasswordOpen").hidden = false;
+    refreshSyncSheet();
   }
   function zhAuthError(e) { return authFailureMessage(e); }
   function openLoginPanel() {
     var panel = $("syncPanel");
     if (panel) panel.hidden = false;
+    if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
     if ($("syncToggle")) $("syncToggle").hidden = false;
+    refreshSyncSheet();
   }
   function showLoginError(message) {
     loginErrorShown = true;
@@ -896,6 +972,7 @@
       if ($("syncNewPassword")) $("syncNewPassword").value = "";
       if ($("syncNewPassword2")) $("syncNewPassword2").value = "";
       if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
+      refreshSyncSheet();
       toast("密碼已設定。其他裝置可以用這個電子郵件和密碼登入。");
     }).catch(function (e) {
       toast(authFailureMessage(e));
@@ -967,10 +1044,26 @@
     $("oq").addEventListener("input", renderOrgs);
     $("oType").addEventListener("change", renderOrgs);
     $("favCount").textContent = Object.keys(state.user.fav).length;
+    if ($("filterToggle")) $("filterToggle").addEventListener("click", function () {
+      var box = $("jobFilters");
+      if (!box) return;
+      box.classList.toggle("is-open");
+      updateFilterToggle();
+    });
     if ($("syncToggle")) $("syncToggle").addEventListener("click", function () {
       var panel = $("syncPanel");
-      if (panel) panel.hidden = !panel.hidden;
-      if (panel && !panel.hidden && $("syncEmail")) $("syncEmail").focus();
+      if (!panel) return;
+      panel.hidden = !panel.hidden;
+      if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
+      refreshSyncSheet();
+      if (!panel.hidden && $("syncEmail")) $("syncEmail").focus();
+    });
+    if ($("syncClose")) $("syncClose").addEventListener("click", closeSyncSheets);
+    if ($("syncPasswordClose")) $("syncPasswordClose").addEventListener("click", closeSyncSheets);
+    if ($("syncBackdrop")) $("syncBackdrop").addEventListener("click", closeSyncSheets);
+    window.addEventListener("resize", refreshSyncSheet);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && syncSheetOpen()) closeSyncSheets();
     });
     if ($("syncPasswordBtn")) $("syncPasswordBtn").addEventListener("click", function (ev) {
       if (ev) ev.preventDefault();
@@ -986,6 +1079,8 @@
       var form = $("syncSetPassword");
       if (!form) return;
       form.hidden = !form.hidden;
+      if ($("syncPanel")) $("syncPanel").hidden = true;
+      refreshSyncSheet();
       if (!form.hidden && $("syncNewPassword")) $("syncNewPassword").focus();
     });
     if ($("syncSetPassword")) $("syncSetPassword").addEventListener("submit", setPassword);
