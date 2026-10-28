@@ -656,6 +656,29 @@
     }
     var toggle = $("syncToggle");
     if (toggle) toggle.setAttribute("aria-expanded", panel && !panel.hidden ? "true" : "false");
+    fitSyncSheet();
+  }
+  // Keyboard show/hide fires resize and visualViewport changes. Only move the sheet; never close it.
+  function fitSyncSheet() {
+    var vv = window.visualViewport;
+    var narrow = window.matchMedia("(max-width: 640px)").matches;
+    var open = syncSheetOpen();
+    ["syncPanel", "syncSetPassword"].forEach(function (id) {
+      var el = $(id);
+      if (!el) return;
+      if (!vv || !narrow || !open || el.hidden) {
+        if (el.style.top) el.style.top = "";
+        if (el.style.maxHeight) el.style.maxHeight = "";
+        return;
+      }
+      var margin = 12;
+      var top = Math.max(margin, vv.offsetTop + margin);
+      var maxH = Math.max(160, Math.round(vv.height - margin * 2));
+      var topPx = top + "px";
+      var maxPx = maxH + "px";
+      if (el.style.top !== topPx) el.style.top = topPx;
+      if (el.style.maxHeight !== maxPx) el.style.maxHeight = maxPx;
+    });
   }
   function closeSyncSheets() {
     if ($("syncPanel")) $("syncPanel").hidden = true;
@@ -1064,6 +1087,10 @@
     if ($("syncPasswordClose")) $("syncPasswordClose").addEventListener("click", closeSyncSheets);
     if ($("syncBackdrop")) $("syncBackdrop").addEventListener("click", closeSyncSheets);
     window.addEventListener("resize", refreshSyncSheet);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", fitSyncSheet);
+      window.visualViewport.addEventListener("scroll", fitSyncSheet);
+    }
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && syncSheetOpen()) closeSyncSheets();
     });
