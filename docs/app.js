@@ -7,7 +7,7 @@
   var PAGE = 60;
   var STATUSES = ["想投", "已投", "面試", "不考慮"];
   var CAT_ORDER = ["設計與生涯", "藝術與諮詢", "一般工讀", "家教伴讀"];
-  var USER_MAPS = ["fav", "status", "note", "favJobs", "updated"];
+  var USER_MAPS = ["fav", "status", "note", "favJobs", "seen", "updated"];
 
   // ---------- 純函式（可在 node 測試） ----------
   function norm(s) { return String(s == null ? "" : s).toLowerCase(); }
@@ -50,8 +50,10 @@
       return true;
     });
   }
-  function sortJobs(list, key) {
-    var a = list.slice();
+  function sortJobs(list, key, user) {
+    user = user || {};
+    var status = user.status || {};
+    var seen = user.seen || {};
     var by = {
       date: function (x, y) { return String(y.date || y.firstSeen || "").localeCompare(String(x.date || x.firstSeen || "")); },
       first: function (x, y) { return String(y.firstSeen || "").localeCompare(String(x.firstSeen || "")); },
@@ -59,10 +61,18 @@
       title: function (x, y) { return String(x.title).localeCompare(String(y.title), "zh-Hant"); },
       pay: function (x, y) { return payNumber(y.salary) - payNumber(x.salary); }
     }[key] || function () { return 0; };
-    return a.sort(by);
+    return list.slice().sort(function (x, y) {
+      var xr = status[x.url] === "不考慮" ? 1 : 0;
+      var yr = status[y.url] === "不考慮" ? 1 : 0;
+      if (xr !== yr) return xr - yr;
+      var xs = seen[x.url] ? 1 : 0;
+      var ys = seen[y.url] ? 1 : 0;
+      if (xs !== ys) return xs - ys;
+      return by(x, y);
+    });
   }
   function emptyUser() {
-    return { fav: {}, status: {}, note: {}, favJobs: {}, updated: {} };
+    return { fav: {}, status: {}, note: {}, favJobs: {}, seen: {}, updated: {} };
   }
   function assignMap(target, src) {
     if (!src || typeof src !== "object") return;
@@ -147,21 +157,23 @@
     var note = user.note && user.note[id] != null ? String(user.note[id]) : "";
     if (note.length > 20000) note = note.slice(0, 20000);
     var updatedAt = user.updated && typeof user.updated[id] === "string" ? user.updated[id] : "";
+    var seenAt = user.seen && typeof user.seen[id] === "string" ? user.seen[id] : "";
     var snap = user.favJobs && user.favJobs[id];
     var favJob = fav && snap && typeof snap === "object" && !Array.isArray(snap) ? snap : null;
-    if (!fav && !status && !note && !updatedAt) return null;
-    return { fav: fav, status: status, note: note, favJob: favJob, updatedAt: updatedAt };
+    if (!fav && !status && !note && !seenAt && !updatedAt) return null;
+    return { fav: fav, status: status, note: note, seenAt: seenAt, favJob: favJob, updatedAt: updatedAt };
   }
   function jobContent(rec) {
     return {
       fav: !!rec.fav,
       status: rec.status || "",
       note: rec.note || "",
+      seenAt: rec.seenAt || "",
       favJob: rec.fav ? (rec.favJob || null) : null
     };
   }
   function sameContent(a, b) {
-    return a.fav === b.fav && a.status === b.status && a.note === b.note && stableJson(a.favJob) === stableJson(b.favJob);
+    return a.fav === b.fav && a.status === b.status && a.note === b.note && a.seenAt === b.seenAt && stableJson(a.favJob) === stableJson(b.favJob);
   }
   function chooseUpdatedAt(localRec, remoteRec, merged, lt, rt, nowIso) {
     var mc = jobContent(merged), lc = jobContent(localRec), rc = jobContent(remoteRec);
@@ -182,13 +194,14 @@
     var fav = !!pickField(!!localRec.fav, !!remoteRec.fav, lt, rt);
     var status = pickField(localRec.status || "", remoteRec.status || "", lt, rt) || "";
     var note = pickField(localRec.note || "", remoteRec.note || "", lt, rt) || "";
+    var seenAt = pickField(localRec.seenAt || "", remoteRec.seenAt || "", lt, rt) || "";
     var favJob = null;
     if (fav) {
       var ls = localRec.fav ? (localRec.favJob || null) : null;
       var rs = remoteRec.fav ? (remoteRec.favJob || null) : null;
       favJob = ls && rs ? (rt > lt ? rs : ls) : (ls || rs);
     }
-    var merged = { fav: fav, status: status, note: note, favJob: favJob, updatedAt: "" };
+    var merged = { fav: fav, status: status, note: note, seenAt: seenAt, favJob: favJob, updatedAt: "" };
     merged.updatedAt = chooseUpdatedAt(localRec, remoteRec, merged, lt, rt, nowIso);
     return merged;
   }
@@ -206,6 +219,7 @@
     if (rec.fav) user.fav[id] = true;
     if (rec.status) user.status[id] = rec.status;
     if (rec.note) user.note[id] = rec.note;
+    if (rec.seenAt) user.seen[id] = rec.seenAt;
     if (rec.fav && rec.favJob) user.favJobs[id] = rec.favJob;
     if (rec.updatedAt) user.updated[id] = rec.updatedAt;
   }
@@ -231,6 +245,7 @@
         favorite: !!rec.fav,
         status: rec.status || null,
         note: rec.note || null,
+        seen_at: rec.seenAt || null,
         fav_snapshot: rec.fav ? (rec.favJob || null) : null,
         updated_at: rec.updatedAt || new Date(0).toISOString()
       });
@@ -246,6 +261,7 @@
       var status = cleanStatus(row.status || "");
       if (status) user.status[id] = status;
       if (row.note) user.note[id] = String(row.note).slice(0, 20000);
+      if (row.seen_at) user.seen[id] = String(row.seen_at);
       if (row.favorite && row.fav_snapshot && typeof row.fav_snapshot === "object" && !Array.isArray(row.fav_snapshot)) {
         user.favJobs[id] = row.fav_snapshot;
       }
@@ -259,12 +275,13 @@
     return !!row.favorite === !!remote.favorite &&
       (row.status || "") === (remote.status || "") &&
       (row.note || "") === (remote.note || "") &&
+      (row.seen_at || "") === (remote.seen_at || "") &&
       ta > 0 && ta === tb &&
       stableJson(row.fav_snapshot || null) === stableJson(remote.fav_snapshot || null);
   }
   function applyImport(localUser, inc, nowIso) {
     var merged = mergeUser(localUser, inc);
-    ["fav", "status", "note", "favJobs"].forEach(function (k) {
+    ["fav", "status", "note", "favJobs", "seen"].forEach(function (k) {
       Object.keys((inc && inc[k]) || {}).forEach(function (id) {
         if (id && id !== "__proto__" && id !== "constructor" && id !== "prototype") merged.updated[id] = nowIso;
       });
@@ -425,8 +442,10 @@
   function card(j) {
     var u = state.user, url = j.url, st = u.status[url] || "", fav = !!u.fav[url];
     var isNew = (TODAY - Date.parse(j.firstSeen || "")) / 86400000 <= 7 && !j.seed;
+    var unseen = !(u.seen && u.seen[url]);
     var badges = ['<span class="b cat">' + esc(j.category) + "</span>"];
     if (isNew) badges.push('<span class="b new">NEW</span>');
+    if (unseen) badges.push('<span class="b unseen">未看</span>');
     if (j.remote) badges.push('<span class="b remote">遠端</span>');
     if (j.intern) badges.push('<span class="b intern">實習</span>');
     if (j.informal) badges.push('<span class="b inf">非正式・未查證</span>');
@@ -488,7 +507,7 @@
     btn.textContent = open ? "收合篩選" : (n ? "篩選（" + n + "）" : "篩選");
   }
   function renderJobs() {
-    var list = sortJobs(filterJobs(state.jobs, currentFilters(), state.user, TODAY), $("sort").value);
+    var list = sortJobs(filterJobs(state.jobs, currentFilters(), state.user, TODAY), $("sort").value, state.user);
     $("count").textContent = "符合 " + list.length + " 筆（共 " + state.jobs.length + " 筆）";
     $("list").innerHTML = list.length ? list.slice(0, state.shown).map(card).join("") : '<p class="empty">沒有符合條件的職缺，試著放寬篩選。</p>';
     $("more").hidden = list.length <= state.shown;
@@ -500,7 +519,7 @@
     var list = Object.keys(u.fav).map(function (url) {
       return byUrl[url] || Object.assign({ gone: true }, u.favJobs[url] || { url: url, title: url, company: "", category: "" });
     });
-    list = sortJobs(list, "date");
+    list = sortJobs(list, "date", u);
     $("favList").innerHTML = list.length ? list.map(card).join("") : '<p class="empty">還沒有收藏。在職缺卡片右上角按 ☆ 就能收藏。</p>';
   }
   function renderOrgs() {
@@ -537,20 +556,38 @@
       if (m.ai) h += "<p>AI 篩選：模型 " + esc(m.ai.model) + "，處理 " + m.ai.processed + " 筆（輸入 " + m.ai.prompt_tokens + "、輸出 " + m.ai.completion_tokens + " tokens）。</p>";
     }
     h += "<h3>說明</h3><ul><li>「非正式・未查證」代表來自 PTT 或家教網的個人貼文，請自行確認對方身分，不要先付費或提供證件。</li>" +
+      "<li>「未看」代表還沒點開這則職缺的連結。點開後會記下來，排到已看過的後面；「不考慮」一律排在最後。NEW 則是這 7 天內新出現在清單裡的職缺。</li>" +
       "<li>104 的日期是職缺「更新日」，不一定是首次刊登日；Yourator 只提供「一週內更新」這類相對時間。</li>" +
       "<li>" + (cloudOn()
-        ? "登入後，收藏、狀態與備註會在你的裝置之間同步，這台裝置也會留一份離線備份。仍可到「我的收藏」匯出 JSON。"
-        : "收藏、狀態與備註只存在這個瀏覽器；請到「我的收藏」匯出備份。") + "</li></ul>";
+        ? "登入後，收藏、狀態、備註與已看過會在你的裝置之間同步，這台裝置也會留一份離線備份。仍可到「我的收藏」匯出 JSON。"
+        : "收藏、狀態、備註與已看過只存在這個瀏覽器；請到「我的收藏」匯出備份。") + "</li></ul>";
     $("about").innerHTML = h;
   }
   function fillSelect(sel, values) {
     values.forEach(function (v) { var o = document.createElement("option"); o.value = o.textContent = v; sel.appendChild(o); });
   }
 
+  function markSeen(url) {
+    if (!url) return;
+    if (!state.user.seen) state.user.seen = {};
+    if (state.user.seen[url]) return;
+    var now = new Date().toISOString();
+    state.user.seen[url] = now;
+    state.user.updated[url] = now;
+    saveUser();
+    setTimeout(function () {
+      renderJobs();
+      if ($("tab-favs") && !$("tab-favs").hidden) renderFavs();
+    }, 0);
+  }
   function onCardEvent(e) {
     var el = e.target, art = el.closest && el.closest(".card[data-url]");
     if (!art) return;
     var url = art.getAttribute("data-url"), act = el.getAttribute("data-act"), u = state.user;
+    if (e.type === "click") {
+      var link = el.closest && el.closest("a");
+      if (link && art.contains(link)) markSeen(url);
+    }
     if (act === "fav" && e.type === "click") {
       var cur = state.user;
       if (cur.fav[url]) { delete cur.fav[url]; delete cur.favJobs[url]; toast("已取消收藏"); }
@@ -566,7 +603,10 @@
     } else if (act === "status" && e.type === "change") {
       if (el.value) state.user.status[url] = el.value; else delete state.user.status[url];
       state.user.updated[url] = new Date().toISOString();
-      art.classList.toggle("no", el.value === "不考慮"); saveUser();
+      art.classList.toggle("no", el.value === "不考慮");
+      saveUser();
+      renderJobs();
+      if (!$("tab-favs").hidden) renderFavs();
     } else if (act === "note" && e.type === "input") {
       clearTimeout(onCardEvent._t);
       onCardEvent._t = setTimeout(function () {
@@ -893,7 +933,7 @@
     var page = 1000, from = 0, all = [];
     function next() {
       return sb.from("job_progress")
-        .select("job_id,favorite,status,note,fav_snapshot,updated_at")
+        .select("job_id,favorite,status,note,fav_snapshot,seen_at,updated_at")
         .order("job_id", { ascending: true })
         .range(from, from + page - 1)
         .then(function (res) {
@@ -917,6 +957,7 @@
         status: row.status,
         note: row.note,
         fav_snapshot: row.fav_snapshot,
+        seen_at: row.seen_at || null,
         updated_at: row.updated_at
       };
     });
