@@ -1,25 +1,25 @@
 {
- "lastRun": "2026-10-27T14:02:34+08:00",
- "total": 692,
- "newThisRun": 60,
- "removedOld": 4,
+ "lastRun": "2026-10-28T14:41:13+08:00",
+ "total": 750,
+ "newThisRun": 59,
+ "removedOld": 1,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 615,
-   "kept": 435,
-   "new": 48,
+   "fetched": 610,
+   "kept": 429,
+   "new": 45,
    "errors": [],
-   "requests": 113,
-   "seconds": 143.9
+   "requests": 112,
+   "seconds": 138.7
   },
   "518": {
    "status": "成功",
    "fetched": 164,
-   "kept": 19,
-   "new": 9,
+   "kept": 18,
+   "new": 0,
    "errors": [],
    "requests": 14,
    "seconds": 17.1
@@ -38,34 +38,30 @@
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 52,
-   "kept": 30,
+   "fetched": 48,
+   "kept": 29,
    "new": 0,
    "errors": [],
    "requests": 19,
-   "seconds": 23.4
+   "seconds": 23.2
   },
   "LinkedIn": {
-   "status": "部分成功",
-   "fetched": 62,
-   "kept": 16,
-   "new": 0,
-   "errors": [
-    "UI Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=UI%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Illustrator: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Illustrator&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "設計實習生: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=%E8%A8%AD%E8%A8%88%E5%AF%A6%E7%BF%92%E7%94%9F&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
-   ],
-   "requests": 16,
-   "seconds": 24.4
+   "status": "成功",
+   "fetched": 64,
+   "kept": 21,
+   "new": 1,
+   "errors": [],
+   "requests": 13,
+   "seconds": 15.7
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
    "kept": 40,
-   "new": 3,
+   "new": 13,
    "errors": [],
    "requests": 4,
-   "seconds": 5.2
+   "seconds": 5.1
   }
  }
 }
