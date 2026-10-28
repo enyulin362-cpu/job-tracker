@@ -95,6 +95,53 @@ check("existing filters and import merge still work", function () {
   assert.strictEqual(imported.updated.a, "2026-10-26T00:00:00.000Z");
 });
 
+check("不考慮 stays last and unseen precedes seen", function () {
+  var jobs = [
+    { url: "old-seen", title: "甲", company: "A", date: "2026-01-01", firstSeen: "2026-01-01", salary: "時薪 100" },
+    { url: "new-unseen", title: "乙", company: "B", date: "2026-10-01", firstSeen: "2026-10-01", salary: "時薪 300" },
+    { url: "mid-seen", title: "丙", company: "C", date: "2026-06-01", firstSeen: "2026-06-01", salary: "時薪 200" },
+    { url: "no", title: "丁", company: "D", date: "2026-12-01", firstSeen: "2026-12-01", salary: "月薪 80000" }
+  ];
+  var user = {
+    fav: {}, status: { no: "不考慮" }, note: {}, favJobs: {},
+    seen: { "old-seen": "2026-02-01T00:00:00.000Z", "mid-seen": "2026-07-01T00:00:00.000Z" },
+    updated: {}
+  };
+  ["date", "first", "company", "title", "pay"].forEach(function (key) {
+    var urls = api.sortJobs(jobs, key, user).map(function (j) { return j.url; });
+    assert.strictEqual(urls[urls.length - 1], "no", key + " " + urls.join(","));
+    var flags = urls.slice(0, -1).map(function (u) { return user.seen[u] ? 1 : 0; });
+    for (var i = 1; i < flags.length; i++) assert.ok(flags[i - 1] <= flags[i], key + " " + urls.join(","));
+  });
+  assert.deepStrictEqual(api.sortJobs(jobs, "date", user).map(function (j) { return j.url; }), ["new-unseen", "mid-seen", "old-seen", "no"]);
+  var hidden = api.filterJobs(jobs, {
+    q: "", cat: "", src: "", status: "", fit: "", sal: "", remote: false, intern: false, days: false, isNew: false, hideNo: true
+  }, user, Date.now());
+  assert.deepStrictEqual(hidden.map(function (j) { return j.url; }).indexOf("no"), -1);
+  var seenUser = api.userFromRows([row("a", { seen_at: "2026-04-01T00:00:00.000Z", updated_at: "2026-04-01T00:00:00.000Z" })]);
+  assert.strictEqual(seenUser.seen.a, "2026-04-01T00:00:00.000Z");
+  assert.strictEqual(api.rowsFromUser(seenUser)[0].seen_at, "2026-04-01T00:00:00.000Z");
+  var imported = api.applyImport(
+    { fav: {}, status: {}, note: {}, favJobs: {}, seen: {}, updated: {} },
+    { fav: {}, status: {}, note: {}, favJobs: {}, seen: { x: "2026-03-01T00:00:00.000Z" } },
+    "2026-10-26T00:00:00.000Z"
+  );
+  assert.strictEqual(imported.seen.x, "2026-03-01T00:00:00.000Z");
+  assert.strictEqual(imported.updated.x, "2026-10-26T00:00:00.000Z");
+  var kept = api.planSync(
+    { fav: {}, status: {}, note: {}, favJobs: {}, seen: { a: "2026-09-01T00:00:00.000Z" }, updated: { a: "2026-09-01T00:00:00.000Z" } },
+    [row("a", { updated_at: "2026-01-01T00:00:00.000Z" })],
+    "2026-10-01T00:00:00.000Z"
+  );
+  assert.strictEqual(kept.merged.seen.a, "2026-09-01T00:00:00.000Z");
+  var newer = api.planSync(
+    { fav: {}, status: {}, note: {}, favJobs: {}, seen: { a: "2026-01-01T00:00:00.000Z" }, updated: { a: "2026-01-01T00:00:00.000Z" } },
+    [row("a", { seen_at: "2026-08-01T00:00:00.000Z", updated_at: "2026-08-01T00:00:00.000Z" })],
+    "2026-10-01T00:00:00.000Z"
+  );
+  assert.strictEqual(newer.merged.seen.a, "2026-08-01T00:00:00.000Z");
+});
+
 check("first login uploads local jobs and keeps cloud-only jobs", function () {
   var now = "2026-10-26T03:00:00.000Z";
   var local = {
