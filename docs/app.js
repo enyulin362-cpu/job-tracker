@@ -680,6 +680,20 @@
       if (el.style.maxHeight !== maxPx) el.style.maxHeight = maxPx;
     });
   }
+  function revealFocusedField() {
+    var el = document.activeElement;
+    if (!el || !el.matches || !el.matches("input, textarea, select")) return;
+    if (el.closest && el.closest("#syncPanel, #syncSetPassword")) return;
+    if (!window.matchMedia("(max-width: 640px)").matches) return;
+    var vv = window.visualViewport;
+    var viewH = vv ? vv.height : window.innerHeight;
+    var rect = el.getBoundingClientRect();
+    var margin = 12;
+    if (rect.width < 1 || rect.height < 1) return;
+    if (rect.top >= margin && rect.bottom <= viewH - margin) return;
+    try { el.scrollIntoView({ block: "center", inline: "nearest" }); }
+    catch (err) { el.scrollIntoView(true); }
+  }
   function closeSyncSheets() {
     if ($("syncPanel")) $("syncPanel").hidden = true;
     if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
@@ -1088,9 +1102,18 @@
     if ($("syncBackdrop")) $("syncBackdrop").addEventListener("click", closeSyncSheets);
     window.addEventListener("resize", refreshSyncSheet);
     if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", fitSyncSheet);
+      window.visualViewport.addEventListener("resize", function () {
+        fitSyncSheet();
+        revealFocusedField();
+      });
       window.visualViewport.addEventListener("scroll", fitSyncSheet);
     }
+    document.addEventListener("focusin", function (e) {
+      var el = e.target;
+      if (!el || !el.matches || !el.matches("input, textarea, select")) return;
+      if (el.closest && el.closest("#syncPanel, #syncSetPassword")) return;
+      setTimeout(revealFocusedField, 60);
+    });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && syncSheetOpen()) closeSyncSheets();
     });
