@@ -611,6 +611,16 @@
     try { history.replaceState(null, "", "#" + name); } catch (e) {}
   }
 
+  function syncStatusShort(text, kind) {
+    text = String(text || "");
+    if (/離線/.test(text)) return "離線";
+    if (/同步失敗|寄送失敗/.test(text)) return "同步失敗";
+    if (/同步中/.test(text)) return "同步中";
+    if (/已同步/.test(text) || kind === "ok") return "已同步";
+    if (kind === "bad") return "失敗";
+    if (kind === "warn") return "注意";
+    return "";
+  }
   function setSyncStatus(text, kind) {
     ["syncStatus", "syncSheetStatus"].forEach(function (id) {
       var el = $(id);
@@ -618,6 +628,8 @@
       el.textContent = text;
       el.className = "sync-status" + (kind ? " " + kind : "");
     });
+    var status = $("syncStatus");
+    if (status) status.setAttribute("data-short", syncStatusShort(text, kind));
   }
   function syncSheetOpen() {
     var panel = $("syncPanel");
@@ -657,6 +669,7 @@
     var toggle = $("syncToggle");
     if (toggle) toggle.setAttribute("aria-expanded", panel && !panel.hidden ? "true" : "false");
     fitSyncSheet();
+    syncAccountChrome();
   }
   // Keyboard show/hide fires resize and visualViewport changes. Only move the sheet; never close it.
   function fitSyncSheet() {
@@ -694,6 +707,35 @@
     try { el.scrollIntoView({ block: "center", inline: "nearest" }); }
     catch (err) { el.scrollIntoView(true); }
   }
+  function narrowScreen() {
+    return window.matchMedia("(max-width: 640px)").matches;
+  }
+  function syncAccountChrome() {
+    var menu = $("syncAccountMenu");
+    var btn = $("syncAccount");
+    var bar = $("syncbar");
+    if (!menu || !btn) return;
+    var loggedIn = !!(bar && bar.classList.contains("is-in"));
+    var narrow = narrowScreen();
+    if (!narrow) {
+      menu.hidden = false;
+      btn.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      return;
+    }
+    btn.hidden = !loggedIn;
+    if (!loggedIn) {
+      menu.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+    }
+  }
+  function setAccountMenu(open) {
+    var menu = $("syncAccountMenu");
+    var btn = $("syncAccount");
+    if (!menu || !btn || !narrowScreen()) return;
+    menu.hidden = !open;
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
   function closeSyncSheets() {
     if ($("syncPanel")) $("syncPanel").hidden = true;
     if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
@@ -709,6 +751,8 @@
     if ($("syncToggle")) $("syncToggle").hidden = false;
     if ($("syncPasswordOpen")) $("syncPasswordOpen").hidden = true;
     if ($("syncSetPassword")) $("syncSetPassword").hidden = true;
+    var barOut = $("syncbar");
+    if (barOut) barOut.classList.remove("is-in");
     setSyncStatus("尚未登入・只存在這台裝置", "");
     refreshSyncSheet();
   }
@@ -720,6 +764,10 @@
     if (who) { who.hidden = false; who.textContent = email || "已登入"; }
     if ($("syncLogout")) $("syncLogout").hidden = false;
     if ($("syncPasswordOpen")) $("syncPasswordOpen").hidden = false;
+    var barIn = $("syncbar");
+    if (barIn) barIn.classList.add("is-in");
+    if (who) who.title = who.textContent;
+    setAccountMenu(false);
     refreshSyncSheet();
   }
   function zhAuthError(e) { return authFailureMessage(e); }
@@ -1115,7 +1163,9 @@
       setTimeout(revealFocusedField, 60);
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && syncSheetOpen()) closeSyncSheets();
+      if (e.key !== "Escape") return;
+      if (syncSheetOpen()) closeSyncSheets();
+      else setAccountMenu(false);
     });
     if ($("syncPasswordBtn")) $("syncPasswordBtn").addEventListener("click", function (ev) {
       if (ev) ev.preventDefault();
@@ -1130,12 +1180,23 @@
     if ($("syncPasswordOpen")) $("syncPasswordOpen").addEventListener("click", function () {
       var form = $("syncSetPassword");
       if (!form) return;
+      setAccountMenu(false);
       form.hidden = !form.hidden;
       if ($("syncPanel")) $("syncPanel").hidden = true;
       refreshSyncSheet();
       if (!form.hidden && $("syncNewPassword")) $("syncNewPassword").focus();
     });
     if ($("syncSetPassword")) $("syncSetPassword").addEventListener("submit", setPassword);
+    if ($("syncAccount")) $("syncAccount").addEventListener("click", function () {
+      var menu = $("syncAccountMenu");
+      if (!menu) return;
+      setAccountMenu(!!menu.hidden);
+    });
+    document.addEventListener("click", function (e) {
+      var wrap = document.querySelector(".account-wrap");
+      if (!wrap || !e.target || wrap.contains(e.target)) return;
+      setAccountMenu(false);
+    });
     if ($("syncLogout")) $("syncLogout").addEventListener("click", logout);
     window.addEventListener("online", function () { if (cloudReady()) syncNow(); });
     document.addEventListener("visibilitychange", function () {
