@@ -26,6 +26,7 @@ input[type=search],input[type=text],select,textarea{font:inherit;font-size:16px;
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
 .card.no{opacity:.55}
+.card.consider{box-shadow:inset 3px 0 0 #8ea2ef}
 .card h3{font-size:1rem;margin:0;line-height:1.35}
 .card h3 a{color:var(--ink);text-decoration:none}
 .card h3 a:hover{color:var(--acc);text-decoration:underline}
