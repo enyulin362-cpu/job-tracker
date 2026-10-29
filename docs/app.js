@@ -391,6 +391,14 @@
   // ---------- 瀏覽器端 ----------
   var $ = function (id) { return document.getElementById(id); };
   var state = { jobs: [], orgs: [], meta: null, shown: PAGE, user: loadUser() };
+  // 排序用的「已看過」在這次開啟時拍下來。這次點開的職缺只拿掉「未看」，位置留到重新整理。
+  var seenAtLoad = {};
+  Object.keys((state.user && state.user.seen) || {}).forEach(function (id) {
+    if (state.user.seen[id]) seenAtLoad[id] = true;
+  });
+  function orderUser() {
+    return { status: (state.user && state.user.status) || {}, seen: seenAtLoad };
+  }
   var TODAY = Date.now();
   var sb = null;
   var session = null;
@@ -507,7 +515,7 @@
     btn.textContent = open ? "收合篩選" : (n ? "篩選（" + n + "）" : "篩選");
   }
   function renderJobs() {
-    var list = sortJobs(filterJobs(state.jobs, currentFilters(), state.user, TODAY), $("sort").value, state.user);
+    var list = sortJobs(filterJobs(state.jobs, currentFilters(), state.user, TODAY), $("sort").value, orderUser());
     $("count").textContent = "符合 " + list.length + " 筆（共 " + state.jobs.length + " 筆）";
     $("list").innerHTML = list.length ? list.slice(0, state.shown).map(card).join("") : '<p class="empty">沒有符合條件的職缺，試著放寬篩選。</p>';
     $("more").hidden = list.length <= state.shown;
@@ -519,7 +527,7 @@
     var list = Object.keys(u.fav).map(function (url) {
       return byUrl[url] || Object.assign({ gone: true }, u.favJobs[url] || { url: url, title: url, company: "", category: "" });
     });
-    list = sortJobs(list, "date", u);
+    list = sortJobs(list, "date", orderUser());
     $("favList").innerHTML = list.length ? list.map(card).join("") : '<p class="empty">還沒有收藏。在職缺卡片右上角按 ☆ 就能收藏。</p>';
   }
   function renderOrgs() {
@@ -556,7 +564,7 @@
       if (m.ai) h += "<p>AI 篩選：模型 " + esc(m.ai.model) + "，處理 " + m.ai.processed + " 筆（輸入 " + m.ai.prompt_tokens + "、輸出 " + m.ai.completion_tokens + " tokens）。</p>";
     }
     h += "<h3>說明</h3><ul><li>「非正式・未查證」代表來自 PTT 或家教網的個人貼文，請自行確認對方身分，不要先付費或提供證件。</li>" +
-      "<li>「未看」代表還沒點開這則職缺的連結。點開後會記下來，排到已看過的後面；「不考慮」一律排在最後。NEW 則是這 7 天內新出現在清單裡的職缺。</li>" +
+      "<li>「未看」代表還沒點開這則職缺的連結。點開後標籤會拿掉，但這次瀏覽仍留在原來的位置，重新整理後才排到已看過的後面。「不考慮」會立刻排到最後。NEW 則是這 7 天內新出現在清單裡的職缺。</li>" +
       "<li>104 的日期是職缺「更新日」，不一定是首次刊登日；Yourator 只提供「一週內更新」這類相對時間。</li>" +
       "<li>" + (cloudOn()
         ? "登入後，收藏、狀態、備註與已看過會在你的裝置之間同步，這台裝置也會留一份離線備份。仍可到「我的收藏」匯出 JSON。"
@@ -575,10 +583,11 @@
     state.user.seen[url] = now;
     state.user.updated[url] = now;
     saveUser();
-    setTimeout(function () {
-      renderJobs();
-      if ($("tab-favs") && !$("tab-favs").hidden) renderFavs();
-    }, 0);
+    Array.prototype.forEach.call(document.querySelectorAll(".card"), function (art) {
+      if (art.getAttribute("data-url") !== url) return;
+      var badge = art.querySelector(".b.unseen");
+      if (badge) badge.remove();
+    });
   }
   function onCardEvent(e) {
     var el = e.target, art = el.closest && el.closest(".card[data-url]");
