@@ -65,7 +65,7 @@ def main(argv=None):
     # 改了設定檔後，舊的自動抓取職缺也重新套用排除／地區規則（初始人工整理的 seed 資料不動）
     before = len(existing)
     existing = [j for j in existing if j.get("seed") or (
-        not rules.excluded(j.get("title", ""), j.get("company", "")) and rules.location_ok(j.get("location", ""), j.get("remote")))]
+        not rules.excluded(j.get("title", ""), j.get("company", "")) and rules.location_ok(j.get("location", ""), j.get("remote"), j.get("onsiteDays", "")))]
     refiltered = before - len(existing)
     by_url = {j["url"]: j for j in existing}
     tc_keys = {key_tc(j) for j in existing}
