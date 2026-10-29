@@ -140,6 +140,23 @@ check("不考慮 stays last and unseen precedes seen", function () {
     "2026-10-01T00:00:00.000Z"
   );
   assert.strictEqual(newer.merged.seen.a, "2026-08-01T00:00:00.000Z");
+  var considerJobs = [
+    { url: "plain", title: "甲", company: "A", date: "2026-01-01", salary: "時薪 100" },
+    { url: "consider", title: "乙", company: "B", date: "2026-12-01", salary: "時薪 200" },
+    { url: "no", title: "丙", company: "C", date: "2026-11-01", salary: "時薪 900" }
+  ];
+  var considerUser = { fav: {}, status: { consider: "考慮", no: "不考慮" }, note: {}, favJobs: {}, seen: {}, updated: {} };
+  assert.deepStrictEqual(api.sortJobs(considerJobs, "date", considerUser).map(function (j) { return j.url; }), ["consider", "plain", "no"]);
+  assert.deepStrictEqual(api.filterJobs(considerJobs, { status: "考慮" }, considerUser, Date.now()).map(function (j) { return j.url; }), ["consider"]);
+  var round = api.userFromRows([row("consider", { status: "考慮", updated_at: "2026-04-01T00:00:00.000Z" })]);
+  assert.strictEqual(round.status.consider, "考慮");
+  assert.strictEqual(api.rowsFromUser(round)[0].status, "考慮");
+  var importedConsider = api.applyImport(
+    { fav: {}, status: {}, note: {}, favJobs: {}, seen: {}, updated: {} },
+    { fav: {}, status: { consider: "考慮" }, note: {}, favJobs: {}, seen: {} },
+    "2026-10-26T00:00:00.000Z"
+  );
+  assert.strictEqual(importedConsider.status.consider, "考慮");
 });
 
 check("first login uploads local jobs and keeps cloud-only jobs", function () {

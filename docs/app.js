@@ -5,7 +5,7 @@
   "use strict";
   var STORE_KEY = "jerry-job-tracker-v1";
   var PAGE = 60;
-  var STATUSES = ["想投", "已投", "面試", "不考慮"];
+  var STATUSES = ["考慮", "想投", "已投", "面試", "不考慮"];
   var CAT_ORDER = ["設計與生涯", "藝術與諮詢", "一般工讀", "家教伴讀"];
   var USER_MAPS = ["fav", "status", "note", "favJobs", "seen", "updated"];
 
@@ -470,7 +470,7 @@
     var opts = '<option value="">狀態…</option>' + STATUSES.map(function (s) {
       return '<option' + (s === st ? " selected" : "") + ">" + s + "</option>";
     }).join("");
-    return '<article class="card' + (st === "不考慮" ? " no" : "") + '" data-url="' + esc(url) + '">' +
+    return '<article class="card' + (st === "不考慮" ? " no" : st === "考慮" ? " consider" : "") + '" data-url="' + esc(url) + '">' +
       '<div class="head"><h3><a href="' + esc(safeUrl(url)) + '" target="_blank" rel="noopener">' + esc(j.title) + "</a></h3>" +
       '<button class="star' + (fav ? " on" : "") + '" data-act="fav" title="收藏" aria-label="收藏">' + (fav ? "★" : "☆") + "</button></div>" +
       '<div class="co">' + esc(j.company) + "</div>" +
@@ -624,9 +624,11 @@
       if (el.value) state.user.status[url] = el.value; else delete state.user.status[url];
       state.user.updated[url] = new Date().toISOString();
       var rejected = el.value === "不考慮";
+      var considering = el.value === "考慮";
       Array.prototype.forEach.call(document.querySelectorAll(".card"), function (node) {
         if (node.getAttribute("data-url") !== url) return;
         node.classList.toggle("no", rejected);
+        node.classList.toggle("consider", considering);
         var sel = node.querySelector('select[data-act="status"]');
         if (sel && sel !== el) sel.value = el.value;
       });

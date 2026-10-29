@@ -14,7 +14,7 @@ create table if not exists public.job_progress (
   primary key (user_id, job_id),
   constraint job_progress_job_id_len check (char_length(job_id) between 1 and 2048),
   constraint job_progress_status_check check (
-    status is null or status in ('想投', '已投', '面試', '不考慮')
+    status is null or status in ('考慮', '想投', '已投', '面試', '不考慮')
   ),
   constraint job_progress_note_len check (note is null or char_length(note) <= 20000)
 );
@@ -23,6 +23,10 @@ comment on table public.job_progress is
   '每位使用者的職缺進度。job_id 是職缺網址。fav_snapshot 是收藏當下的職缺卡片，方便職缺下架後仍看得到。seen_at 是使用者打開職缺連結的時間，空值代表還沒看過。';
 
 alter table public.job_progress add column if not exists seen_at timestamptz;
+
+alter table public.job_progress drop constraint if exists job_progress_status_check;
+alter table public.job_progress add constraint job_progress_status_check
+  check (status is null or status in ('考慮', '想投', '已投', '面試', '不考慮'));
 
 alter table public.job_progress enable row level security;
 alter table public.job_progress force row level security;
