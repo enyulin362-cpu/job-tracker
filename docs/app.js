@@ -391,19 +391,17 @@
   // ---------- 瀏覽器端 ----------
   var $ = function (id) { return document.getElementById(id); };
   var state = { jobs: [], orgs: [], meta: null, shown: PAGE, user: loadUser() };
-  // 排序用的「已看過」和「不考慮」都在這次開啟時拍下來。這次才改的，標籤和狀態立刻更新，位置留到重新整理。
+  // 排序和狀態篩選用的紀錄都在這次開啟時拍下來。這次改的狀態會立刻顯示，但篩選與分組留到重新整理。
   var seenAtLoad = {};
-  var noAtLoad = {};
+  var statusAtLoad = {};
   Object.keys((state.user && state.user.seen) || {}).forEach(function (id) {
     if (state.user.seen[id]) seenAtLoad[id] = true;
   });
   Object.keys((state.user && state.user.status) || {}).forEach(function (id) {
-    if (state.user.status[id] === "不考慮") noAtLoad[id] = true;
+    if (state.user.status[id]) statusAtLoad[id] = state.user.status[id];
   });
   function orderUser() {
-    var status = {};
-    Object.keys(noAtLoad).forEach(function (id) { status[id] = "不考慮"; });
-    return { status: status, seen: seenAtLoad };
+    return { status: statusAtLoad, seen: seenAtLoad, note: (state.user && state.user.note) || {} };
   }
   var TODAY = Date.now();
   var sb = null;
@@ -521,12 +519,7 @@
     btn.textContent = open ? "收合篩選" : (n ? "篩選（" + n + "）" : "篩選");
   }
   function renderJobs() {
-    var f = currentFilters();
-    var hideNo = f.hideNo;
-    f.hideNo = false;
-    var list = filterJobs(state.jobs, f, state.user, TODAY);
-    if (hideNo) list = list.filter(function (j) { return !noAtLoad[j.url]; });
-    list = sortJobs(list, $("sort").value, orderUser());
+    var list = sortJobs(filterJobs(state.jobs, currentFilters(), orderUser(), TODAY), $("sort").value, orderUser());
     $("count").textContent = "符合 " + list.length + " 筆（共 " + state.jobs.length + " 筆）";
     $("list").innerHTML = list.length ? list.slice(0, state.shown).map(card).join("") : '<p class="empty">沒有符合條件的職缺，試著放寬篩選。</p>';
     $("more").hidden = list.length <= state.shown;
@@ -575,7 +568,7 @@
       if (m.ai) h += "<p>AI 篩選：模型 " + esc(m.ai.model) + "，處理 " + m.ai.processed + " 筆（輸入 " + m.ai.prompt_tokens + "、輸出 " + m.ai.completion_tokens + " tokens）。</p>";
     }
     h += "<h3>說明</h3><ul><li>「非正式・未查證」代表來自 PTT 或家教網的個人貼文，請自行確認對方身分，不要先付費或提供證件。</li>" +
-      "<li>「未看」代表還沒點開這則職缺的連結。點開後標籤會拿掉，但這次瀏覽仍留在原來的位置，重新整理後才排到已看過的後面。標成「不考慮」也是一樣，外觀會立刻變淡，位置留到重新整理才沉到最後。NEW 則是這 7 天內新出現在清單裡的職缺。</li>" +
+      "<li>「未看」代表還沒點開這則職缺的連結。點開後標籤會拿掉，但這次瀏覽仍留在原來的位置，重新整理後才排到已看過的後面。改狀態（包含「不考慮」）也會立刻更新外觀，但用狀態篩選或「隱藏不考慮」時，仍依開啟頁面當下的狀態決定要不要留在清單裡，重新整理後才套用新狀態。NEW 則是這 7 天內新出現在清單裡的職缺。</li>" +
       "<li>104 的日期是職缺「更新日」，不一定是首次刊登日；Yourator 只提供「一週內更新」這類相對時間。</li>" +
       "<li>" + (cloudOn()
         ? "登入後，收藏、狀態、備註與已看過會在你的裝置之間同步，這台裝置也會留一份離線備份。仍可到「我的收藏」匯出 JSON。"
