@@ -133,8 +133,60 @@ class Rules:
     def excluded(self, title, company=""):
         return any_in(title, self.excl) or any_in(company, self.cfg["exclude"].get("service_keywords", []))
 
-    def location_ok(self, location, remote=False):
-        return remote or bool(any_in(location, self.loc))
+    def _has_any(self, text, words):
+        low = (text or "").lower()
+        return any(w and str(w).lower() in low for w in words)
+
+    def _physical_onsite(self, onsite):
+        """「未標示遠端（實體）」這類文字代表不是遠端，即使 remote 旗標為真。"""
+        t = onsite or ""
+        if "完全遠端" in t or "部分遠端" in t:
+            return False
+        if "未標示遠端" in t or "不接受遠端" in t:
+            return True
+        return "實體" in t and "遠端" not in t
+
+    def _remote_regardless(self, location, remote, onsite):
+        # 「未標示遠端（實體）」含有「遠端」二字，但不能當成遠端職缺。
+        if self._physical_onsite(onsite):
+            return self.is_remote(location)
+        text = f"{onsite or ''} {location or ''}"
+        if "完全遠端" in text or "部分遠端" in text:
+            return True
+        if self.is_remote(location, onsite):
+            return True
+        return bool(remote) and not self._physical_onsite(onsite)
+
+    def _has_taipei_city(self, location):
+        # 先拿掉「新北／New Taipei」，避免 New Taipei 裡的 Taipei 被當成台北市。
+        text = (location or "").replace("新北市", " ").replace("新北", " ")
+        low = text.lower().replace("new taipei", " ")
+        return ("台北" in text) or ("臺北" in text) or ("taipei" in low)
+
+    def _new_taipei_reject(self, location):
+        """新北職缺沒有允許的行政區就排除。同時寫了台北市的不排除。"""
+        locs = self.cfg.get("locations", {})
+        allow = locs.get("new_taipei_districts") or []
+        if not allow:
+            return False
+        others = locs.get("new_taipei_other_districts") or []
+        text = location or ""
+        low = text.lower()
+        is_nt = ("新北" in text) or ("new taipei" in low) or self._has_any(text, allow) or self._has_any(text, others)
+        if not is_nt:
+            return False
+        if self._has_any(text, allow):
+            return False
+        if self._has_taipei_city(text):
+            return False
+        return True
+
+    def location_ok(self, location, remote=False, onsite=""):
+        if self._remote_regardless(location, remote, onsite):
+            return True
+        if self._new_taipei_reject(location):
+            return False
+        return bool(any_in(location, self.loc))
 
     def is_intern(self, *texts):
         return any(any_in(t, self.intern_kw) for t in texts)
@@ -148,7 +200,7 @@ class Rules:
         if self.excluded(title, job.get("company", "")):
             return None
         remote = job.get("remote") or self.is_remote(title, job.get("onsiteDays", ""), job.get("location", ""))
-        if not self.location_ok(job.get("location", ""), remote):
+        if not self.location_ok(job.get("location", ""), remote, job.get("onsiteDays", "")):
             return None
         cat = job.get("category") or self.category(title, None)
         if not cat:
