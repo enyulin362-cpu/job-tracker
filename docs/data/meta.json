@@ -1,28 +1,28 @@
 {
- "lastRun": "2026-10-30T14:52:07+08:00",
- "total": 770,
- "newThisRun": 39,
- "removedOld": 1,
+ "lastRun": "2026-10-31T14:41:16+08:00",
+ "total": 812,
+ "newThisRun": 44,
+ "removedOld": 2,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 603,
-   "kept": 372,
-   "new": 26,
+   "fetched": 596,
+   "kept": 376,
+   "new": 38,
    "errors": [],
    "requests": 113,
-   "seconds": 141.0
+   "seconds": 139.0
   },
   "518": {
    "status": "成功",
-   "fetched": 163,
+   "fetched": 162,
    "kept": 10,
-   "new": 1,
+   "new": 0,
    "errors": [],
    "requests": 14,
-   "seconds": 17.2
+   "seconds": 17.3
   },
   "PTT": {
    "status": "失敗",
@@ -34,13 +34,13 @@
     "part-time: 403 Client Error: Forbidden for url: https://www.ptt.cc/bbs/part-time/index.html"
    ],
    "requests": 4,
-   "seconds": 7.8
+   "seconds": 7.7
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 50,
-   "kept": 27,
-   "new": 3,
+   "fetched": 49,
+   "kept": 26,
+   "new": 0,
    "errors": [],
    "requests": 19,
    "seconds": 23.2
@@ -49,7 +49,7 @@
    "status": "成功",
    "fetched": 66,
    "kept": 21,
-   "new": 1,
+   "new": 0,
    "errors": [],
    "requests": 13,
    "seconds": 15.5
@@ -57,11 +57,11 @@
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
-   "kept": 32,
-   "new": 8,
+   "kept": 35,
+   "new": 6,
    "errors": [],
    "requests": 4,
-   "seconds": 5.0
+   "seconds": 5.2
   }
  }
 }
