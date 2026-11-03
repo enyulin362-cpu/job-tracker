@@ -1,28 +1,28 @@
 {
- "lastRun": "2026-11-02T15:17:10+08:00",
- "total": 860,
- "newThisRun": 26,
- "removedOld": 0,
+ "lastRun": "2026-11-03T15:37:21+08:00",
+ "total": 905,
+ "newThisRun": 46,
+ "removedOld": 1,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 596,
-   "kept": 371,
-   "new": 20,
+   "fetched": 595,
+   "kept": 361,
+   "new": 32,
    "errors": [],
    "requests": 113,
-   "seconds": 139.8
+   "seconds": 145.6
   },
   "518": {
    "status": "成功",
-   "fetched": 164,
-   "kept": 9,
-   "new": 0,
+   "fetched": 165,
+   "kept": 13,
+   "new": 2,
    "errors": [],
    "requests": 14,
-   "seconds": 17.1
+   "seconds": 17.2
   },
   "PTT": {
    "status": "失敗",
@@ -34,40 +34,34 @@
     "part-time: 403 Client Error: Forbidden for url: https://www.ptt.cc/bbs/part-time/index.html"
    ],
    "requests": 4,
-   "seconds": 8.0
+   "seconds": 7.8
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 49,
-   "kept": 26,
-   "new": 0,
+   "fetched": 51,
+   "kept": 29,
+   "new": 2,
    "errors": [],
    "requests": 19,
-   "seconds": 23.6
+   "seconds": 23.2
   },
   "LinkedIn": {
-   "status": "部分成功",
-   "fetched": 38,
-   "kept": 11,
-   "new": 0,
-   "errors": [
-    "Product Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Product%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Illustrator: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Illustrator&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Design Intern: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Design%20Intern&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Career Consultant: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Career%20Consultant&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "設計實習生: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=%E8%A8%AD%E8%A8%88%E5%AF%A6%E7%BF%92%E7%94%9F&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
-   ],
-   "requests": 19,
-   "seconds": 34.0
+   "status": "成功",
+   "fetched": 64,
+   "kept": 22,
+   "new": 1,
+   "errors": [],
+   "requests": 13,
+   "seconds": 15.5
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
-   "kept": 31,
-   "new": 6,
+   "kept": 28,
+   "new": 9,
    "errors": [],
    "requests": 4,
-   "seconds": 4.8
+   "seconds": 5.0
   }
  }
 }
