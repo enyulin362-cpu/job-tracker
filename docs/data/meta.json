@@ -1,24 +1,24 @@
 {
- "lastRun": "2026-11-08T14:59:04+08:00",
- "total": 1046,
- "newThisRun": 17,
- "removedOld": 3,
+ "lastRun": "2026-11-09T15:42:49+08:00",
+ "total": 1065,
+ "newThisRun": 21,
+ "removedOld": 2,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 603,
-   "kept": 368,
-   "new": 13,
+   "fetched": 615,
+   "kept": 375,
+   "new": 14,
    "errors": [],
    "requests": 113,
-   "seconds": 140.3
+   "seconds": 140.4
   },
   "518": {
    "status": "成功",
-   "fetched": 162,
-   "kept": 15,
+   "fetched": 161,
+   "kept": 10,
    "new": 0,
    "errors": [],
    "requests": 14,
@@ -34,37 +34,34 @@
     "part-time: 403 Client Error: Forbidden for url: https://www.ptt.cc/bbs/part-time/index.html"
    ],
    "requests": 4,
-   "seconds": 7.9
+   "seconds": 8.0
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 53,
-   "kept": 28,
-   "new": 0,
+   "fetched": 55,
+   "kept": 29,
+   "new": 1,
    "errors": [],
    "requests": 19,
-   "seconds": 23.3
+   "seconds": 23.1
   },
   "LinkedIn": {
-   "status": "部分成功",
-   "fetched": 52,
+   "status": "成功",
+   "fetched": 61,
    "kept": 17,
    "new": 0,
-   "errors": [
-    "Graphic Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Graphic%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Tutor: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Tutor&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
-   ],
-   "requests": 16,
-   "seconds": 24.8
+   "errors": [],
+   "requests": 13,
+   "seconds": 15.7
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
-   "kept": 29,
-   "new": 4,
+   "kept": 28,
+   "new": 6,
    "errors": [],
    "requests": 4,
-   "seconds": 5.0
+   "seconds": 4.6
   }
  }
 }
