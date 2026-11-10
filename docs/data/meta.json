@@ -1,28 +1,30 @@
 {
- "lastRun": "2026-11-09T15:42:49+08:00",
- "total": 1065,
- "newThisRun": 21,
- "removedOld": 2,
+ "lastRun": "2026-11-10T16:03:38+08:00",
+ "total": 1101,
+ "newThisRun": 36,
+ "removedOld": 0,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
-   "status": "成功",
-   "fetched": 615,
-   "kept": 375,
-   "new": 14,
-   "errors": [],
-   "requests": 113,
-   "seconds": 140.4
+   "status": "部分成功",
+   "fetched": 600,
+   "kept": 360,
+   "new": 30,
+   "errors": [
+    "資料整理 工讀: 500 Server Error: Internal Server Error for url: https://www.104.com.tw/jobs/search/api/jobs?keyword=%E8%B3%87%E6%96%99%E6%95%B4%E7%90%86%20%E5%B7%A5%E8%AE%80&page=1&pagesize=30&order=1&area=6001001000,6001002000"
+   ],
+   "requests": 114,
+   "seconds": 156.5
   },
   "518": {
    "status": "成功",
-   "fetched": 161,
-   "kept": 10,
-   "new": 0,
+   "fetched": 163,
+   "kept": 12,
+   "new": 1,
    "errors": [],
    "requests": 14,
-   "seconds": 17.1
+   "seconds": 21.3
   },
   "PTT": {
    "status": "失敗",
@@ -34,34 +36,38 @@
     "part-time: 403 Client Error: Forbidden for url: https://www.ptt.cc/bbs/part-time/index.html"
    ],
    "requests": 4,
-   "seconds": 8.0
+   "seconds": 7.8
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 55,
-   "kept": 29,
-   "new": 1,
-   "errors": [],
-   "requests": 19,
-   "seconds": 23.1
-  },
-  "LinkedIn": {
-   "status": "成功",
-   "fetched": 61,
-   "kept": 17,
+   "fetched": 56,
+   "kept": 30,
    "new": 0,
    "errors": [],
-   "requests": 13,
-   "seconds": 15.7
+   "requests": 19,
+   "seconds": 23.2
+  },
+  "LinkedIn": {
+   "status": "部分成功",
+   "fetched": 45,
+   "kept": 15,
+   "new": 0,
+   "errors": [
+    "Graphic Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Graphic%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
+    "Research Assistant: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Research%20Assistant&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
+    "Tutor: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Tutor&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
+   ],
+   "requests": 17,
+   "seconds": 28.6
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
-   "kept": 28,
-   "new": 6,
+   "kept": 27,
+   "new": 5,
    "errors": [],
    "requests": 4,
-   "seconds": 4.6
+   "seconds": 4.4
   }
  }
 }
