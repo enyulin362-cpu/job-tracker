@@ -1,28 +1,28 @@
 {
- "lastRun": "2026-11-11T15:33:00+08:00",
- "total": 1134,
- "newThisRun": 33,
- "removedOld": 0,
+ "lastRun": "2026-11-12T16:00:59+08:00",
+ "total": 1176,
+ "newThisRun": 43,
+ "removedOld": 1,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 607,
-   "kept": 376,
-   "new": 25,
+   "fetched": 609,
+   "kept": 383,
+   "new": 35,
    "errors": [],
    "requests": 113,
-   "seconds": 139.3
+   "seconds": 145.3
   },
   "518": {
    "status": "成功",
-   "fetched": 162,
-   "kept": 11,
+   "fetched": 160,
+   "kept": 19,
    "new": 0,
    "errors": [],
    "requests": 14,
-   "seconds": 17.1
+   "seconds": 17.0
   },
   "PTT": {
    "status": "失敗",
@@ -34,37 +34,34 @@
     "part-time: 403 Client Error: Forbidden for url: https://www.ptt.cc/bbs/part-time/index.html"
    ],
    "requests": 4,
-   "seconds": 8.3
+   "seconds": 8.0
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 55,
-   "kept": 29,
-   "new": 0,
+   "fetched": 61,
+   "kept": 31,
+   "new": 2,
    "errors": [],
-   "requests": 19,
-   "seconds": 23.5
+   "requests": 20,
+   "seconds": 24.4
   },
   "LinkedIn": {
-   "status": "部分成功",
+   "status": "成功",
    "fetched": 64,
-   "kept": 22,
-   "new": 3,
-   "errors": [
-    "UI UX Intern: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=UI%20UX%20Intern&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "UI設計: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=UI%E8%A8%AD%E8%A8%88&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
-   ],
-   "requests": 16,
-   "seconds": 24.1
+   "kept": 17,
+   "new": 0,
+   "errors": [],
+   "requests": 15,
+   "seconds": 21.7
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
    "kept": 28,
-   "new": 5,
+   "new": 6,
    "errors": [],
    "requests": 4,
-   "seconds": 5.3
+   "seconds": 4.8
   }
  }
 }
