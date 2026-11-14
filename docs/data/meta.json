@@ -1,40 +1,37 @@
 {
- "lastRun": "2026-11-13T15:40:19+08:00",
- "total": 1213,
- "newThisRun": 37,
- "removedOld": 0,
+ "lastRun": "2026-11-14T15:25:19+08:00",
+ "total": 1245,
+ "newThisRun": 36,
+ "removedOld": 4,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 596,
-   "kept": 385,
-   "new": 36,
+   "fetched": 585,
+   "kept": 378,
+   "new": 21,
    "errors": [],
    "requests": 113,
-   "seconds": 141.3
+   "seconds": 139.4
   },
   "518": {
    "status": "成功",
    "fetched": 159,
-   "kept": 19,
-   "new": 1,
+   "kept": 16,
+   "new": 2,
    "errors": [],
    "requests": 14,
    "seconds": 17.2
   },
   "PTT": {
-   "status": "失敗",
-   "fetched": 0,
-   "kept": 0,
-   "new": 0,
-   "errors": [
-    "HomeTeach: 403 Client Error: Forbidden for url: https://www.ptt.cc/bbs/HomeTeach/index.html",
-    "part-time: 403 Client Error: Forbidden for url: https://www.ptt.cc/bbs/part-time/index.html"
-   ],
-   "requests": 4,
-   "seconds": 7.9
+   "status": "成功",
+   "fetched": 62,
+   "kept": 16,
+   "new": 10,
+   "errors": [],
+   "requests": 37,
+   "seconds": 43.9
   },
   "Yourator": {
    "status": "成功",
@@ -43,25 +40,22 @@
    "new": 0,
    "errors": [],
    "requests": 20,
-   "seconds": 24.3
+   "seconds": 24.2
   },
   "LinkedIn": {
-   "status": "部分成功",
-   "fetched": 61,
-   "kept": 19,
+   "status": "成功",
+   "fetched": 63,
+   "kept": 20,
    "new": 0,
-   "errors": [
-    "Visual Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Visual%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "設計實習生: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=%E8%A8%AD%E8%A8%88%E5%AF%A6%E7%BF%92%E7%94%9F&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
-   ],
-   "requests": 17,
-   "seconds": 27.9
+   "errors": [],
+   "requests": 13,
+   "seconds": 15.7
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
-   "kept": 30,
-   "new": 0,
+   "kept": 31,
+   "new": 3,
    "errors": [],
    "requests": 4,
    "seconds": 4.8
