@@ -1,37 +1,37 @@
 {
- "lastRun": "2026-11-14T15:25:19+08:00",
- "total": 1245,
- "newThisRun": 36,
- "removedOld": 4,
+ "lastRun": "2026-11-15T15:37:42+08:00",
+ "total": 1260,
+ "newThisRun": 15,
+ "removedOld": 0,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 585,
-   "kept": 378,
-   "new": 21,
+   "fetched": 586,
+   "kept": 375,
+   "new": 9,
    "errors": [],
    "requests": 113,
-   "seconds": 139.4
+   "seconds": 138.0
   },
   "518": {
    "status": "成功",
    "fetched": 159,
-   "kept": 16,
-   "new": 2,
+   "kept": 17,
+   "new": 1,
    "errors": [],
    "requests": 14,
    "seconds": 17.2
   },
   "PTT": {
    "status": "成功",
-   "fetched": 62,
-   "kept": 16,
-   "new": 10,
+   "fetched": 69,
+   "kept": 17,
+   "new": 1,
    "errors": [],
-   "requests": 37,
-   "seconds": 43.9
+   "requests": 28,
+   "seconds": 33.1
   },
   "Yourator": {
    "status": "成功",
@@ -44,12 +44,12 @@
   },
   "LinkedIn": {
    "status": "成功",
-   "fetched": 63,
-   "kept": 20,
-   "new": 0,
+   "fetched": 64,
+   "kept": 21,
+   "new": 1,
    "errors": [],
    "requests": 13,
-   "seconds": 15.7
+   "seconds": 15.6
   },
   "1111家教網": {
    "status": "成功",
@@ -58,7 +58,7 @@
    "new": 3,
    "errors": [],
    "requests": 4,
-   "seconds": 4.8
+   "seconds": 4.7
   }
  }
 }

@@ -1,6 +1,304 @@
 {
- "updated": "2026-11-14T15:25:19+08:00",
+ "updated": "2026-11-15T15:37:42+08:00",
  "jobs": [
+  {
+   "category": "一般工讀",
+   "title": "蝦皮內勤 行政工讀 生 ✅坐辦公室✅長期穩定✅職缺超多-WN",
+   "company": "材霈有限公司",
+   "location": "台北市-信義區",
+   "type": "未提供",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "時薪 196 元以上",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "518",
+   "url": "https://www.518.com.tw/job-Lzb73b.html",
+   "firstSeen": "2026-10-26",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "快遞高手.守區. 工讀 生",
+   "company": "巨邦事業有限公司",
+   "location": "新北市-三重區",
+   "type": "未提供",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "月薪 30,000 元以上",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "518",
+   "url": "https://www.518.com.tw/job-GxjK4P.html",
+   "firstSeen": "2026-11-03",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "國文科家教老師",
+   "company": "東弼",
+   "location": "台北市中山區",
+   "type": "家教",
+   "experience": "不拘",
+   "workDays": "每週至少 2～3 天",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 400~800",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8v3bs",
+   "firstSeen": "2026-10-25",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "家教媒合平台",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "英文科家教老師（劉赫團隊）",
+   "company": "東弼資訊事業",
+   "location": "台北市內湖區",
+   "type": "家教",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "部分遠端，視家教需求",
+   "salary": "時薪400~800",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8qo6h",
+   "firstSeen": "2026-10-25",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "社會科家教老師（Hank 團隊）",
+   "company": "東弼資訊事業有限公司",
+   "location": "台北市中山區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 400~800",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8v3c4",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "英文科家教老師（Hank團隊）",
+   "company": "東弼資訊事業有限公司",
+   "location": "台北市內湖區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 400~800",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8v3bl",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "自然科家教老師（劉赫團隊）",
+   "company": "東弼資訊事業有限公司",
+   "location": "台北市文山區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "部分遠端",
+   "salary": "時薪 400~800",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8qo6q",
+   "firstSeen": "2026-11-08",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "數學科家教老師（Hank 團隊）",
+   "company": "東弼資訊事業",
+   "location": "台北市內湖區",
+   "type": "家教",
+   "experience": "不拘",
+   "workDays": "每週至少 2～3 天",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪400~800",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8v3bz",
+   "firstSeen": "2026-10-25",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "英文科家教老師（Heisen 團隊）",
+   "company": "東弼資訊事業有限公司",
+   "location": "台北市內湖區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 200~800",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8q8e4",
+   "firstSeen": "2026-11-02",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "助理顧問-全職-台北辦公室",
+   "company": "SIUK_招手留遊學諮商有限公司",
+   "location": "台北市大安區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪 30,000~42,000",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/51yux",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "外勤助理",
+   "company": "超急資訊股份有限公司",
+   "location": "台北市中正區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪 40,000~50,000",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/94k9q",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "藝術與諮詢",
+   "title": "網站／平面美術設計助理",
+   "company": "GaragePlay",
+   "location": "台北市大同區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "週休二日",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪 30,000~35,000",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8n72o",
+   "firstSeen": "2026-10-25",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "遊戲公司美術助理",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "實習老師",
+   "company": "牛津橋美語短期補習班",
+   "location": "新北市新店區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪32,000~35,000元",
+   "date": "2026-11-15",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8q2fu",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": true,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "北投熱炒店晚班 工讀",
+   "company": "海口味熱炒",
+   "location": "台北市-北投區",
+   "type": "未提供",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "時薪 220 至 250 元",
+   "date": null,
+   "dateText": "",
+   "source": "518",
+   "url": "https://www.518.com.tw/job-GQJdz7.html",
+   "firstSeen": "2026-11-15",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
   {
    "category": "藝術與諮詢",
    "title": "【電商營運】電商美編平面設計專員",
@@ -21,7 +319,7 @@
    "informal": false,
    "fitNote": "電商美編入門",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -42,7 +340,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -64,7 +362,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -86,7 +384,7 @@
    "informal": false,
    "fitNote": "部分可遠端；東弼常刊登多則相似家教缺",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -107,7 +405,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -128,7 +426,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -149,7 +447,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -170,7 +468,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -192,7 +490,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -213,7 +511,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -234,7 +532,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -255,7 +553,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -276,7 +574,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -297,7 +595,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -318,7 +616,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -339,7 +637,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -360,7 +658,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -385,27 +683,6 @@
   },
   {
    "category": "一般工讀",
-   "title": "蝦皮內勤 行政工讀 生 ✅坐辦公室✅長期穩定✅職缺超多-WN",
-   "company": "材霈有限公司",
-   "location": "台北市-信義區",
-   "type": "未提供",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未提供",
-   "salary": "時薪 196 元以上",
-   "date": "2026-11-13",
-   "dateText": "",
-   "source": "518",
-   "url": "https://www.518.com.tw/job-Lzb73b.html",
-   "firstSeen": "2026-10-26",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "一般工讀",
    "title": "客服 工讀 生(WORLD GYM台北新店店)",
    "company": "香港商世界健身事業有限公司台灣分公司",
    "location": "新北市-新店區",
@@ -414,7 +691,7 @@
    "workDays": "未提供",
    "onsiteDays": "未提供",
    "salary": "時薪 196 元",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "dateText": "",
    "source": "518",
    "url": "https://www.518.com.tw/job-N6nDa7.html",
@@ -423,7 +700,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -435,7 +712,7 @@
    "workDays": "未提供",
    "onsiteDays": "未提供",
    "salary": "時薪 196 元",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "dateText": "",
    "source": "518",
    "url": "https://www.518.com.tw/job-NPabpE.html",
@@ -444,7 +721,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -456,7 +733,7 @@
    "workDays": "未提供",
    "onsiteDays": "未提供",
    "salary": "時薪 196 元",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "dateText": "",
    "source": "518",
    "url": "https://www.518.com.tw/job-GQokK6.html",
@@ -465,7 +742,325 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "客服 工讀 生(WORLD GYM板橋府中店)",
+   "company": "香港商世界健身事業有限公司台灣分公司",
+   "location": "新北市-板橋區",
+   "type": "未提供",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "時薪 196 元",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "518",
+   "url": "https://www.518.com.tw/job-GQokl8.html",
+   "firstSeen": "2026-10-27",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "藝術與諮詢",
+   "title": "Kiki.co 服裝品牌 【 全職平面設計師 】",
+   "company": "其其谷服飾設計有限公司",
+   "location": "台北市大安區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "週休二日",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪35,000~45,000元",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/7n998",
+   "firstSeen": "2026-11-13",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "台北市 - 國中小伴讀人員 (信義、大安、中正、文山)",
+   "company": "海涵文化教育",
+   "location": "台北市大安區",
+   "type": "伴讀",
+   "experience": "不拘",
+   "workDays": "一週一次，每次 1.5 小時（19:00–20:30 或假日）",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪450~550",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/87h41",
+   "firstSeen": "2026-10-16",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "台北市 - 國中小伴讀人員 (松山、中山、大同、萬華)",
+   "company": "海涵文化教育",
+   "location": "台北市中山區",
+   "type": "伴讀",
+   "experience": "不拘",
+   "workDays": "一週一次，每次 1.5 小時（19:00–20:30 或假日）",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪450~550",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/87h3y",
+   "firstSeen": "2026-10-16",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "新北市 - 國中小伴讀人員 (三重、新莊、板橋)",
+   "company": "海涵文化教育",
+   "location": "新北市板橋區",
+   "type": "伴讀",
+   "experience": "不拘",
+   "workDays": "一週一次，每次 1.5 小時（19:00–20:30 或假日）",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪400",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/87h3g",
+   "firstSeen": "2026-10-16",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "台北市 - 國中小伴讀人員 (內湖、南港)",
+   "company": "海涵文化教育有限公司",
+   "location": "台北市內湖區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "一週一次，一次1.5小時",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 400",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/87h3x",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "台北市 - 國中小伴讀人員 (北投、士林)",
+   "company": "海涵文化教育有限公司",
+   "location": "台北市士林區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "一週一次，一次1.5小時",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 450~550",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/87h3v",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "新北市 - 國中小伴讀人員 (永和、中和、土城)",
+   "company": "海涵文化教育有限公司",
+   "location": "新北市中和區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "一週一次，一次1.5小時",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 450~550",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/87h3o",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "Intern (LiDAR/KPS assistant)",
+   "company": "Siemens",
+   "location": "台北",
+   "type": "實習",
+   "experience": "入門／實習（LinkedIn 篩選）",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "未提供",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "LinkedIn",
+   "url": "https://www.linkedin.com/jobs/view/4455433314",
+   "firstSeen": "2026-10-26",
+   "remote": false,
+   "intern": true,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "診所助理",
+   "company": "夏凱納生活診所",
+   "location": "台北市大同區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "待遇面議",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/7m76a",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "重灌筆電工讀生300/h",
+   "company": "PTT 網友 Lamere",
+   "location": "台北/個人",
+   "type": "工讀",
+   "experience": "未提供",
+   "workDays": "預定排班方式：每周1-3次",
+   "onsiteDays": "未提供",
+   "salary": "300/h",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "PTT part-time",
+   "url": "https://www.ptt.cc/bbs/part-time/M.1794663985.A.5B7.html",
+   "firstSeen": "2026-11-15",
+   "remote": false,
+   "intern": false,
+   "informal": true,
+   "fitNote": "非正式貼文，未經查證",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "設計與生涯",
+   "title": "User Research & Product Design Expert",
+   "company": "Ruijie Cybrey",
+   "location": "台北",
+   "type": "未提供",
+   "experience": "入門／實習（LinkedIn 篩選）",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "未提供",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "LinkedIn",
+   "url": "https://www.linkedin.com/jobs/view/4489899237",
+   "firstSeen": "2026-11-15",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "書法家教（國小低年級(1~2)）",
+   "company": "1111家教網 家長案件",
+   "location": "新北市土城區",
+   "type": "家教",
+   "experience": "未提供",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "時薪 400 ~ 600",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "1111家教網",
+   "url": "https://tutor.1111.com.tw/case/caseDetail.asp?CNo=5827661089883381439618824823284813965355858568",
+   "firstSeen": "2026-11-15",
+   "remote": false,
+   "intern": false,
+   "informal": true,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "體能訓練家教（國小高年級(5~6)）",
+   "company": "1111家教網 家長案件",
+   "location": "台北市大安區",
+   "type": "家教",
+   "experience": "未提供",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "時薪 196 ~ 800",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "1111家教網",
+   "url": "https://tutor.1111.com.tw/case/caseDetail.asp?CNo=1367351429573661989557582987482497864865676512",
+   "firstSeen": "2026-11-15",
+   "remote": false,
+   "intern": false,
+   "informal": true,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "英文家教（幼稚園中班）",
+   "company": "1111家教網 家長案件",
+   "location": "台北市中山區",
+   "type": "家教",
+   "experience": "未提供",
+   "workDays": "未提供",
+   "onsiteDays": "未提供",
+   "salary": "時薪 300 ~ 500",
+   "date": "2026-11-14",
+   "dateText": "",
+   "source": "1111家教網",
+   "url": "https://tutor.1111.com.tw/case/caseDetail.asp?CNo=3277251239823111839566149225343164871301570639",
+   "firstSeen": "2026-11-15",
+   "remote": false,
+   "intern": false,
+   "informal": true,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -507,7 +1102,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -528,7 +1123,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -549,7 +1144,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -570,7 +1165,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -592,7 +1187,7 @@
    "informal": false,
    "fitNote": "美術助理入門",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -613,7 +1208,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -635,7 +1230,7 @@
    "informal": false,
    "fitNote": "研究型工讀",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -656,7 +1251,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -677,7 +1272,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -698,7 +1293,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -719,7 +1314,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -740,7 +1335,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -782,7 +1377,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -804,7 +1399,7 @@
    "informal": false,
    "fitNote": "家教媒合，多科",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -825,7 +1420,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -846,7 +1441,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -889,7 +1484,7 @@
    "informal": false,
    "fitNote": "UI/UX 實習",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -910,7 +1505,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -932,28 +1527,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "一般工讀",
-   "title": "客服 工讀 生(WORLD GYM板橋府中店)",
-   "company": "香港商世界健身事業有限公司台灣分公司",
-   "location": "新北市-板橋區",
-   "type": "未提供",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未提供",
-   "salary": "時薪 196 元",
-   "date": "2026-11-13",
-   "dateText": "",
-   "source": "518",
-   "url": "https://www.518.com.tw/job-GQokl8.html",
-   "firstSeen": "2026-10-27",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -974,7 +1548,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -995,7 +1569,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1016,7 +1590,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1037,7 +1611,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -1058,7 +1632,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1080,7 +1654,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -1101,7 +1675,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1143,7 +1717,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1164,7 +1738,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1185,7 +1759,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1206,7 +1780,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1227,7 +1801,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1270,7 +1844,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1354,7 +1928,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1375,7 +1949,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -1417,7 +1991,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1438,7 +2012,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -1459,7 +2033,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1480,7 +2054,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -1523,7 +2097,7 @@
    "informal": false,
    "fitNote": "全遠端插畫",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1544,7 +2118,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1607,7 +2181,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1628,7 +2202,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1649,7 +2223,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1691,7 +2265,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1733,7 +2307,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -1754,7 +2328,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -1775,7 +2349,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -1842,6 +2416,112 @@
   },
   {
    "category": "一般工讀",
+   "title": "一般行政",
+   "company": "福一建設股份有限公司",
+   "location": "台北市信義區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪 32,000",
+   "date": "2026-11-13",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/95nsi",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "設計與生涯",
+   "title": "產品企劃助理",
+   "company": "正暉",
+   "location": "台北市南港區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "週休二日",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "面議",
+   "date": "2026-11-13",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/7jnom",
+   "firstSeen": "2026-10-19",
+   "remote": false,
+   "intern": false,
+   "informal": false,
+   "fitNote": "產品企劃助理",
+   "seed": true,
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "旅遊 QC 實習生 Tour QC Intern",
+   "company": "綺樂旅行社股份有限公司",
+   "location": "台北市中山區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "一週排班 3-5 天，每日可彈性選擇 4-6 小時排班",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪200元",
+   "date": "2026-11-13",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/95ftb",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": true,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "藝術與諮詢",
+   "title": "【台北】幸福關係諮詢顧問/無須陌生開發/保障底薪+高額獎金-公司提供名單",
+   "company": "flowgalaxy想想交友_星球時尚有限公司",
+   "location": "台北市中山區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪35,000~185,000元",
+   "date": "2026-11-13",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/7xk7f",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "地理 歷史 公民 社會科家教老師",
+   "company": "AmazingTalker_香港商驚奇學習有限公司台灣分公司",
+   "location": "新北市新莊區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "完全遠端",
+   "salary": "時薪 450~1,500",
+   "date": "2026-11-13",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/7pc9w",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
    "title": "客服 工讀 生(WORLD GYM新莊店)",
    "company": "香港商世界健身事業有限公司台灣分公司",
    "location": "新北市-新莊區",
@@ -1902,7 +2582,7 @@
    "informal": false,
    "fitNote": "諮詢顧問助理",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -1923,7 +2603,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -1965,7 +2645,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2007,7 +2687,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -2028,7 +2708,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -2091,7 +2771,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2155,7 +2835,7 @@
    "informal": false,
    "fitNote": "接案插畫",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -2177,7 +2857,7 @@
    "informal": false,
    "fitNote": "產品 × 設計實習",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2198,7 +2878,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2219,7 +2899,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2240,7 +2920,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -2282,7 +2962,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2367,7 +3047,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2409,7 +3089,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -2430,7 +3110,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -2451,7 +3131,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -2473,7 +3153,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -2536,7 +3216,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2578,7 +3258,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2620,7 +3300,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2642,7 +3322,7 @@
    "informal": false,
    "fitNote": "經濟研究計畫助理",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2663,7 +3343,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -2684,7 +3364,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -2705,7 +3385,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2726,7 +3406,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2768,7 +3448,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -2852,7 +3532,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2873,7 +3553,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2894,7 +3574,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2936,7 +3616,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -2957,7 +3637,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -3045,27 +3725,6 @@
   },
   {
    "category": "一般工讀",
-   "title": "快遞高手.守區. 工讀 生",
-   "company": "巨邦事業有限公司",
-   "location": "新北市-三重區",
-   "type": "未提供",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未提供",
-   "salary": "月薪 30,000 元以上",
-   "date": "2026-11-12",
-   "dateText": "",
-   "source": "518",
-   "url": "https://www.518.com.tw/job-GxjK4P.html",
-   "firstSeen": "2026-11-03",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-13"
-  },
-  {
-   "category": "一般工讀",
    "title": "85度三重自強店-晚班正職/ 工讀",
    "company": "85度C_美源有限公司",
    "location": "新北市-三重區",
@@ -3104,7 +3763,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3126,7 +3785,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3147,7 +3806,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3169,7 +3828,7 @@
    "informal": false,
    "fitNote": "遠端；實為依教材教插畫的教學工作",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -3190,7 +3849,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3211,7 +3870,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3232,7 +3891,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3316,7 +3975,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3337,7 +3996,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3358,7 +4017,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3379,7 +4038,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3400,7 +4059,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3421,7 +4080,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3442,7 +4101,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3463,7 +4122,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3506,7 +4165,7 @@
    "informal": false,
    "fitNote": "電商後台行政（非門市）",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3527,7 +4186,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3570,7 +4229,7 @@
    "informal": false,
    "fitNote": "英文家教",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3592,7 +4251,7 @@
    "informal": false,
    "fitNote": "顧問助理，明寫無經驗可",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3613,7 +4272,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3634,7 +4293,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -3655,7 +4314,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -3718,7 +4377,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3761,7 +4420,7 @@
    "informal": false,
    "fitNote": "平面設計助理",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3783,7 +4442,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3804,7 +4463,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -3846,7 +4505,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -3909,7 +4568,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3951,7 +4610,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -3993,7 +4652,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -4057,7 +4716,7 @@
    "informal": false,
    "fitNote": "全遠端線上家教",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -4078,7 +4737,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -4099,7 +4758,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4141,7 +4800,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4162,7 +4821,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4183,7 +4842,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4204,7 +4863,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -4225,7 +4884,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4246,7 +4905,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4267,7 +4926,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -4330,7 +4989,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4372,7 +5031,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -4435,7 +5094,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4561,7 +5220,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4582,7 +5241,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -4604,7 +5263,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4625,7 +5284,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -4646,7 +5305,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4667,7 +5326,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4709,7 +5368,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -4730,7 +5389,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4772,7 +5431,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4814,7 +5473,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4835,7 +5494,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -4856,7 +5515,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4877,7 +5536,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4919,7 +5578,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4940,7 +5599,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4961,7 +5620,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -4982,7 +5641,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5150,7 +5809,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5213,7 +5872,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5234,7 +5893,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5276,7 +5935,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -5297,7 +5956,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5318,7 +5977,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5339,7 +5998,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5360,7 +6019,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5381,7 +6040,133 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "中和區銷售中心工讀生",
+   "company": "甲桂林廣告股份有限公司",
+   "location": "新北市中和區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "夜間部學生可，但週六、日需上班，平日排休",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪196元",
+   "date": "2026-11-11",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8csj5",
+   "firstSeen": "2026-11-08",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "實習律師",
+   "company": "成碩法律事務所",
+   "location": "台北市松山區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪40,000元",
+   "date": "2026-11-11",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8jv2u",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": true,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "家教伴讀",
+   "title": "北區-兼職晚班安親(美語）課輔工讀生(永和/近網溪國小)",
+   "company": "徐薇文化事業有限公司",
+   "location": "新北市永和區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 200~240",
+   "date": "2026-11-11",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/8xdfy",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "網拍助理",
+   "company": "Lilianlala shop_湘惟有限公司",
+   "location": "新北市中和區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪200~210元",
+   "date": "2026-11-11",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/88mik",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "藝術與諮詢",
+   "title": "美編設計人員 【按件計酬者請勿投遞】",
+   "company": "永信旅行社股份有限公司",
+   "location": "台北市中山區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "週休二日",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪33,000~36,000元",
+   "date": "2026-11-11",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/7s1it",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "一般工讀",
+   "title": "花博展會現場問卷推廣工讀生11/19~11/21(薪資當日結算)",
+   "company": "嘉合星智能股份有限公司",
+   "location": "台北市中山區",
+   "type": "兼職／工讀",
+   "experience": "不拘",
+   "workDays": "Meet Taipei 展會現場問卷推廣／外場訪員（時薪 220 元／可彈性排班）",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪220元",
+   "date": "2026-11-11",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/97ieq",
+   "firstSeen": "2026-11-15",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5403,7 +6188,7 @@
    "informal": false,
    "fitNote": "市調研究，與 UX 研究相關",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -5425,7 +6210,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5447,7 +6232,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5468,7 +6253,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -5489,7 +6274,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5510,7 +6295,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5531,7 +6316,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5552,7 +6337,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -5573,7 +6358,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5594,7 +6379,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -5615,7 +6400,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5636,7 +6421,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5657,7 +6442,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5678,7 +6463,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5699,7 +6484,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5720,7 +6505,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5741,7 +6526,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5762,7 +6547,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -5784,7 +6569,7 @@
    "informal": false,
    "fitNote": "職涯/招募方向；偏業務性質",
    "seed": true,
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -5805,7 +6590,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -5826,7 +6611,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5889,7 +6674,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -5910,7 +6695,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -6036,7 +6821,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -6058,7 +6843,7 @@
    "informal": false,
    "fitNote": "全遠端教學型，需產品設計基礎",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6100,7 +6885,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6121,7 +6906,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -6143,7 +6928,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6164,7 +6949,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -6185,7 +6970,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -6249,7 +7034,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6291,7 +7076,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6333,7 +7118,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -6354,7 +7139,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6417,7 +7202,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6459,7 +7244,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -6501,7 +7286,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6522,7 +7307,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -6606,7 +7391,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6627,7 +7412,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -6648,7 +7433,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6669,7 +7454,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -6691,7 +7476,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6712,7 +7497,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6754,7 +7539,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -6964,7 +7749,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -6985,7 +7770,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -7111,7 +7896,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7174,7 +7959,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7216,7 +8001,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7237,7 +8022,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -7321,7 +8106,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7342,7 +8127,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -7384,7 +8169,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7447,7 +8232,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -7468,7 +8253,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7490,7 +8275,7 @@
    "informal": false,
    "fitNote": "研究助理",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -7512,7 +8297,7 @@
    "informal": false,
    "fitNote": "顧問助理",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7533,7 +8318,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -7554,7 +8339,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -7596,7 +8381,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-11"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7638,7 +8423,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7659,7 +8444,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -7786,7 +8571,7 @@
    "informal": false,
    "fitNote": "辦公室行政",
    "seed": true,
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -7807,7 +8592,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -7850,7 +8635,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7871,7 +8656,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7913,7 +8698,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7934,7 +8719,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -7956,7 +8741,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -7999,7 +8784,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8020,7 +8805,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -8042,7 +8827,7 @@
    "informal": false,
    "fitNote": "產品營運實習",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8063,7 +8848,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -8084,7 +8869,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -8126,7 +8911,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8147,7 +8932,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8168,7 +8953,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -8273,7 +9058,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8294,7 +9079,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -8315,7 +9100,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8357,7 +9142,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8378,7 +9163,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8399,7 +9184,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -8504,7 +9289,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8525,7 +9310,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8546,7 +9331,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-12"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -8588,7 +9373,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8714,7 +9499,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8777,7 +9562,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -8840,7 +9625,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8861,7 +9646,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -8903,7 +9688,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -8924,7 +9709,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -8945,93 +9730,92 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
-   "category": "家教伴讀",
-   "title": "國文科家教老師",
-   "company": "東弼",
-   "location": "台北市中山區",
-   "type": "家教",
+   "category": "藝術與諮詢",
+   "title": "視覺設計師",
+   "company": "夢幻互娛國際有限公司",
+   "location": "台北市信義區",
+   "type": "正職",
    "experience": "不拘",
-   "workDays": "每週至少 2～3 天",
+   "workDays": "週休二日",
    "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 400~800",
-   "date": "2026-11-08",
+   "salary": "月薪50,000~100,000元",
+   "date": "2026-11-09",
    "dateText": "",
    "source": "104",
-   "url": "https://www.104.com.tw/job/8v3bs",
-   "firstSeen": "2026-10-25",
+   "url": "https://www.104.com.tw/job/8i673",
+   "firstSeen": "2026-11-06",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "藝術與諮詢",
+   "title": "Graphic Design Intern（平面設計實習生）",
+   "company": "玩美行動",
+   "location": "台北市內湖區",
+   "type": "實習",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪205~225",
+   "date": "2026-11-09",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/94wkv",
+   "firstSeen": "2026-10-20",
    "remote": false,
-   "intern": false,
+   "intern": true,
    "informal": false,
-   "fitNote": "家教媒合平台",
+   "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
-   "category": "家教伴讀",
-   "title": "英文科家教老師（劉赫團隊）",
-   "company": "東弼資訊事業",
-   "location": "台北市內湖區",
-   "type": "家教",
+   "category": "一般工讀",
+   "title": "工讀生",
+   "company": "財團法人台灣產業服務基金會",
+   "location": "台北市大安區",
+   "type": "兼職／工讀",
    "experience": "不拘",
    "workDays": "未提供",
-   "onsiteDays": "部分遠端，視家教需求",
-   "salary": "時薪400~800",
-   "date": "2026-11-08",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "時薪 196",
+   "date": "2026-11-09",
    "dateText": "",
    "source": "104",
-   "url": "https://www.104.com.tw/job/8qo6h",
-   "firstSeen": "2026-10-25",
+   "url": "https://www.104.com.tw/job/82xu9",
+   "firstSeen": "2026-10-26",
    "remote": true,
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
-   "category": "家教伴讀",
-   "title": "社會科家教老師（Hank 團隊）",
-   "company": "東弼資訊事業有限公司",
+   "category": "一般工讀",
+   "title": "【校園實習企劃】存匯櫃台實習人員",
+   "company": "華泰商業銀行股份有限公司",
    "location": "台北市中山區",
-   "type": "兼職／工讀",
+   "type": "正職",
    "experience": "不拘",
-   "workDays": "未提供",
+   "workDays": "◎實習時間：週一至週五08:40~17:30(可配合全時段實習者優先錄取)",
    "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 400~800",
-   "date": "2026-11-08",
+   "salary": "月薪32,000元以上",
+   "date": "2026-11-09",
    "dateText": "",
    "source": "104",
-   "url": "https://www.104.com.tw/job/8v3c4",
-   "firstSeen": "2026-10-26",
+   "url": "https://www.104.com.tw/job/7xa9e",
+   "firstSeen": "2026-11-15",
    "remote": true,
-   "intern": false,
+   "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "英文科家教老師（Hank團隊）",
-   "company": "東弼資訊事業有限公司",
-   "location": "台北市內湖區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 400~800",
-   "date": "2026-11-08",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8v3bl",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -9073,7 +9857,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -9094,7 +9878,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -9115,71 +9899,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "自然科家教老師（劉赫團隊）",
-   "company": "東弼資訊事業有限公司",
-   "location": "台北市文山區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "部分遠端",
-   "salary": "時薪 400~800",
-   "date": "2026-11-08",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8qo6q",
-   "firstSeen": "2026-11-08",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "數學科家教老師（Hank 團隊）",
-   "company": "東弼資訊事業",
-   "location": "台北市內湖區",
-   "type": "家教",
-   "experience": "不拘",
-   "workDays": "每週至少 2～3 天",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪400~800",
-   "date": "2026-11-08",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8v3bz",
-   "firstSeen": "2026-10-25",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "seed": true,
-   "lastSeen": "2026-11-10"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "英文科家教老師（Heisen 團隊）",
-   "company": "東弼資訊事業有限公司",
-   "location": "台北市內湖區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 200~800",
-   "date": "2026-11-08",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8q8e4",
-   "firstSeen": "2026-11-02",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -9201,7 +9921,7 @@
    "informal": false,
    "fitNote": "時薪高，需英文程度",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -9222,7 +9942,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -9243,7 +9963,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -9307,7 +10027,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -9370,7 +10090,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -9391,7 +10111,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -9412,7 +10132,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -9496,7 +10216,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -9539,7 +10259,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -9669,27 +10389,6 @@
   },
   {
    "category": "藝術與諮詢",
-   "title": "Kiki.co 服裝品牌 【 全職平面設計師 】",
-   "company": "其其谷服飾設計有限公司",
-   "location": "台北市大安區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "週休二日",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪35,000~45,000元",
-   "date": "2026-11-07",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/7n998",
-   "firstSeen": "2026-11-13",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "藝術與諮詢",
    "title": "設計助理",
    "company": "宸逸全屋定制股份有限公司",
    "location": "新北市新莊區",
@@ -9708,27 +10407,6 @@
    "informal": false,
    "fitNote": "",
    "lastSeen": "2026-11-11"
-  },
-  {
-   "category": "一般工讀",
-   "title": "一般行政",
-   "company": "福一建設股份有限公司",
-   "location": "台北市信義區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪 32,000",
-   "date": "2026-11-06",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/95nsi",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-09"
   },
   {
    "category": "家教伴讀",
@@ -9833,7 +10511,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -9875,7 +10553,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -9896,7 +10574,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -9917,7 +10595,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -9938,7 +10616,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -10064,7 +10742,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -10127,7 +10805,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -10149,7 +10827,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -10170,7 +10848,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -10275,7 +10953,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -10422,7 +11100,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -10527,7 +11205,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -10548,7 +11226,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -10569,7 +11247,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -10758,7 +11436,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -10779,7 +11457,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -10800,7 +11478,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -10821,7 +11499,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -10990,7 +11668,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -11033,7 +11711,7 @@
    "informal": false,
    "fitNote": "最貼近「生涯發展」的職缺",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -11096,7 +11774,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -11201,7 +11879,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -11369,7 +12047,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -11621,7 +12299,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -11789,7 +12467,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -11831,7 +12509,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -11916,7 +12594,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -12048,135 +12726,6 @@
   },
   {
    "category": "家教伴讀",
-   "title": "台北市 - 國中小伴讀人員 (信義、大安、中正、文山)",
-   "company": "海涵文化教育",
-   "location": "台北市大安區",
-   "type": "伴讀",
-   "experience": "不拘",
-   "workDays": "一週一次，每次 1.5 小時（19:00–20:30 或假日）",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪450~550",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/87h41",
-   "firstSeen": "2026-10-16",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "seed": true,
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "台北市 - 國中小伴讀人員 (松山、中山、大同、萬華)",
-   "company": "海涵文化教育",
-   "location": "台北市中山區",
-   "type": "伴讀",
-   "experience": "不拘",
-   "workDays": "一週一次，每次 1.5 小時（19:00–20:30 或假日）",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪450~550",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/87h3y",
-   "firstSeen": "2026-10-16",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "seed": true,
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "新北市 - 國中小伴讀人員 (三重、新莊、板橋)",
-   "company": "海涵文化教育",
-   "location": "新北市板橋區",
-   "type": "伴讀",
-   "experience": "不拘",
-   "workDays": "一週一次，每次 1.5 小時（19:00–20:30 或假日）",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪400",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/87h3g",
-   "firstSeen": "2026-10-16",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "seed": true,
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "台北市 - 國中小伴讀人員 (內湖、南港)",
-   "company": "海涵文化教育有限公司",
-   "location": "台北市內湖區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "一週一次，一次1.5小時",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 400",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/87h3x",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "台北市 - 國中小伴讀人員 (北投、士林)",
-   "company": "海涵文化教育有限公司",
-   "location": "台北市士林區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "一週一次，一次1.5小時",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 450~550",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/87h3v",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "新北市 - 國中小伴讀人員 (永和、中和、土城)",
-   "company": "海涵文化教育有限公司",
-   "location": "新北市中和區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "一週一次，一次1.5小時",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 450~550",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/87h3o",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "家教伴讀",
    "title": "Math Tutor數學家教（新店）",
    "company": "iABC國際教育中心",
    "location": "新北市新店區",
@@ -12195,7 +12744,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -12216,7 +12765,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -12280,7 +12829,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -12301,7 +12850,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -12325,27 +12874,6 @@
    "lastSeen": "2026-11-13"
   },
   {
-   "category": "一般工讀",
-   "title": "助理顧問-全職-台北辦公室",
-   "company": "SIUK_招手留遊學諮商有限公司",
-   "location": "台北市大安區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪 30,000~42,000",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/51yux",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
    "category": "設計與生涯",
    "title": "UI/UX designer",
    "company": "BH Global 明輝環球",
@@ -12365,7 +12893,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -12386,7 +12914,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -12449,7 +12977,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -12554,7 +13082,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -12575,7 +13103,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -12596,7 +13124,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -12722,7 +13250,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -12999,27 +13527,6 @@
    "lastSeen": "2026-11-09"
   },
   {
-   "category": "一般工讀",
-   "title": "中和區銷售中心工讀生",
-   "company": "甲桂林廣告股份有限公司",
-   "location": "新北市中和區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "夜間部學生可，但週六、日需上班，平日排休",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪196元",
-   "date": "2026-11-04",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8csj5",
-   "firstSeen": "2026-11-08",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-10"
-  },
-  {
    "category": "藝術與諮詢",
    "title": "建築設計助理",
    "company": "大樑堂建築師事務所",
@@ -13164,7 +13671,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -13185,7 +13692,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -13206,7 +13713,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -13606,7 +14113,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -13627,7 +14134,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -13648,7 +14155,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -13795,7 +14302,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -13858,7 +14365,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -14005,7 +14512,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -14090,7 +14597,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -14195,28 +14702,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "一般工讀",
-   "title": "外勤助理",
-   "company": "超急資訊股份有限公司",
-   "location": "台北市中正區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪 40,000~50,000",
-   "date": "2026-11-03",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/94k9q",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -14364,7 +14850,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -14617,7 +15103,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -14827,7 +15313,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -14932,7 +15418,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -14953,29 +15439,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "藝術與諮詢",
-   "title": "網站／平面美術設計助理",
-   "company": "GaragePlay",
-   "location": "台北市大同區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "週休二日",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪 30,000~35,000",
-   "date": "2026-11-01",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8n72o",
-   "firstSeen": "2026-10-25",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "遊戲公司美術助理",
-   "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -15290,7 +15754,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -15311,7 +15775,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -15773,7 +16237,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -15794,7 +16258,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -16025,7 +16489,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-10-31"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -16067,7 +16531,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -16214,7 +16678,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -16343,27 +16807,6 @@
    "lastSeen": "2026-11-07"
   },
   {
-   "category": "藝術與諮詢",
-   "title": "視覺設計師",
-   "company": "夢幻互娛國際有限公司",
-   "location": "台北市信義區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "週休二日",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪50,000~100,000元",
-   "date": "2026-10-30",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8i673",
-   "firstSeen": "2026-11-06",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-09"
-  },
-  {
    "category": "一般工讀",
    "title": "實習律師",
    "company": "眾達國際法律事務所",
@@ -16462,27 +16905,6 @@
    "dateText": "",
    "source": "104",
    "url": "https://www.104.com.tw/job/965ma",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": true,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-10-29"
-  },
-  {
-   "category": "一般工讀",
-   "title": "實習律師",
-   "company": "成碩法律事務所",
-   "location": "台北市松山區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪40,000元",
-   "date": "2026-10-29",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8jv2u",
    "firstSeen": "2026-10-26",
    "remote": true,
    "intern": true,
@@ -16847,7 +17269,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -16952,7 +17374,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -17268,7 +17690,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -17289,7 +17711,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -17310,7 +17732,28 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
+  },
+  {
+   "category": "藝術與諮詢",
+   "title": "平面設計／美編",
+   "company": "權鋒國際股份有限公司",
+   "location": "台北市南港區",
+   "type": "正職",
+   "experience": "不拘",
+   "workDays": "未提供",
+   "onsiteDays": "未標示遠端（實體）",
+   "salary": "月薪 32,000~35,000",
+   "date": "2026-10-29",
+   "dateText": "",
+   "source": "104",
+   "url": "https://www.104.com.tw/job/948u9",
+   "firstSeen": "2026-10-26",
+   "remote": true,
+   "intern": false,
+   "informal": false,
+   "fitNote": "",
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -17394,7 +17837,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -17752,7 +18195,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -18340,7 +18783,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -18448,7 +18891,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -18534,7 +18977,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -18641,7 +19084,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -18662,7 +19105,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -18684,7 +19127,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -19126,7 +19569,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -19736,7 +20179,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -19778,7 +20221,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -19799,7 +20242,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -19820,7 +20263,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -19863,7 +20306,7 @@
    "informal": false,
    "fitNote": "歡迎新鮮人；Yourator 顯示「一週內更新」",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -19885,7 +20328,7 @@
    "informal": false,
    "fitNote": "Yourator 顯示「一個月內更新」",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -19920,7 +20363,7 @@
    "onsiteDays": "未提供",
    "salary": "NT$ 800 - 800 (時薪)",
    "date": null,
-   "dateText": "一週內更新",
+   "dateText": "兩週內更新",
    "source": "Yourator",
    "url": "https://www.yourator.co/companies/english-cool/jobs/38961",
    "firstSeen": "2026-10-26",
@@ -19928,7 +20371,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -19941,7 +20384,7 @@
    "onsiteDays": "未提供",
    "salary": "NT$ 15,000 -  (論件計酬)",
    "date": null,
-   "dateText": "兩週內更新",
+   "dateText": "一個月內更新",
    "source": "Yourator",
    "url": "https://www.yourator.co/companies/simpleinfo/jobs/48097",
    "firstSeen": "2026-10-26",
@@ -19949,7 +20392,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20012,7 +20455,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20054,7 +20497,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20075,7 +20518,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20096,7 +20539,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20117,7 +20560,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20138,7 +20581,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20159,7 +20602,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20180,7 +20623,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20201,7 +20644,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20222,7 +20665,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20243,7 +20686,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20264,7 +20707,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20285,7 +20728,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20306,7 +20749,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20327,7 +20770,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -20348,7 +20791,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20369,7 +20812,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -20432,7 +20875,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -20475,7 +20918,7 @@
    "informal": false,
    "fitNote": "包裝美術設計助理",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -20643,7 +21086,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -21001,7 +21444,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -21173,27 +21616,6 @@
   },
   {
    "category": "一般工讀",
-   "title": "Intern (LiDAR/KPS assistant)",
-   "company": "Siemens",
-   "location": "台北",
-   "type": "實習",
-   "experience": "入門／實習（LinkedIn 篩選）",
-   "workDays": "未提供",
-   "onsiteDays": "未提供",
-   "salary": "未提供",
-   "date": "2026-10-24",
-   "dateText": "",
-   "source": "LinkedIn",
-   "url": "https://www.linkedin.com/jobs/view/4455433314",
-   "firstSeen": "2026-10-26",
-   "remote": false,
-   "intern": true,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-11-14"
-  },
-  {
-   "category": "一般工讀",
    "title": "【台北地區｜誠徵】軟裝擺拍兼職工讀生（可排班、長期培訓）",
    "company": "允盺有限公司",
    "location": "台北市信義區",
@@ -21232,7 +21654,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -21700,7 +22122,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-13"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -21826,7 +22248,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -21911,27 +22333,6 @@
    "informal": false,
    "fitNote": "",
    "lastSeen": "2026-10-26"
-  },
-  {
-   "category": "家教伴讀",
-   "title": "北區-兼職晚班安親(美語）課輔工讀生(永和/近網溪國小)",
-   "company": "徐薇文化事業有限公司",
-   "location": "新北市永和區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 200~240",
-   "date": "2026-10-22",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/8xdfy",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-10-31"
   },
   {
    "category": "家教伴讀",
@@ -22141,7 +22542,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -22523,7 +22924,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -22565,7 +22966,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -22586,7 +22987,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -22907,27 +23308,6 @@
   },
   {
    "category": "藝術與諮詢",
-   "title": "Graphic Design Intern（平面設計實習生）",
-   "company": "玩美行動",
-   "location": "台北市內湖區",
-   "type": "實習",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪205~225",
-   "date": "2026-10-20",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/94wkv",
-   "firstSeen": "2026-10-20",
-   "remote": false,
-   "intern": true,
-   "informal": false,
-   "fitNote": "",
-   "seed": true
-  },
-  {
-   "category": "藝術與諮詢",
    "title": "[ 台北-總公司 ] 設計部-平面視覺設計 (實習工讀生)(無經驗可)",
    "company": "服部創意",
    "location": "台北市中正區",
@@ -22946,7 +23326,7 @@
    "informal": false,
    "fitNote": "標明無經驗可",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -23010,27 +23390,6 @@
    "informal": false,
    "fitNote": "",
    "lastSeen": "2026-10-27"
-  },
-  {
-   "category": "藝術與諮詢",
-   "title": "平面設計／美編",
-   "company": "權鋒國際股份有限公司",
-   "location": "台北市南港區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "月薪 32,000~35,000",
-   "date": "2026-10-20",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/948u9",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-10-26"
   },
   {
    "category": "藝術與諮詢",
@@ -23177,7 +23536,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -23345,7 +23704,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -23388,28 +23747,6 @@
    "informal": false,
    "fitNote": "UX 研究方向",
    "seed": true
-  },
-  {
-   "category": "設計與生涯",
-   "title": "產品企劃助理",
-   "company": "正暉",
-   "location": "台北市南港區",
-   "type": "正職",
-   "experience": "不拘",
-   "workDays": "週休二日",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "面議",
-   "date": "2026-10-19",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/7jnom",
-   "firstSeen": "2026-10-19",
-   "remote": false,
-   "intern": false,
-   "informal": false,
-   "fitNote": "產品企劃助理",
-   "seed": true,
-   "lastSeen": "2026-10-28"
   },
   {
    "category": "藝術與諮詢",
@@ -23624,27 +23961,6 @@
   },
   {
    "category": "一般工讀",
-   "title": "工讀生",
-   "company": "財團法人台灣產業服務基金會",
-   "location": "台北市大安區",
-   "type": "兼職／工讀",
-   "experience": "不拘",
-   "workDays": "未提供",
-   "onsiteDays": "未標示遠端（實體）",
-   "salary": "時薪 196",
-   "date": "2026-10-19",
-   "dateText": "",
-   "source": "104",
-   "url": "https://www.104.com.tw/job/82xu9",
-   "firstSeen": "2026-10-26",
-   "remote": true,
-   "intern": false,
-   "informal": false,
-   "fitNote": "",
-   "lastSeen": "2026-10-26"
-  },
-  {
-   "category": "一般工讀",
    "title": "讀家補習班錄課工讀生(長期)",
    "company": "PTT 網友 redduke",
    "location": "台北/一般",
@@ -23725,7 +24041,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -23746,7 +24062,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -24125,7 +24441,7 @@
    "informal": false,
    "fitNote": "UIUX 助理，入門友善",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -24251,7 +24567,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -24335,7 +24651,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -24400,7 +24716,7 @@
    "informal": true,
    "fitNote": "全薪試教；非正式貼文，未驗證",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -24737,7 +25053,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -24779,7 +25095,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -24926,7 +25242,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -25031,7 +25347,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -25409,7 +25725,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -25430,7 +25746,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -25535,7 +25851,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -25556,7 +25872,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -25662,7 +25978,7 @@
    "informal": false,
    "fitNote": "可實習或兼職的設計入門",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -25726,7 +26042,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -25789,7 +26105,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -25831,7 +26147,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -25894,7 +26210,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -25916,7 +26232,7 @@
    "informal": false,
    "fitNote": "設計工作室實習",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -25938,7 +26254,7 @@
    "informal": false,
    "fitNote": "",
    "seed": true,
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -25959,7 +26275,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "藝術與諮詢",
@@ -26001,7 +26317,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "家教伴讀",
@@ -26064,7 +26380,7 @@
    "intern": false,
    "informal": true,
    "fitNote": "非正式貼文，未經查證",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -26085,7 +26401,7 @@
    "intern": true,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "設計與生涯",
@@ -26169,7 +26485,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
@@ -26211,7 +26527,7 @@
    "intern": false,
    "informal": false,
    "fitNote": "",
-   "lastSeen": "2026-11-14"
+   "lastSeen": "2026-11-15"
   },
   {
    "category": "一般工讀",
