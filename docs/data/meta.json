@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-18T16:16:40+08:00",
- "total": 1368,
+ "lastRun": "2026-11-19T16:29:03+08:00",
+ "total": 1402,
  "newThisRun": 36,
  "removedOld": 2,
  "removedByRules": 0,
@@ -8,30 +8,33 @@
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 605,
-   "kept": 384,
-   "new": 28,
+   "fetched": 608,
+   "kept": 394,
+   "new": 32,
    "errors": [],
    "requests": 113,
-   "seconds": 144.4
+   "seconds": 139.9
   },
   "518": {
    "status": "成功",
-   "fetched": 160,
-   "kept": 22,
-   "new": 5,
+   "fetched": 159,
+   "kept": 24,
+   "new": 2,
    "errors": [],
    "requests": 14,
    "seconds": 17.1
   },
   "PTT": {
-   "status": "成功",
-   "fetched": 73,
-   "kept": 18,
+   "status": "失敗",
+   "fetched": 0,
+   "kept": 0,
    "new": 0,
-   "errors": [],
-   "requests": 29,
-   "seconds": 34.4
+   "errors": [
+    "HomeTeach: 500 Server Error: Internal Server Error for url: https://www.ptt.cc/bbs/HomeTeach/index.html",
+    "part-time: 500 Server Error: Internal Server Error for url: https://www.ptt.cc/bbs/part-time/index.html"
+   ],
+   "requests": 4,
+   "seconds": 8.4
   },
   "Yourator": {
    "status": "成功",
@@ -40,25 +43,28 @@
    "new": 0,
    "errors": [],
    "requests": 20,
-   "seconds": 24.2
+   "seconds": 24.4
   },
   "LinkedIn": {
    "status": "成功",
-   "fetched": 63,
-   "kept": 17,
-   "new": 0,
+   "fetched": 64,
+   "kept": 18,
+   "new": 2,
    "errors": [],
    "requests": 13,
-   "seconds": 15.6
+   "seconds": 15.5
   },
   "1111家教網": {
-   "status": "成功",
-   "fetched": 40,
-   "kept": 33,
-   "new": 3,
-   "errors": [],
+   "status": "失敗",
+   "fetched": 0,
+   "kept": 0,
+   "new": 0,
+   "errors": [
+    "伴讀: HTTPSConnectionPool(host='tutor.1111.com.tw', port=443): Read timed out. (read timeout=20.0)",
+    "全部科目: HTTPSConnectionPool(host='tutor.1111.com.tw', port=443): Read timed out. (read timeout=20.0)"
+   ],
    "requests": 4,
-   "seconds": 5.0
+   "seconds": 90.6
   }
  }
 }
