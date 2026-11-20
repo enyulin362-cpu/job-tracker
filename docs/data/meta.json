@@ -1,40 +1,37 @@
 {
- "lastRun": "2026-11-19T16:29:03+08:00",
- "total": 1402,
- "newThisRun": 36,
- "removedOld": 2,
+ "lastRun": "2026-11-20T16:08:53+08:00",
+ "total": 1443,
+ "newThisRun": 42,
+ "removedOld": 1,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 608,
-   "kept": 394,
-   "new": 32,
+   "fetched": 610,
+   "kept": 400,
+   "new": 29,
    "errors": [],
    "requests": 113,
-   "seconds": 139.9
+   "seconds": 139.4
   },
   "518": {
    "status": "成功",
-   "fetched": 159,
-   "kept": 24,
-   "new": 2,
+   "fetched": 160,
+   "kept": 22,
+   "new": 0,
    "errors": [],
    "requests": 14,
-   "seconds": 17.1
+   "seconds": 17.0
   },
   "PTT": {
-   "status": "失敗",
-   "fetched": 0,
-   "kept": 0,
-   "new": 0,
-   "errors": [
-    "HomeTeach: 500 Server Error: Internal Server Error for url: https://www.ptt.cc/bbs/HomeTeach/index.html",
-    "part-time: 500 Server Error: Internal Server Error for url: https://www.ptt.cc/bbs/part-time/index.html"
-   ],
-   "requests": 4,
-   "seconds": 8.4
+   "status": "成功",
+   "fetched": 71,
+   "kept": 19,
+   "new": 3,
+   "errors": [],
+   "requests": 35,
+   "seconds": 41.5
   },
   "Yourator": {
    "status": "成功",
@@ -43,28 +40,28 @@
    "new": 0,
    "errors": [],
    "requests": 20,
-   "seconds": 24.4
+   "seconds": 24.3
   },
   "LinkedIn": {
-   "status": "成功",
-   "fetched": 64,
-   "kept": 18,
-   "new": 2,
-   "errors": [],
-   "requests": 13,
-   "seconds": 15.5
+   "status": "部分成功",
+   "fetched": 54,
+   "kept": 17,
+   "new": 1,
+   "errors": [
+    "Visual Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Visual%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
+    "Tutor: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Tutor&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
+   ],
+   "requests": 16,
+   "seconds": 25.2
   },
   "1111家教網": {
-   "status": "失敗",
-   "fetched": 0,
-   "kept": 0,
-   "new": 0,
-   "errors": [
-    "伴讀: HTTPSConnectionPool(host='tutor.1111.com.tw', port=443): Read timed out. (read timeout=20.0)",
-    "全部科目: HTTPSConnectionPool(host='tutor.1111.com.tw', port=443): Read timed out. (read timeout=20.0)"
-   ],
+   "status": "成功",
+   "fetched": 40,
+   "kept": 34,
+   "new": 9,
+   "errors": [],
    "requests": 4,
-   "seconds": 90.6
+   "seconds": 4.8
   }
  }
 }
