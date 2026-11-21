@@ -1,67 +1,68 @@
 {
- "lastRun": "2026-11-20T16:08:53+08:00",
- "total": 1443,
- "newThisRun": 42,
- "removedOld": 1,
+ "lastRun": "2026-11-21T16:02:51+08:00",
+ "total": 1452,
+ "newThisRun": 16,
+ "removedOld": 7,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 610,
-   "kept": 400,
-   "new": 29,
+   "fetched": 600,
+   "kept": 395,
+   "new": 15,
    "errors": [],
    "requests": 113,
-   "seconds": 139.4
+   "seconds": 139.1
   },
   "518": {
    "status": "成功",
-   "fetched": 160,
-   "kept": 22,
+   "fetched": 161,
+   "kept": 17,
    "new": 0,
    "errors": [],
    "requests": 14,
-   "seconds": 17.0
+   "seconds": 17.2
   },
   "PTT": {
    "status": "成功",
-   "fetched": 71,
+   "fetched": 73,
    "kept": 19,
-   "new": 3,
+   "new": 0,
    "errors": [],
-   "requests": 35,
-   "seconds": 41.5
+   "requests": 32,
+   "seconds": 37.9
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 59,
-   "kept": 29,
+   "fetched": 58,
+   "kept": 28,
    "new": 0,
    "errors": [],
    "requests": 20,
-   "seconds": 24.3
+   "seconds": 24.2
   },
   "LinkedIn": {
    "status": "部分成功",
-   "fetched": 54,
-   "kept": 17,
+   "fetched": 45,
+   "kept": 14,
    "new": 1,
    "errors": [
-    "Visual Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Visual%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
+    "Graphic Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Graphic%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
+    "Research Assistant: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Research%20Assistant&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
     "Tutor: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Tutor&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
    ],
-   "requests": 16,
-   "seconds": 25.2
+   "requests": 17,
+   "seconds": 27.7
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
-   "kept": 34,
-   "new": 9,
+   "kept": 32,
+   "new": 0,
    "errors": [],
    "requests": 4,
-   "seconds": 4.8
+   "seconds": 5.0
   }
  }
 }
