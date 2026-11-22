@@ -1,23 +1,23 @@
 {
- "lastRun": "2026-11-21T16:02:51+08:00",
- "total": 1452,
- "newThisRun": 16,
- "removedOld": 7,
+ "lastRun": "2026-11-22T15:49:17+08:00",
+ "total": 1459,
+ "newThisRun": 13,
+ "removedOld": 6,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
   "104": {
    "status": "成功",
-   "fetched": 600,
-   "kept": 395,
-   "new": 15,
+   "fetched": 605,
+   "kept": 391,
+   "new": 11,
    "errors": [],
    "requests": 113,
-   "seconds": 139.1
+   "seconds": 140.7
   },
   "518": {
    "status": "成功",
-   "fetched": 161,
+   "fetched": 159,
    "kept": 17,
    "new": 0,
    "errors": [],
@@ -26,16 +26,16 @@
   },
   "PTT": {
    "status": "成功",
-   "fetched": 73,
+   "fetched": 75,
    "kept": 19,
    "new": 0,
    "errors": [],
-   "requests": 32,
-   "seconds": 37.9
+   "requests": 33,
+   "seconds": 39.1
   },
   "Yourator": {
    "status": "成功",
-   "fetched": 58,
+   "fetched": 59,
    "kept": 28,
    "new": 0,
    "errors": [],
@@ -43,26 +43,22 @@
    "seconds": 24.2
   },
   "LinkedIn": {
-   "status": "部分成功",
-   "fetched": 45,
-   "kept": 14,
-   "new": 1,
-   "errors": [
-    "Graphic Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Graphic%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Research Assistant: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Research%20Assistant&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Tutor: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Tutor&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
-   ],
-   "requests": 17,
-   "seconds": 27.7
+   "status": "成功",
+   "fetched": 65,
+   "kept": 19,
+   "new": 0,
+   "errors": [],
+   "requests": 14,
+   "seconds": 18.7
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
    "kept": 32,
-   "new": 0,
+   "new": 2,
    "errors": [],
    "requests": 4,
-   "seconds": 5.0
+   "seconds": 5.2
   }
  }
 }
