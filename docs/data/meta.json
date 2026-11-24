@@ -1,8 +1,8 @@
 {
- "lastRun": "2026-11-23T16:39:14+08:00",
- "total": 1458,
- "newThisRun": 6,
- "removedOld": 7,
+ "lastRun": "2026-11-24T18:44:50+08:00",
+ "total": 1462,
+ "newThisRun": 4,
+ "removedOld": 0,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
@@ -24,25 +24,25 @@
     "視覺設計 實習: 403 Client Error: Forbidden for url: https://www.104.com.tw/jobs/search/api/jobs?keyword=%E8%A6%96%E8%A6%BA%E8%A8%AD%E8%A8%88%20%E5%AF%A6%E7%BF%92&page=1&pagesize=30&order=1&area=6001001000,6001002000"
    ],
    "requests": 66,
-   "seconds": 138.2
+   "seconds": 138.1
   },
   "518": {
    "status": "成功",
-   "fetched": 158,
-   "kept": 19,
+   "fetched": 160,
+   "kept": 22,
    "new": 0,
    "errors": [],
    "requests": 14,
-   "seconds": 17.5
+   "seconds": 17.6
   },
   "PTT": {
    "status": "成功",
-   "fetched": 80,
-   "kept": 20,
-   "new": 2,
+   "fetched": 69,
+   "kept": 19,
+   "new": 1,
    "errors": [],
-   "requests": 35,
-   "seconds": 41.4
+   "requests": 32,
+   "seconds": 37.8
   },
   "Yourator": {
    "status": "成功",
@@ -55,23 +55,25 @@
   },
   "LinkedIn": {
    "status": "部分成功",
-   "fetched": 64,
-   "kept": 18,
+   "fetched": 53,
+   "kept": 16,
    "new": 0,
    "errors": [
-    "Graphic Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Graphic%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
+    "UI UX Intern: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=UI%20UX%20Intern&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
+    "Graphic Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Graphic%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
+    "Research Assistant: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Research%20Assistant&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
    ],
-   "requests": 15,
-   "seconds": 21.8
+   "requests": 17,
+   "seconds": 27.8
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
-   "kept": 31,
-   "new": 4,
+   "kept": 32,
+   "new": 3,
    "errors": [],
    "requests": 4,
-   "seconds": 4.7
+   "seconds": 5.1
   }
  }
 }
