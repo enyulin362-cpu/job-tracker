@@ -1,8 +1,8 @@
 {
- "lastRun": "2026-11-24T18:44:50+08:00",
- "total": 1462,
- "newThisRun": 4,
- "removedOld": 0,
+ "lastRun": "2026-11-25T17:36:44+08:00",
+ "total": 1475,
+ "newThisRun": 15,
+ "removedOld": 2,
  "removedByRules": 0,
  "keepDays": 45,
  "sources": {
@@ -28,21 +28,21 @@
   },
   "518": {
    "status": "成功",
-   "fetched": 160,
-   "kept": 22,
-   "new": 0,
+   "fetched": 157,
+   "kept": 24,
+   "new": 3,
    "errors": [],
    "requests": 14,
-   "seconds": 17.6
+   "seconds": 17.5
   },
   "PTT": {
    "status": "成功",
-   "fetched": 69,
-   "kept": 19,
+   "fetched": 74,
+   "kept": 20,
    "new": 1,
    "errors": [],
    "requests": 32,
-   "seconds": 37.8
+   "seconds": 37.9
   },
   "Yourator": {
    "status": "成功",
@@ -55,25 +55,23 @@
   },
   "LinkedIn": {
    "status": "部分成功",
-   "fetched": 53,
-   "kept": 16,
-   "new": 0,
+   "fetched": 65,
+   "kept": 19,
+   "new": 2,
    "errors": [
-    "UI UX Intern: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=UI%20UX%20Intern&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Graphic Designer: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Graphic%20Designer&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0",
-    "Research Assistant: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Research%20Assistant&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
+    "UI UX Intern: 429 Client Error: Too Many Requests for url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=UI%20UX%20Intern&location=Taipei%20City%2C%20Taiwan&f_TPR=r2592000&f_E=1%2C2&start=0"
    ],
-   "requests": 17,
-   "seconds": 27.8
+   "requests": 15,
+   "seconds": 21.9
   },
   "1111家教網": {
    "status": "成功",
    "fetched": 40,
    "kept": 32,
-   "new": 3,
+   "new": 9,
    "errors": [],
    "requests": 4,
-   "seconds": 5.1
+   "seconds": 4.8
   }
  }
 }
